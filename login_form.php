@@ -14,7 +14,7 @@
 
     if($user->login($uname,$umail,$upass))
     {
-      $user->redirect('home.php');
+      $user->redirect('index.php');
     }
     else
     {
