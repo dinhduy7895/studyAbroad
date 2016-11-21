@@ -98,6 +98,7 @@ a {
 
 .icon-box {
     padding-left: 12px;
+    padding-top: 30px;
 }
 .icon-box + .icon-box {
     margin-top: 44px;
@@ -128,8 +129,10 @@ a {
     overflow: hidden;
 }
 
-.o__hidden {
-    overflow: hidden;
+.o__hidden a {
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'nice', Arial, sans-serif;
 }
 h6 {
     font-size: 19px;
@@ -144,6 +147,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #303334;
 }
 /*---------------------------*/
+.news {
+    padding-top: 30px;
+}
 .views-field-title {
     color: #64797E !important;
     font-size: 2em;
@@ -178,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 #block-views-recent-news-block h2 {
-	margin: .2em 0 .6em;
+    margin: .2em 0 .6em;
     padding: 0;
     font-weight: normal;
     text-transform: uppercase;
@@ -216,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 100%;
 }
 .catpulseicon::before, .catpulseicon::after{
-	content: "";
+    content: "";
     position: absolute;
     width: 8em;
     height: 2px;
@@ -230,7 +236,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #052B5B !important;
 }
 #block-views-recent-news-block .views-row p {
-	font-size: 1.5em;
+    font-size: 1.5em;
     line-height: 1.2;
     color: #052B5B !important;
     margin: .6em 0 .4em;

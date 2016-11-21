@@ -11,6 +11,6 @@ session_start();
     <?php
       echo "New record created successfully";
     ?>
-    <a href="studyAbroadbk/login_form.php">Click here to Login</a>
+    <a href="login_form.php">Click here to Login</a>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "binh";
 $dbname = "studyabroad";
 try{
      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -12,7 +12,7 @@ catch(PDOException $e)
     {
     echo  $e->getMessage();
     }
-include('class.user.php');
+include 'Class.user.php';
 $user = new USER($conn);
 ?>
-
+ 

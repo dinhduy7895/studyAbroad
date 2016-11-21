@@ -2,14 +2,15 @@
   require_once 'connect.php';
   if($user->is_loggedin()!="")
   {
-    $user->redirect('index.php');
+    $user->redirect('home.php');
   }
 
   if(isset($_POST['submit']))
   {
-    $uname = $_POST['txt_uname_email'];
-    $umail = $_POST['txt_uname_email'];
-    $upass = $_POST['txt_password'];
+    $uname = $_POST['Name'];
+    $umail = $_POST['Name'];
+    $upass = $_POST['pass'];
+    $upass = md5($upass);
 
     if($user->login($uname,$umail,$upass))
     {
@@ -28,7 +29,7 @@
       <div class="container">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Login</li>
+            <li class="breadcrumb-item">Login</li>
         </ol>
       </div>
     </div>
@@ -36,14 +37,14 @@
       <div class="clearfix"><br/></div>
       <div class="main-content container">
         <form method="post" class="form-horizontal">
-                    <?php
-                    if(isset($error))
-                    {
-                    ?>
-                        <div class="alert alert-danger">
-                            <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?> !
-                        </div>
-                    <?php } ?>
+            <?php
+            if(isset($error))
+            {
+            ?>
+                <div class="alert alert-danger">
+                    <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?> !
+                </div>
+            <?php } ?>
             <div class="form-group">
               <label class="col-lg-2" for="Name">Username</label>
               <div class="col-sm-5">

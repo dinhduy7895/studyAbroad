@@ -15,7 +15,7 @@
 	color: #a6cdd7;
 }
 #main-content {
-	margin-top: 60px;
+	padding-bottom: 30px;
 }
 .top-title {
 	background: #1f987d;
@@ -49,6 +49,28 @@
 	color: #b6211d;
 	font-family: 'Lato-Regular', Arial, sans-serif;
 }
+.text-content {
+	padding-top: 20px;
+}
+
+.other-news {
+
+}
+.other-news h3 {
+	color: #1F987D;
+}
+.other-news-container {
+	padding: 15px 0;
+}
+.info-container {
+	padding-top: 20px;
+}
+.other-news-container a {
+	text-decoration: none;
+	font-size: 18px;
+	font-family: 'nice', Arial, sans-serif;
+}
+
 .social {
 	padding-top: 15px;
 }
