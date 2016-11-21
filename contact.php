@@ -1,8 +1,12 @@
 
 <?php
-session_start();
 $title = 'Contact';
+if(!isset($_SESSION['user_session'])){
+	
+	header("Location: contactError.php");
+}
 ?>
+
 <?php include("header.php") ?>
 <?php
 	include('connect.php');

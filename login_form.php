@@ -1,3 +1,5 @@
+<?php $title = 'Login'; ?>
+<?php include 'header.php'; ?>
 <?php
   require_once 'connect.php';
   if($user->is_loggedin()!="")
@@ -14,6 +16,7 @@
 
     if($user->login($uname,$umail,$upass))
     {
+      $_SESSION['user_session'] = $uname;
       $user->redirect('index.php');
     }
     else
@@ -22,8 +25,7 @@
     } 
   }
 ?>
-<?php $title = 'Login'; ?>
-<?php include 'header.php'; ?>
+
   <section id="main-content">
     <div class="top-title">
       <div class="container">

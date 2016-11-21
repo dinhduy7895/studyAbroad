@@ -1,8 +1,6 @@
 
-<?php
-session_start();
-$title = 'Register';
-?>
+<?php $title = 'Register'; ?>
+<?php include 'header.php'; ?>
     <?php
 
 $name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
@@ -28,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else{
             try{
-                $stmt = $conn->prepare("Select count(*) from user where name= '$name'  ");
+                $stmt = $conn->prepare("Select count(*) from user where name= '$name' or email ='$email' ");
                 $stmt->execute();
                 $count = $stmt->fetchColumn(0);
             }
@@ -37,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo $stmt."<br>".$e->getMessage();
             }
             if($count >= 1){
-                $nameErr = "Username has been exist ";
+                $nameErr = "Username or email has been exist ";
                 $check = 1;
             }
         }
@@ -45,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($check==0){
         if($user->register($fname,$lname,$name,$email,$pass,$phone,$year))
         {
-            $_SESSION['user_session'] = $name;
+            
             header('Location: signupsuccess.php');
         }
         else {
@@ -55,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
       
-        <?php include("header.php") ?>
+        
         <section id="main-content">
           <div class="top-title">
             <div class="container">

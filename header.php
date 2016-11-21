@@ -39,7 +39,7 @@
 						<li class="<?php if ($title=='News') echo "active";?> "><a href="news-page.php">News</a></li>
 						<li class="<?php if ($title=='Blog') echo "active";?> "><a href="#">Blog</a></li>
 						<li class="<?php if ($title=='Contact') echo "active";?> "><a href="contact.php">Contact</a></li>
-						<?php if (!$_SESSION['user_session']) { ?>
+						<?php if (!isset($_SESSION['user_session']) ) { ?>
 							<li class="<?php if ($title=='Login') echo "active";?> "><a href="login_form.php">Login</a></li>
 							<li class="<?php if ($title=='Register') echo "active";?> "><a href="register_form.php">Register</a></li>
 						<?php } else { ?>
