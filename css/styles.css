@@ -1,0 +1,17 @@
+#signupForm {
+	margin: 10px 0 0 10px;
+	padding: 20px 0 20px 20px;
+	border: 1px solid black;
+}
+#signupForm>label, #signupForm>input, #signupForm>select {
+	margin-bottom: 10px;	
+	vertical-align: middle;
+	display: inline-block;
+}
+#signupForm>label {
+	text-align: left;
+}
+.error { 
+	color: red;
+	padding-left: 4px;
+}

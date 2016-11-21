@@ -1,0 +1,6 @@
+.container {
+	padding: 30px;
+}
+.col-sm-4, .col-sm-8 {
+	padding-bottom: 15px;
+}
