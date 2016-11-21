@@ -1,4 +1,3 @@
-
 <?php $title = 'News' ?>
 <?php include 'header.php'; ?>
 	<section id="main-content">

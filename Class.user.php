@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class USER
 {
     private $db;
@@ -70,7 +70,7 @@ class USER
           {
              if($upass == $userRow['Pass'])
              {
-                $_SESSION['user_session'] = $userRow['Id'];
+                $_SESSION['user_session'] = $userRow['Name'];
                 return true;
              }
              else
