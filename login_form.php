@@ -17,7 +17,9 @@
     if($user->login($uname,$umail,$upass))
     {
       $_SESSION['user_session'] = $uname;
-      $user->redirect('index.php');
+      if ($uname == 'admin') {
+        $user->redirect('/admin/index.php')
+      } else $user->redirect('index.php');
     }
     else
     {

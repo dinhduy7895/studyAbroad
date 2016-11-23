@@ -1,24 +1,27 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT']."/template/admin/inc/header.php"; ?>
-<?php require_once $_SERVER['DOCUMENT_ROOT']."/template/admin/inc/leftbar.php"; ?>
-<?php require_once $_SERVER['DOCUMENT_ROOT']."/template/admin/inc/menu.php"; ?>
-
+<?php 
+	// require_once $_SERVER['DOCUMENT_ROOT']."/template/admin/inc/header.php"; ?>
+<?php 
+	// require_once $_SERVER['DOCUMENT_ROOT']."/template/admin/inc/leftbar.php"; ?>
+<?php 
+	// require_once $_SERVER['DOCUMENT_ROOT']."/template/admin/inc/menu.php"; ?>
+<?php include '../connect.php'; ?>
 <?php
 	//tính toán phân chia trang
-	$queryTSD = "SELECT count(id_bv) AS tongsodong FROM baiviet";
-	$resultTSD = $mysqli -> query ($queryTSD);
-	$arTSD = mysqli_fetch_assoc($resultTSD);
-	$tongsodong = $arTSD['tongsodong'];
-	//số dòng trên 1 trang
-	$row_count = TRANGADMIN;
-	//tổng số trang
-	$sotrang = ceil($tongsodong/$row_count);
-	//lấy trang hiện tại
-	if (isset ($_GET['page'])){
-		$current_page = $_GET['page'];
-	} else {
-		$current_page = 1;
-	}
-	$offset = ($current_page - 1) * $row_count;
+	// $queryTSD = "SELECT count(id_bv) AS tongsodong FROM baiviet";
+	// $resultTSD = $mysqli -> query ($queryTSD);
+	// $arTSD = mysqli_fetch_assoc($resultTSD);
+	// $tongsodong = $arTSD['tongsodong'];
+	// //số dòng trên 1 trang
+	// $row_count = TRANGADMIN;
+	// //tổng số trang
+	// $sotrang = ceil($tongsodong/$row_count);
+	// //lấy trang hiện tại
+	// if (isset ($_GET['page'])){
+	// 	$current_page = $_GET['page'];
+	// } else {
+	// 	$current_page = 1;
+	// }
+	// $offset = ($current_page - 1) * $row_count;
 	//kết thúc phân trang
 ?>
 <div class="templatemo-flex-row flex-content-row">
@@ -105,5 +108,5 @@
 	}
 </script> 
 <?php
-	require_once $_SERVER['DOCUMENT_ROOT']."/template/admin/inc/footer.php";
+	require_once "footer.php";
 ?>	
