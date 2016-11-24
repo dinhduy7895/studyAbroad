@@ -1,3 +1,4 @@
+@import url("plugins/magnific-popup.css");
 @font-face {
 	font-family:  'Lato-Regular';
 	src: url('../fonts/Lato-Regular.eot');
@@ -11,6 +12,16 @@
 
 #wrapper {
 	width: 100%;
+}
+#preloader {
+    background-color: rgba(255, 255, 255, 1);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999999999;
 }
 #header {
 	position: absolute;
