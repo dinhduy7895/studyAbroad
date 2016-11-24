@@ -32,3 +32,4 @@
 
 <!-- Mirrored from simpleqode.com/preview/kite/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Oct 2016 09:06:54 GMT -->
 </html>
+<?php ob_end_flush();?>
