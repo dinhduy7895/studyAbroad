@@ -43,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($check==0){
         if($user->register($fname,$lname,$name,$email,$pass,$phone,$year))
         {
-            
             header('Location: signupsuccess.php');
         }
         else {

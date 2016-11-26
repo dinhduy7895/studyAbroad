@@ -27,6 +27,9 @@
     
     <!-- JS Custom -->
     <script src="assets/js/custom.js"></script>
+          <script src="//cdn.ckeditor.com/4.6.0/basic/ckeditor.js"></script>
+          <script type="text/javascript" src="../js/ckeditor.js"></script>
+      <script type="text/javascript" src="../js/sample.js"></script>
 
   </body>
 
