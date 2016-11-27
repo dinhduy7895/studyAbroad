@@ -35,15 +35,15 @@
                 <h2>Quick Links</h2>
                 <div class="content">
                     <ul class="menu">
-                        <li class="first leaf"><a href="uafinalssurvival.html">Finals Survival</a>
+                        <li class="first leaf"><a href="#">Finals Survival</a>
                         </li>
-                        <li class="leaf"><a href="senior-vice-president-senior-vice-provost/policy-interactions-non-enrolled-minors.html">Minor Policy</a>
+                        <li class="leaf"><a href="#">Minor Policy</a>
                         </li>
-                        <li class="leaf"><a href="student-affairs/student-fees.html">Student Fees</a>
+                        <li class="leaf"><a href="#">Student Fees</a>
                         </li>
-                        <li class="leaf"><a href="http://www.arizona.edu/apply">Apply</a>
+                        <li class="leaf"><a href="#">Apply</a>
                         </li>
-                        <li class="last leaf"><a href="https://webauth.arizona.edu/webauth/login?service=http%3A%2F%2Fsaem-aiss.arizona.edu%2Fcas%3Fdestination%3Dnode%2F690" class="restricted">UA Online Co-Branding Resources</a>
+                        <li class="last leaf"><a href="#" class="restricted">UA Online Co-Branding Resources</a>
                         </li>
                     </ul>
                 </div>
@@ -55,42 +55,45 @@
                 <div class="content" >
                     <ul >
                         <li>
-                            <a href="http://www.facebook.com/uasaem" style="padding: 8px 14px 8px 14px;">
+                            <a href="#" style="padding: 8px 14px 8px 14px;">
                             	<i class="fa fa-facebook"  style="height:31px; " ></i>
                             </a>
                         </li>
                         <li>
-                            <a href="http://twitter.com/UA_SAEM_AISS" style="padding: 8px 9px 8px 11px;">
+                            <a href="#" style="padding: 8px 9px 8px 11px;">
                              	<i class="fa fa-twitter"  style="height:31px; " ></i>
                             </a>
                         </li>
                         <li>
-                            <a href="http://instagram.com/ua_saem_aiss" style="padding: 8px 10px 8px 11px;">
+                            <a href="#" style="padding: 8px 10px 8px 11px;">
                             	<i class="fa fa-instagram"  style="height:31px; 	" ></i>
                             </a>
                         </li>
                     </ul>
-                    <p><a class="blue-button" href="https://www.uafoundation.org/NetCommunity/donations/student-affairs-and-enrollment-management">Donate Now</a>
+                    <p><a class="blue-button" href="#">Donate Now</a>
                     </p>
                 </div>
             </div>
         </div>
         
       
-        <div class="footertext container">
-            <div class="region region-footer-text">
-                <div id="block-block-1" class="block block-block">
-                    <div class="content">
-                        <p>Copyright 2016 | Arizona Board of Regents</p>
-                    </div>
+        <div class="footertext ">
+            <div class="region region-footer-text container">
+                <div class="content-copy">
+                    <p>Copyright 2016 | Arizona Board of Regents</p>
                 </div>
             </div>
         </div>
         
     </footer>
 </div>  
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    
+    <script src="js/vendor/jquery.sortelements.js" type="text/javascript"></script>
+<script src="js/jquery.bdt.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready( function () {
+        $('#bootstrap-table').bdt();
+    });
+</script>
 </body>
 </html>

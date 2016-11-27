@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="shortcut icon" href="assets/ico/favicon.ico">
-  
+
   <title>Kite: Dashboard</title>
 
   <!-- CSS Plugins -->
@@ -21,7 +21,7 @@
 
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300,500' rel='stylesheet' type='text/css'>
+
   </head>
 
   <body>
-  <?php    ob_start();  ?>

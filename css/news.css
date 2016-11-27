@@ -1,19 +1,4 @@
 
-#header {
-	position: relative;
-	margin-top: 0;
-	height: auto;
-}
-.navbar {
-	background-color: #ccc;
-	z-index: 100
-}
-#navbar > ul > li >  a { 
-	color: #4d7b87;
-}
-#navbar > ul > li a:hover {
-	color: black;
-}
 #main-content {
 	padding-bottom: 30px;
 }

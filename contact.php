@@ -1,13 +1,15 @@
 
 <?php
 $title = 'Contact';
+ include "header.php" ;
+
 if(!isset($_SESSION['user_session'])){
 	
 	header("Location: contactError.php");
 }
 ?>
 
-<?php include("header.php") ?>
+
 <?php
 	include('connect.php');
 	// if(!$user->is_loggedin()){
@@ -33,7 +35,8 @@ if(!isset($_SESSION['user_session'])){
 		<div class="top-title">
 			<div class="container">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="index.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Contact</a></li>
 				</ol>
 			</div>
 		</div>

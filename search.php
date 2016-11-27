@@ -1,40 +1,27 @@
-<!DOCTYPE html>
+<?php $title = 'Search';?>
 <?php
-          session_start();
+    session_start(); 
+    include('connect.php');
+    $universitySelected = $majorSelected  ="None";
+    if(count($_POST) > 0) {
+        $_SESSION['univer'] = $_POST['univer'];
+        $_SESSION['major']  = $_POST['major'];
+        header("HTTP/1.1 303 See Other");
+        header("Location: search.php");
+        die();
+    }
+    else if (isset($_SESSION['univer'])){
+        $universitySelected = $_SESSION['univer'];
+        $majorSelected  = $_SESSION['major'];
+        session_unset();
+        session_destroy();
+    }
 ?>
-  <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
-  </head>
-
-  <body>
-    
-    <?php
-          include('connect.php');
-          $universitySelected = $majorSelected  ="None";
-          if(count($_POST) > 0) {
-              $_SESSION['univer'] = $_POST['univer'];
-              $_SESSION['major']  = $_POST['major'];
-              header("HTTP/1.1 303 See Other");
-              header("Location:test.php");
-              die();
-          }
-          else if (isset($_SESSION['univer'])){
-              $universitySelected = $_SESSION['univer'];
-              $majorSelected  = $_SESSION['major'];
-              session_unset();
-              session_destroy();
-          }
-?>
-      
-      <form method="post" action="test.php?true">
-           <script type="text/javascript">
+<?php include 'header.php';?>
+  <section class="search-field">
+    <div class="container">
+        <div class=" search row">
+               <script type="text/javascript">
       $(document).ready(function() {
         $(".univer").change(function() {
           var iduniver = $(this).val();
@@ -55,7 +42,9 @@
 
       });
     </script>
-        <select name="univer" class="univer">
+      <form method="post" action="search.php?true">
+        <label for="univer" class="fleft col-lg-2">University : </label> 
+        <select name="univer" class="univer fleft col-lg-3">
           <option selected="selected" value = "None">None</option>
 
           <?php
@@ -71,9 +60,9 @@
           }
 ?>
         </select>
-        <br/>
-        <br/>
-        <select name="major" class="major">
+        
+        <label for="major" class="fleft col-lg-1">Major : </label>
+        <select name="major" class="major col-lg-3">
           <option selected="selected">None</option>
           <?php
          if($universitySelected =="None")
@@ -91,7 +80,7 @@
           }
 ?>
         </select>
-        <input type="submit"> Search
+        <input class="col-lg-2 fright" type="submit" value = " Seach"> 
       </form>
 
       <table class="table table-hover table-striped bdt" id="bootstrap-table">
@@ -150,54 +139,7 @@
 ?>
 
       </table>
-
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-              <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-              <a data-toggle="modal" data-dismiss="modal" href="#myModal1">OK</a>
-            </div>
-          </div>
-
         </div>
-      </div>
-      <div class="modal fade" id="myModal1" role="dialog">
-        <div class="modal-dialog">
-
-
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-              <p>tadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/vendor/jquery.sortelements.js" type="text/javascript"></script>
-<script src="js/jquery.bdt.min.js" type="text/javascript"></script>
-<script>
-    $(document).ready( function () {
-        $('#bootstrap-table').bdt();
-    });
-</script>
-  </body>
-
-  </html>
+    </div>
+  </section>
+  <?php include 'footer.php'; ?>

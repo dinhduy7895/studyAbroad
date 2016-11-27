@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($check==0){
         if($user->register($fname,$lname,$name,$email,$pass,$phone,$year))
         {
+            
             header('Location: signupsuccess.php');
         }
         else {
@@ -57,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="top-title">
             <div class="container">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                 <li class="breadcrumb-item"><a href="#">Register</a></li>
               </ol>
             </div>
           </div>
