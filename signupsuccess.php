@@ -9,6 +9,7 @@ session_start();
 </head>
 <body>
     <?php
+     
       echo "New record created successfully";
     ?>
     <a href="login_form.php">Click here to Login</a>

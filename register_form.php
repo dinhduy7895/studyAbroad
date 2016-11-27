@@ -1,25 +1,35 @@
 
 <?php $title = 'Register'; ?>
-<?php include 'header.php'; ?>
-    <?php
-
-$name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
-$check = 0;
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $fname = $_POST['firstname'];
-    $lname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $year = $_POST['year'];
-    $phone = $_POST['phoneNumber'];
+<?php
+    session_start(); 
     include('connect.php');
-    
-    if (empty($_POST["name"])) {
+    $name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
+$check = 0;
+    if(count($_POST) > 0) {
+    $_SESSION['name'] = $_POST["name"];
+    $_SESSION['firstname'] = $_POST['firstname'];
+    $_SESSION['lastname'] = $_POST['lastname'];
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['pass']= $_POST['pass'];
+    $_SESSION['year'] = $_POST['year'];
+    $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
+        header("HTTP/1.1 303 See Other");
+        header("Location: register_form.php");
+        die();
+    }
+    else if (isset($_SESSION['email'])){
+    $name = $_SESSION["name"];
+    $fname = $_SESSION['firstname'];
+    $lname = $_SESSION['lastname'];
+    $email = $_SESSION['email'];
+    $pass = $_SESSION['pass'];
+    $year = $_SESSION['year'];
+    $phone = $_SESSION['phoneNumber'];;
+    if (empty($_SESSION["name"])) {
         $nameErr = "Name is required";
         $check = 1;
     } else {
-        $name = $_POST["name"];
+        $name = $_SESSION["name"];
         if (!preg_match("/^[a-zA-Z0-9]*$/",$name)) {
             $nameErr = "white space is not allowed";
             $check = 1;
@@ -43,14 +53,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($check==0){
         if($user->register($fname,$lname,$name,$email,$pass,$phone,$year))
         {
-            
+             $_SESSION['user_session'] = $name;
             header('Location: signupsuccess.php');
         }
         else {
             header('Location: index.php');
         }
     }
-}
+        session_unset();
+        session_destroy();
+    }
+?>
+<?php include 'header.php'; ?>
+    <?php
+
+    
+
 ?>
       
         

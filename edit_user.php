@@ -1,6 +1,7 @@
 <?php include '../connect.php'; ?>
 <?php include 'header.php'; ?>
 <?php 
+  session_start(); 
  $id = $_GET['id'];
 $sql1 = "SELECT Id, Name, FirstName, LastName FROM user where Id = 1";
 $q = $conn->query($sql1);

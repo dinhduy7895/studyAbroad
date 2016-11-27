@@ -1,6 +1,7 @@
 
 <?php
 $title = 'Contact';
+  session_start(); 
  include "header.php" ;
 
 if(!isset($_SESSION['user_session'])){

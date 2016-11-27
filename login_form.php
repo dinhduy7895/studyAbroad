@@ -1,5 +1,8 @@
-<?php $title = 'Login'; ?>
-<?php include 'header.php'; ?>
+<?php $title = 'Login'; 
+session_start(); 
+?>
+
+
 <?php
   require_once 'connect.php';
   if($user->is_loggedin()!="")
@@ -27,7 +30,7 @@
     } 
   }
 ?>
-
+    <?php include 'header.php'; ?>
   <section id="main-content">
     <div class="top-title">
       <div class="container">

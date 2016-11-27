@@ -1,5 +1,6 @@
 
-<?php $title = 'Home'; ?>
+<?php $title = 'Home';
+session_start();  ?>
 
 <?php include 'header.php'; ?>
 	<section id="slider" class="slider">
