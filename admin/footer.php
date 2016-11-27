@@ -27,7 +27,9 @@
     
     <!-- JS Custom -->
     <script src="assets/js/custom.js"></script>
-
+    <script src="//cdn.ckeditor.com/4.6.0/basic/ckeditor.js"></script>
+    <script type="text/javascript" src="../js/ckeditor.js"></script>
+    <script type="text/javascript" src="../js/sample.js"></script>
   </body>
 
 <!-- Mirrored from simpleqode.com/preview/kite/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Oct 2016 09:06:54 GMT -->
