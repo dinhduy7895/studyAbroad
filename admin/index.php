@@ -12,14 +12,16 @@
               Dashboard <small>Dashboard and statistics</small>
             </h3>
       <?php
-          $sql = "SELECT Id, FirstName, LastName FROM user";
+          $sql = "SELECT Id, Name, FirstName, LastName FROM user";
           $q = $conn->query($sql);
           $q->setFetchMode(PDO::FETCH_ASSOC);
+          echo $row['Id'] . "<br>";
       ?> 
       <table class="table table-bordered table-condensed">
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Name</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Edit</th>
@@ -30,10 +32,11 @@
                     <?php while ($row = $q->fetch()): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['Id']); ?></td>
+                            <td><?php echo htmlspecialchars($row['Name']); ?></td>
                             <td><?php echo htmlspecialchars($row['FirstName']); ?></td>
                             <td><?php echo htmlspecialchars($row['LastName']); ?></td>
-                            <td><a href="/admin/baiviet_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
-              <td><a href="/admin/baiviet_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
+                            <td><a href="edit_user.php?id=<?php echo $row['Id']?>">Edit</a></td>
+                            <td><a href="delete_user.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
@@ -46,4 +49,4 @@
   return confirm("Are you sure to delete ?")
   }
 </script> 
-  <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>

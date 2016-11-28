@@ -25,3 +25,4 @@
   </head>
 
   <body>
+  <?php    ob_start();  ?>
