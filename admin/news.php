@@ -12,7 +12,7 @@
             Dashboard <small>Dashboard and statistics</small>
          </h3>
          <?php
-            $sql = "SELECT Id, Name, FirstName, LastName FROM user";
+            $sql = "SELECT Id, IdUniversity, Title, Context,DateNews,Image FROM news";
             $q = $conn->query($sql);
             $q->setFetchMode(PDO::FETCH_ASSOC);
             echo $row['Id'] . "<br>";
@@ -21,9 +21,11 @@
             <thead>
                <tr>
                   <th>ID</th>
-                  <th>Name</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
+                  <th>ID University</th>
+                  <th>Title</th>
+                  <th>Context</th>
+                  <th>Date</th>
+                  <th>Image</th>
                   <th>Edit</th>
                   <th>Delete</th>
                </tr>
@@ -32,11 +34,13 @@
             <?php while ($row = $q->fetch()): ?>
             <tr>
                <td><?php echo htmlspecialchars($row['Id']); ?></td>
-               <td><?php echo htmlspecialchars($row['Name']); ?></td>
-               <td><?php echo htmlspecialchars($row['FirstName']); ?></td>
-               <td><?php echo htmlspecialchars($row['LastName']); ?></td>
-               <td><a href="user_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
-               <td><a href="user_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
+               <td><?php echo htmlspecialchars($row['IdUniversity']); ?></td>
+               <td><?php echo htmlspecialchars($row['Title']); ?></td>
+               <td><?php echo htmlspecialchars($row['Context']); ?></td>
+               <td><?php echo htmlspecialchars($row['DateNews']); ?></td>
+               <td><img src="files/<?php echo htmlspecialchars($row['Image']); ?>" alt="img"/></td>
+               <td><a href="news_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
+               <td><a href="news_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
             </tr>
             <?php endwhile; ?>
             </tbody>

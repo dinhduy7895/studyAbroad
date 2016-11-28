@@ -18,10 +18,10 @@ include 'header.php'; ?>
 				}					
 			}
 			$time = time();
-			$tenfilemoi = 'Cafe'.'_'.$time.'.'.$duoifile;
+			$tenfilemoi = 'Img'.'_'.$time.'.'.$duoifile;
 			echo $tenfilemoi;
 			$tmp_name = $_FILES['image_news']['tmp_name'];
-			$path_upload = '/files/'.$tenfilemoi;
+			$path_upload = 'files/'.$tenfilemoi;
 			$result = move_uploaded_file($tmp_name, $path_upload);
 			
 			$hinhanh = $tenfilemoi;
@@ -29,11 +29,11 @@ include 'header.php'; ?>
 			$hinhanh = "";
 		}
 		
+		$IdUniversity = $_POST['IdUniversity'];
 		$Title = ($_POST['title']);
 		$Context = ($_POST['cktext']);
 		$Datenews = date("Y-m-d");
-		
-		$sql = "INSERT INTO news(Title,Context, Datenews, Image) VALUES ('{$Title}','{$Context}', '{$Datenews}', '{$hinhanh}')";
+		$sql = "INSERT INTO news(IdUniversity,Title,Context, Datenews, Image) VALUES ('{$IdUniversity}',{$Title}','{$Context}', '{$Datenews}', '{$hinhanh}')";
 		// $result = $mysqli -> query($sql);
 		$stmt = $conn->prepare($sql);
 		$stmt->execute(); 
@@ -57,11 +57,17 @@ include 'header.php'; ?>
           <div class="container">
 			<h2 class="margin-bottom-10">Thêm bài viết</h2>
 					<p>(*): Không được để trống</p>
-					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">		
+					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
+						<div class="row form-group">
+							<div class="col-lg-6">
+								<label>ID University</label>
+								<input type="text" name="IdUniversity" class="form-control" id="IdUniversity" placeholder="Nhập ID university">
+							</div>
+						</div>		
 						<div class="row form-group">
 							<div class="col-lg-6">
 								<label>Tên bài viết (*)</label>
-									<input type="text" name="title" class="form-control" id="inputFirstName" placeholder="Nhập tên bài viết">
+								<input type="text" name="title" class="form-control" id="inputFirstName" placeholder="Nhập tên bài viết">
 							</div>
 						</div>
 						
@@ -69,8 +75,6 @@ include 'header.php'; ?>
 							<div class="col-lg-12">
 								<label class="control-label templatemo-block">Hình ảnh</label> 
 								<input type="file" name="image_news" id="fileToUpload" value="" class="filestyle" data-buttonName="btn-primary" data-buttonBefore="true" data-icon="false" onchange="viewImg(this)">
-								
-								<img id="avartar-img-show" src="/files/img1.png" alt="avatar" width="auto" height="200" >
 								<script>
 								function viewImg(img) {
 									var fileReader = new FileReader;
@@ -80,17 +84,16 @@ include 'header.php'; ?>
 										avartarShow.src = img.target.result
 									}, fileReader.readAsDataURL(img.files[0])
 								}
-							</script>			
+								</script>			
 								<p>Dung lượng tối đa hình ảnh là 5 MB.</p>									
 							</div>
 						</div>
 						<div class="row form-group">
-							<div class="col-lg-12 form-group" id="editor">									 
+							<div class="col-lg-12 form-group" id="editor"> 
 								<label class="control-label">Chi tiết</label>
 								<textarea name="cktext" rows="7" cols="90" class="input-long ckeditor" style="visibility: hidden; display: none;"></textarea>
 							</div>
 						</div>
-
 						<div class="form-group text-right">
 						<input type="submit"  name="submit"  class="templatemo-blue-button" value="Đăng"/>
 						<input type="reset" class="templatemo-white-button" value="Nhập lại" />
@@ -103,8 +106,8 @@ include 'header.php'; ?>
     </div>
    </div> <!-- / .row -->
 </div>
-      <?php include 'footer.php'; ?>
-     <script type="text/javascript">
+    <?php include 'footer.php'; ?>
+    <script type="text/javascript">
 		$(document).ready(function () {
 		$('#add_news').validate({
 			rules: {
