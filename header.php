@@ -77,7 +77,7 @@
                                 </li>
                                 <li class="<?php if ($title=='News') echo " active ";?> "><a href="news-page.php">News</a>
                                 </li>
-                                <li class="<?php if ($title=='Search') echo " active ";?> "><a href="#">Search</a>
+                                <li class="<?php if ($title=='Search') echo " active ";?> "><a href="search.php">Search</a>
                                 </li>
                                 <li class="<?php if ($title=='Contact') echo " active ";?> "><a href="contact.php">Contact</a>
                                 </li>
