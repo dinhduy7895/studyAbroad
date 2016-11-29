@@ -1,107 +1,190 @@
 <?php $title = 'News' ?>
 <?php include 'header.php'; ?>
-	<section id="main-content">
-		<div class="top-title">
-			<div class="container">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item">News</li>
-				</ol>
-			</div>
-		</div>
+	<section class="news">
 		<div class="container">
-			<div class="top-main-content">
-				<h3 class="">New And Innovative market opportunities</h3>
-				<h5 class="">Published on 2016/10/17</h5>
-			</div>
-			<div class="main-content">
-				<h2 class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum iste eligendi molestias minima optio</h2>
-				<h4 class="sub-title text-center">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet sed mollitia nostrum laboriosam? Sapiente error animi, tenetur nemo beatae sint odio placeat ducimus temporibus consequuntur perferendis esse! Explicabo, deserunt aliquam.
-				</h4>
-				<div class="icon-social">
-					<ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
-				        <li class="facebook">
-				            <a class="facebook-icon" target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-				        </li>
-				        <li class="tumblr">
-				            <a class="tumblr-icon" target="_blank" href="https://www.tumblr.com/"><i class="fa fa-tumblr"></i></a>
-				        </li>
-				        <li class="google">
-				            <a class="google-icon" target="_blank" href="https://google.com/"><i class="fa fa-google"></i></a>
-				        </li>
-				        <li class="linkedin">
-				            <a class="linkedin-icon" target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-				        </li>
-				        <li class="twitter">
-				            <a class="twitter-icon" target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
-				        </li>
-				    </ul>
-				</div>
-				<div class="img-description">
-					<img src="img/new1.jpg" alt="news image"/>
-					<p>Creating an entrepreneurial spirit inside the sometimes constraining confines of the academy can be a challenge, but it’s possible to create an agile and goal-driven team focused on transformation</p>
-				</div>
-				<div class="text-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>
-					<p>Lorem ipsum do<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>lor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>
+			<div class="row">
+				<div class="col-lg-9 news-highlight">
+					<div class="row center">
+						<div class="col-lg-12">
+							<div class="new-title-bar center">
+								<div class="title-bar">
+									<span>CATEGORY</span>
+									<h1>Name CATEGORY</h1>
+								</div>
+							</div>
+						</div>
+						<div class="new-single col-lg-12">
+							<div class="new-single-image">
+								<a href="#">
+									<img src="img/new2.jpg " class="image-responsive" alt="">
+								</a>
+							</div>
+							<div class="new-single-header">
+								<div class="new-single-header-category">
+									<span><a href="#">News in Day</a></span>
+								</div>
+								<h2 class="main-title">
+									<a href="#" class="">NAME ARTICLE</a>
+								</h2>
+								<div class="time-new-single">
+									<span>Published at 12:00 AM</span>
+								</div>
+								<div class="new-single-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, neque ratione veniam accusantium consectetur hic qui, asperiores nemo facilis deserunt ipsum! Expedita amet error, nisi ipsum sit quasi nulla explicabo?</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores similique ipsa cum. Ex doloribus necessitatibus atque quam repellendus accusantium voluptatem hic assumenda in, officiis. Modi eligendi, repudiandae veritatis nam.</p>
+								</div>
+								<div class="new-single-more">
+									<a href="#">continue reading</a>
+								</div>
+							</div>
+						</div>
+						<div class="new-single col-lg-12">
+							<div class="new-single-image">
+								<a href="#">
+									<img src="img/new2.jpg " class="image-responsive" alt="">
+								</a>
+							</div>
+							<div class="new-single-header">
+								<div class="new-single-header-category">
+									<span><a href="#">News in Day</a></span>
+								</div>
+								<h2 class="main-title">
+									<a href="#" class="">NAME ARTICLE</a>
+								</h2>
+								<div class="time-new-single">
+									<span>Published at 12:00 AM</span>
+								</div>
+								<div class="new-single-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, neque ratione veniam accusantium consectetur hic qui, asperiores nemo facilis deserunt ipsum! Expedita amet error, nisi ipsum sit quasi nulla explicabo?</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores similique ipsa cum. Ex doloribus necessitatibus atque quam repellendus accusantium voluptatem hic assumenda in, officiis. Modi eligendi, repudiandae veritatis nam.</p>
+								</div>
+								<div class="new-single-more">
+									<a href="#">continue reading</a>
+								</div>
+							</div>
+						</div>
+						<div class="new-single col-lg-12">
+							<div class="new-single-image">
+								<a href="#">
+									<img src="img/new2.jpg " class="image-responsive" alt="">
+								</a>
+							</div>
+							<div class="new-single-header">
+								<div class="new-single-header-category">
+									<span><a href="#">News in Day</a></span>
+								</div>
+								<h2 class="main-title">
+									<a href="#" class="">NAME ARTICLE</a>
+								</h2>
+								<div class="time-new-single">
+									<span>Published at 12:00 AM</span>
+								</div>
+								<div class="new-single-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, neque ratione veniam accusantium consectetur hic qui, asperiores nemo facilis deserunt ipsum! Expedita amet error, nisi ipsum sit quasi nulla explicabo?</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores similique ipsa cum. Ex doloribus necessitatibus atque quam repellendus accusantium voluptatem hic assumenda in, officiis. Modi eligendi, repudiandae veritatis nam.</p>
+								</div>
+								<div class="new-single-more">
+									<a href="#">continue reading</a>
+								</div>
+							</div>
+						</div>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed tempore culpa ipsum, commodi atque illum possimus unde, harum doloremque quibusdam! Est accusamus facere debitis at enim possimus rerum error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos neque ut, nihil provident similique quas minima ullam, possimus placeat, recusandae distinctio totam deserunt accusantium odio hic aliquid labore aut cupiditate?</p>
-					<p class="author">Author perspective: Administrator</p>
-				</div>
-			</div>
-			<div class="other-news">
-				<h3 class="title">You Might Also Like</h3>
-				<div class="row other-news-container">
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
-						<div class="other-img-content">
-							<img src="img/new3.jpg" alt="new 2 img">
-						</div>
-					</div>
-					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">
-						<div class="info-container">
-							<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tenetur dicta nam </a>
-						</div>
-						<div class="author">
-							<a href="#"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae incidunt unde fuga doloremque eligendi, architecto nulla </span></a>
-						</div>
 					</div>
 				</div>
-				<div class="row other-news-container">
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
-						<div class="other-img-content">
-							<img src="img/new3.jpg" alt="new 2 img">
-						</div>
-					</div>
-					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">
-						<div class="info-container">
-							<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tenetur dicta nam </a>
-						</div>
-						<div class="author">
-							<a href="#"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae incidunt unde fuga doloremque eligendi, architecto nulla </span></a>
-						</div>
-					</div>
-				</div>
-				<div class="row other-news-container">
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
-						<div class="other-img-content">
-							<img src="img/new3.jpg" alt="new 2 img">
-						</div>
-					</div>
-					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">
-						<div class="info-container">
-							<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius tenetur dicta nam </a>
-						</div>
-						<div class="author">
-							<a href="#"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae incidunt unde fuga doloremque eligendi, architecto nulla </span></a>
-						</div>
-					</div>
+				<div class="col-lg-3 new-recent ">
+					<h4 class="new-recent-title">
+						<span>RECENT POST</span>
+					</h4>
+					<ul class="new-feed ">
+						<li class="single-feed fearture-feed">
+							<div class="feed col-lg-12">
+								<div class="feed-image">
+									<a href="#">
+										<img src="img/new2.jpg " class="image-responsive" alt="">
+									</a>
+								</div>
+								<div class="feed-header">
+									<h2 class="feed-title">
+										<a href="#" class="">NAME ARTICLE</a>
+									</h2>
+									<div class="time-new-single">
+										Published at 12:00 AM
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="single-feed row">
+							<div class="feed col-lg-12">
+								<div class="feed-image col-lg-5">
+									<a href="#">
+										<img src="img/new2.jpg " class="image-responsive" alt="">
+									</a>
+								</div>
+								<div class="feed-header col-lg-7">
+									<h2 class="feed-title">
+										<a href="#" class="">NAME ARTICLE</a>
+									</h2>
+									<div class="time-new-single">
+										Published at 12:00 AM
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="single-feed row">
+							<div class="feed col-lg-12">
+								<div class="feed-image col-lg-5">
+									<a href="#">
+										<img src="img/new2.jpg " class="image-responsive" alt="">
+									</a>
+								</div>
+								<div class="feed-header col-lg-7">
+									<h2 class="feed-title">
+										<a href="#" class="">NAME ARTICLE</a>
+									</h2>
+									<div class="time-new-single">
+										Published at 12:00 AM
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="single-feed row">
+							<div class="feed col-lg-12">
+								<div class="feed-image col-lg-5">
+									<a href="#">
+										<img src="img/new2.jpg " class="image-responsive" alt="">
+									</a>
+								</div>
+								<div class="feed-header col-lg-7">
+									<h2 class="feed-title">
+										<a href="#" class="">NAME ARTICLE</a>
+									</h2>
+									<div class="time-new-single">
+										Published at 12:00 AM
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="single-feed row">
+							<div class="feed col-lg-12">
+								<div class="feed-image col-lg-5">
+									<a href="#">
+										<img src="img/new2.jpg " class="image-responsive" alt="">
+									</a>
+								</div>
+								<div class="feed-header col-lg-7">
+									<h2 class="feed-title">
+										<a href="#" class="">NAME ARTICLE</a>
+									</h2>
+									<div class="time-new-single">
+										Published at 12:00 AM
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
+	
 <?php include 'footer.php'; ?>

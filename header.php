@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/news.css">
     <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
     <script src="js/jquery-1.11.3.min.js"></script>
@@ -77,7 +77,7 @@
                                 </li>
                                 <li class="<?php if ($title=='News') echo " active ";?> "><a href="news-page.php">News</a>
                                 </li>
-                                <li class="<?php if ($title=='Blog') echo " active ";?> "><a href="#">Blog</a>
+                                <li class="<?php if ($title=='Search') echo " active ";?> "><a href="#">Search</a>
                                 </li>
                                 <li class="<?php if ($title=='Contact') echo " active ";?> "><a href="contact.php">Contact</a>
                                 </li>

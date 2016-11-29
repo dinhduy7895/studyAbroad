@@ -18,6 +18,7 @@
     }
 ?>
 <?php include 'header.php';?>
+
   <section class="search-field">
     <div class="container">
         <div class=" search row">
