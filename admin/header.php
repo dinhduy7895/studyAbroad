@@ -18,7 +18,6 @@
 
   <!-- CSS Global -->
   <link href="assets/css/styles.css" rel="stylesheet">
-
   <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300,500' rel='stylesheet' type='text/css'>
 

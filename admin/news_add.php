@@ -33,14 +33,17 @@ include 'header.php'; ?>
 		$Title = ($_POST['title']);
 		$Context = ($_POST['cktext']);
 		$Datenews = date("Y-m-d");
-		$sql = "INSERT INTO news(IdUniversity,Title,Context, Datenews, Image) VALUES ('{$IdUniversity}',{$Title}','{$Context}', '{$Datenews}', '{$hinhanh}')";
-		// $result = $mysqli -> query($sql);
-		$stmt = $conn->prepare($sql);
+		$stmt = $conn->prepare("INSERT INTO news (IdUniversity,Title,Context, Datenews, Image) VALUES (:IdUniversity,:Title,:Context,:Datenews, :Image)");
+		$stmt->bindparam(":IdUniversity", $IdUniversity);
+        $stmt->bindparam(":Title", $Title);
+        $stmt->bindparam(":Context", $Context);
+        $stmt->bindparam(":Datenews", $Datenews);
+        $stmt->bindparam(":Image", $hinhanh);
 		$stmt->execute(); 
 		if($stmt){
-			header("location:index.php?msg=addnews");exit();
-		} else{
-			header("location:index.php?msg=error");exit();	
+			header("location:news.php?msg=addnews");exit();
+		} else {
+			header("location:news.php?msg=error");exit();	
 		}
 	}
 ?>

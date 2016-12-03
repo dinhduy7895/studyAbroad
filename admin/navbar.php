@@ -21,7 +21,7 @@
                     </div>
                   </form>
 
-                  <a href="#" class="btn btn-primary navbar-btn navbar-right">
+                  <a href="logout.php" class="btn btn-primary navbar-btn navbar-right">
                     Sign Out
                   </a>
 

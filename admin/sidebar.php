@@ -34,7 +34,7 @@
               <a href="inbox.html"><i class="fa fa-envelope-o"></i> Inbox</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-sign-out"></i> Sign out</a>
+              <a href="logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
             </li>
           </ul>
         </nav>

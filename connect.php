@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "binh";
 $dbname = "studyabroad";
 try{
      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -14,5 +14,6 @@ catch(PDOException $e)
     }
 include 'Class.user.php';
 $user = new USER($conn);
+// session_start();
 ?>
  

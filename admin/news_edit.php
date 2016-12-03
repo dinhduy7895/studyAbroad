@@ -38,9 +38,9 @@ include 'header.php'; ?>
                } else {
                   $hinhanh = "";
                }
-               $IdUniversity = $_POST["IdUniversity"];
-              $Title = $_POST['Title'];
-              $Context = $_POST['Context'];
+              $IdUniversity = $_POST["IdUniversity"];
+              $Title = $_POST['title'];
+              $Context = $_POST['cktext'];
               $Datenews = date("Y-m-d");
               $upd = "UPDATE news SET IdUniversity='{$IdUniversity}', Title='{$Title}', Context='{$Context}', Datenews='{$Datenews}',Image='{$hinhanh}' WHERE Id = {$id}";
               $q = $conn->query($upd);
