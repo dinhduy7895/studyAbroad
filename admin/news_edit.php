@@ -11,6 +11,10 @@ include 'header.php'; ?>
          </h3>
           <?php
          $id = $_GET['id'];
+         $stmt_edit = $conn->prepare('SELECT * FROM news where Id =:id');
+         $stmt_edit->execute(array(':id'=>$id));
+         $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+         extract($edit_row);
           if (isset($_POST['submit'])) {
                $tenhinh ="";
                $tenhinh = ($_FILES['image_news']['name']);
@@ -32,6 +36,7 @@ include 'header.php'; ?>
                   echo $tenfilemoi;
                   $tmp_name = $_FILES['image_news']['tmp_name'];
                   $path_upload = 'files/'.$tenfilemoi;
+                  unlink('files/'.$edit_row['Image']);
                   $result = move_uploaded_file($tmp_name, $path_upload);
                   
                   $hinhanh = $tenfilemoi;

@@ -71,7 +71,7 @@
                <td><?php echo htmlspecialchars($row['IdUniversity']); ?></td>
                <td><?php echo htmlspecialchars($row['Title']); ?></td>
                <td><?php echo htmlspecialchars($row['Context']); ?></td>
-               <td><?php echo htmlspecialchars($row['DateNews']); ?> <p><?php echo htmlspecialchars($row['Image']); ?></p></td>
+               <td><?php echo htmlspecialchars($row['DateNews']); ?></td>
                <td><img style="height: 150px; width: 150px;" src="files/<?php echo htmlspecialchars($row['Image']); ?>" alt="img"/></td>
                <td><a href="news_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
                <td><a href="news_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
