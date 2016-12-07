@@ -43,8 +43,8 @@
             </tbody>
          </table>  
          <br><br>
-         <h3>News Table</h3>
-         <h3><a href="news_add.php">click to add news</a></h3>
+         <h3 style="display: inline-block;">News Table</h3>
+         <h3 style="display: inline-block; float: right;"><a href="news_add.php">Add news</a></h3>
          <?php
             $sql = "SELECT Id, IdUniversity, Title, Context,DateNews,Image FROM news";
             $q = $conn->query($sql);

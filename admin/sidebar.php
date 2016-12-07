@@ -58,36 +58,9 @@
               </ul>
             </li>
             <li>
-              <a href="orders.html"><i class="fa fa-shopping-cart"></i> Orders</a>
-            </li>
-            <li>
-              <a href="faq.html"><i class="fa fa-support"></i> FAQ</a>
-            </li>
-            <li>
               <a href="contact.html"><i class="fa fa-envelope-o"></i> Contact</a>
             </li>
-            <li class="sidebar-nav__heading">UI Elements</li>
-            <li>
-              <a href="ui_tables.html"><i class="fa fa-table"></i> Tables</a>
-            </li>
-            <li>
-              <a href="ui_forms.html"><i class="fa fa-check-square-o"></i> Forms</a>
-            </li>
-            <li>
-              <a href="ui_charts.html"><i class="fa fa-bar-chart-o"></i> Charts</a>
-            </li>
-            <li class="sidebar-nav__dropdown">
-              <a href="#"><i class="fa fa-gift"></i> Other <i class="fa fa-angle-down"></i></a>
-              <ul class="sidebar-nav__submenu">
-                <li><a href="ui_alerts.html">Alerts</a></li>
-                <li><a href="ui_buttons.html">Buttons</a></li>
-                <li><a href="ui_pagination.html">Pagination</a></li>
-                <li><a href="ui_panels.html">Panels</a></li>
-                <li><a href="ui_progress-bars.html">Progress Bars</a></li>
-                <li><a href="ui_tabs.html">Tabs</a></li>
-                <li><a href="ui_typography.html">Typography</a></li>
-              </ul>
-            </li>
+           
           </ul>
         </nav>
 
