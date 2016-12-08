@@ -16,7 +16,6 @@
             $sql = "SELECT Id, Name, FirstName, LastName FROM user";
             $q = $conn->query($sql);
             $q->setFetchMode(PDO::FETCH_ASSOC);
-            echo $row['Id'] . "<br>";
          ?> 
          <table class="table table-bordered table-condensed">
             <thead>
