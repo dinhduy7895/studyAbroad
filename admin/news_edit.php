@@ -43,12 +43,13 @@ include 'header.php'; ?>
                } else {
                   $image = "";
                }
-              $IdUniversity = $_POST["IdUniversity"];
-              $Title = $_POST['title'];
+              $idUniversity = $_POST["idUniversity"];
+              $idUniversity = $_POST["idUniversity"];
+              $title = $_POST['title'];
               $headContext = $_POST['cktext1'];
               $Context = $_POST['cktext'];
               $Datenews = date("Y-m-d");
-              $upd = "UPDATE news SET IdUniversity='{$IdUniversity}', Title='{$Title}',HeadContext='{$headContext}', Context='{$Context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
+              $upd = "UPDATE news SET IdUniversity='{$idUniversity}',IdScholarship='{$idScholarship}', Title='{$title}',HeadContext='{$headContext}', Context='{$Context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
               $q = $conn->query($upd);
               if($q){
                 header("location: news.php?msg=Updated");exit();
@@ -71,10 +72,11 @@ include 'header.php'; ?>
                   $q->setFetchMode(PDO::FETCH_ASSOC);
                   while ($row = $q->fetch()) {
                    $idUniversity = $row['IdUniversity'];
+                   $idScholarship = $row['IdScholarship'];
                    $title= $row['Title'];
                    $headContext = $row['HeadContext'];
-                   $Context = $row['Context'];
-                   $Image = $row['Image'];
+                   $context = $row['Context'];
+                   $image = $row['Image'];
                   ?>
             <div class="row form-group">
               <div class="col-lg-6">
@@ -82,6 +84,12 @@ include 'header.php'; ?>
                 <input type="text" name="idUniversity" class="form-control" id="idUniversity" value="<?php echo $idUniversity; ?>">
               </div>
             </div>    
+            <div class="row form-group">
+              <div class="col-lg-6">
+                <label>ID Scholarship</label>
+                <input type="text" name="idScholarship" class="form-control" id="idScholarship" value="<?php echo $idScholarship; ?>">
+              </div>
+            </div> 
             <div class="row form-group">
               <div class="col-lg-6">
                 <label>Title (*)</label>
@@ -92,7 +100,7 @@ include 'header.php'; ?>
             <div class="row form-group">
               <div class="col-lg-12">
                 <label class="control-label templatemo-block">Image</label> 
-                <img src="files/<?php echo $Image; ?>" alt="">
+                <img src="files/<?php echo $image; ?>" alt="">
                 <input type="file" name="image_news" id="fileToUpload" value="" class="filestyle" data-buttonName="btn-primary" data-buttonBefore="true" data-icon="false" onchange="viewImg(this)">
                 <script>
                 function viewImg(img) {
@@ -110,13 +118,13 @@ include 'header.php'; ?>
             <div class="row form-group">
               <div class="col-lg-12 form-group" id="editor"> 
                 <label class="control-label">Head Context</label>
-                <textarea name="cktext1" rows="7" cols="90" class="input-long ckeditor" style="visibility: hidden; display: none;"></textarea>
+                <textarea name="cktext1" rows="7" cols="90" class="input-long ckeditor" style="visibility: hidden; display: none;"><?php echo $headContext; ?></textarea>
               </div>
             </div>
             <div class="row form-group">
               <div class="col-lg-12 form-group" id="editor"> 
                 <label class="control-label">Detail Info</label>
-                <textarea name="cktext" rows="7" cols="90" class="input-long ckeditor" style="visibility: hidden; display: none;"></textarea>
+                <textarea name="cktext" rows="7" cols="90" class="input-long ckeditor" style="visibility: hidden; display: none;"><?php echo $context; ?></textarea>
               </div>
             </div>
             <div class="form-group text-right">

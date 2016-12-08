@@ -19,7 +19,7 @@ include 'header.php'; ?>
 			}
 			$time = time();
 			$imgNewName = 'Img'.'_'.$time.'.'.$extension;
-			echo $imgNewName;
+			// echo $imgNewName;
 			$tmp_name = $_FILES['image_news']['tmp_name'];
 			$path_upload = 'files/'.$imgNewName;
 			$result = move_uploaded_file($tmp_name, $path_upload);
@@ -28,13 +28,15 @@ include 'header.php'; ?>
 			$image = "";
 		}
 		
-		$idUniversity = $_POST['IdUniversity'];
+		$idUniversity = $_POST['idUniversity'];
+		$idScholarship = ($_POST['idScholarship']);
 		$title = ($_POST['title']);
 		$headContext = ($_POST['cktext1']);
 		$context = ($_POST['cktext']);
 		$dateNews = date("Y-m-d");
-		$stmt = $conn->prepare("INSERT INTO news (IdUniversity,Title,HeadContext,Context, Datenews, Image) VALUES (:IdUniversity,:title,:headContext,:context,:dateNews, :image)");
-		$stmt->bindparam(":IdUniversity", $idUniversity);
+		$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
+		$stmt->bindparam(":idUniversity", $idUniversity);
+		$stmt->bindparam(":idScholarship", $idScholarship);
         $stmt->bindparam(":title", $title);
         $stmt->bindparam(":headContext", $headContext);
         $stmt->bindparam(":context", $context);
@@ -70,8 +72,14 @@ include 'header.php'; ?>
 						</div>		
 						<div class="row form-group">
 							<div class="col-lg-6">
+								<label>ID Scholarship</label>
+								<input type="text" name="idScholarship" class="form-control" id="idScholarship" placeholder="Nhập ID Scholarship">
+							</div>
+						</div>	
+						<div class="row form-group">
+							<div class="col-lg-6">
 								<label>Title (*)</label>
-								<input type="text" name="title" class="form-control" id="inputFirstName" placeholder="Nhập tên bài viết">
+								<input type="text" name="title" class="form-control" id="title" placeholder="Nhập tên bài viết">
 							</div>
 						</div>
 						
