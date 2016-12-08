@@ -33,6 +33,9 @@ $check = 0;
         if (!preg_match("/^[a-zA-Z0-9]*$/",$name)) {
             $nameErr = "white space is not allowed";
             $check = 1;
+        } else if ($name == 'admin') {
+            $nameErr = "<span class='error'>Username is a reserved word</span>";
+            $check = 1;
         }
         else{
             try{
@@ -53,7 +56,7 @@ $check = 0;
     if($check==0){
         if($user->register($fname,$lname,$name,$email,$pass,$phone,$year))
         {
-             $_SESSION['user_session'] = $name;
+            $_SESSION['user_session'] = $name;
             header('Location: signupsuccess.php');
         }
         else {

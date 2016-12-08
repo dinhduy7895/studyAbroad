@@ -11,6 +11,11 @@ class USER
     
     public function register($fname,$lname,$name,$email,$pass,$phone,$year)
     {
+        if ($name == 'admin') {
+            $error = 'cannot register user with admin name';
+            header('Location: index2.php?msg='.$error);
+            return ;
+        }
         try
         {
             $pass = md5($pass);
