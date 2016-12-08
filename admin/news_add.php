@@ -69,59 +69,7 @@ include 'header.php'; ?>
 			}
 		} else {
 			$image = "";
-<<<<<<< HEAD
-
 			echo '<span class="error">cannot update. please enter exactly information </span>';
-=======
-<<<<<<< HEAD
-			echo '<span class="error">cannot update. please enter exactly information </span>';
-=======
-		}
-		
-		$idUniversity = $_POST['idUniversity'];
-		$idScholarship = ($_POST['idScholarship']);
-		$headContext = ($_POST['cktext1']);		
-		$title = ($_POST['title']);
-		$context = ($_POST['cktext']);
-		$dateNews = date("Y-m-d");
-
-		$_SESSION['idUniversity'] = $idUniversity;
-		$_SESSION['idScholarship'] = $idScholarship;
-		$_SESSION['cktext1'] = $headContext;
-		$_SESSION['title'] = $title;
-		$_SESSION['cktext'] = $context;
-		$_SESSION['date'] = $dateNews;
-
-		$url = $title;
-		$url = str_replace(" ","-",$url);
-		$file = "../new-page/". $url.".php";
-		$fp = fopen($file,'w');
-		$content = file_get_contents("../temp.php");
-		$content = str_replace("_content",$context,$content);
-		$content = str_replace("_headcontent",$headContext,$content);
-		$content = str_replace("_title",$title,$content);
-		$content = str_replace("_date",$dateNews,$content);
-
-		$file_content = $content;
-		fwrite($fp,$file_content);
-		fclose($fp);
-		
-		$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
-		$stmt->bindparam(":idUniversity", $idUniversity);
-		$stmt->bindparam(":idScholarship", $idScholarship);
-        $stmt->bindparam(":title", $title);
-        $stmt->bindparam(":headContext", $headContext);
-        $stmt->bindparam(":context", $context);
-        $stmt->bindparam(":dateNews", $dateNews);
-        $stmt->bindparam(":image", $image);
-
-		$stmt->execute(); 
-		if($stmt){
-			header("location:news.php?msg=addnews");exit();
-		} else {
-			header("location:news.php?msg=error");exit();	
->>>>>>> 7c6ce69ab0062039e4cb3514144f7c502ffd7d70
->>>>>>> 74e56e4133c30f8b8ba3204b580889501eab826a
 		}
 	}
 ?>
