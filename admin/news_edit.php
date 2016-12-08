@@ -1,63 +1,68 @@
 <?php include('../connect.php');
 include 'header.php'; ?>
 <div class="wrapper">
-  <?php include 'sidebar.php'; ?>
-  <div class="container-fluid">
+   <?php include 'sidebar.php'; ?>
+   <div class="container-fluid">
    <?php include 'navbar.php'; ?>
    <div class="row">
       <div class="col-xs-12">
          <h3 class="page-header">
             Dashboard <small>Dashboard and statistics</small>
          </h3>
-          <?php
-         $id = $_GET['id'];
-         $stmt_edit = $conn->prepare('SELECT * FROM news where Id =:id');
-         $stmt_edit->execute(array(':id'=>$id));
-         $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
-         extract($edit_row);
-          if (isset($_POST['submit'])) {
+         <?php
+            $uploadOk = 1;
+            $id = $_GET['id'];
+            $stmt_edit = $conn->prepare('SELECT * FROM news where Id =:id');
+            $stmt_edit->execute(array(':id'=>$id));
+            $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+            extract($edit_row);
+            if (isset($_POST['submit'])) {
                $imgName ="";
                $imgName = ($_FILES['image_news']['name']);
-               if ($imgName != ""){
+               if ($_FILES["image_news"]["size"] > 400000) {
+                  echo "<span class='error'>Sorry, your file is too large. </span></br>";
+                  $uploadOk = 0;
+               }
+               if ($uploadOk != 0 &&  $imgName != ""){
                   $arr_splitfile = explode('.',$imgName);
                   $count = count ($arr_splitfile);
                   $extension = $arr_splitfile[$count-1];
                   unset ($arr_splitfile[$count-1]);
                   $join = '';
                   foreach ($arr_splitfile as $key => $value) {
-                    if ($key == 0) {
-                      $join = $join.$value;
-                    } else {
-                      $join = $join.'_'.$value;
-                    }         
+                     if ($key == 0) {
+                        $join = $join.$value;
+                     } else {
+                        $join = $join.'_'.$value;
+                     }         
                   }
                   $time = time();
                   $imgNewName = 'Img'.'_'.$time.'.'.$extension;
-                  echo $imgNewName;
+                  // echo $imgNewName;
                   $tmp_name = $_FILES['image_news']['tmp_name'];
                   $path_upload = 'files/'.$imgNewName;
                   unlink('files/'.$edit_row['Image']);
                   $result = move_uploaded_file($tmp_name, $path_upload);
-                  
-                  $image = $tenfilemoi;
+                  $image = $imgNewName;
+                  $idUniversity = $_POST["idUniversity"];
+                  $idScholarship = $_POST["idScholarship"];
+                  $title = $_POST['title'];
+                  $headContext = $_POST['cktext1'];
+                  $context = $_POST['cktext'];
+                  $Datenews = date("Y-m-d");
+                  $upd = "UPDATE news SET IdUniversity='{$idUniversity}',IdScholarship='{$idScholarship}', Title='{$title}',HeadContext='{$headContext}', Context='{$context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
+                  $q = $conn->query($upd);
+                  if ($q) {
+                     header("location: news.php?msg=Updated");exit();
+                  } else {
+                     header("location: news.php?msg=Error");exit();
+                  }
                } else {
-                  $image = "";
+                  echo '<span class="error">cannot update. please enter exactly information </span>';
                }
-              $idUniversity = $_POST["idUniversity"];
-              $idScholarship = $_POST["idScholarship"];
-              $title = $_POST['title'];
-              $headContext = $_POST['cktext1'];
-              $Context = $_POST['cktext'];
-              $Datenews = date("Y-m-d");
-              $upd = "UPDATE news SET IdUniversity='{$idUniversity}',IdScholarship='{$idScholarship}', Title='{$title}',HeadContext='{$headContext}', Context='{$context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
-              $q = $conn->query($upd);
-              if($q){
-                header("location: news.php?msg=Updated");exit();
-              }else {
-                header("location: news.php?msg=Error");exit();
-              }
-          }
-          ?>
+
+            }
+         ?>
         <section id="main-content">
           <div class="container">
          <h2 class="margin-bottom-10">Edit News</h2>

@@ -2,9 +2,14 @@
 include 'header.php'; ?>
 <?php
 	if (isset($_POST['submit'])){
+		$uploadOk = 1;
 		$imgName ="";
 		$imgName = ($_FILES['image_news']['name']);
-		if ($imgName != ""){
+		if ($_FILES["image_news"]["size"] > 400000) {
+			echo "<span class='error'>Sorry, your file is too large. </span></br>";
+			$uploadOk = 0;
+        }
+		if ( $uploadOk != 0 && $imgName != ""){
 			$arr_splitfile = explode('.',$imgName);
 			$count = count ($arr_splitfile);
 			$extension = $arr_splitfile[$count-1];
@@ -19,34 +24,33 @@ include 'header.php'; ?>
 			}
 			$time = time();
 			$imgNewName = 'Img'.'_'.$time.'.'.$extension;
-			// echo $imgNewName;
 			$tmp_name = $_FILES['image_news']['tmp_name'];
 			$path_upload = 'files/'.$imgNewName;
 			$result = move_uploaded_file($tmp_name, $path_upload);
 			$image = $imgNewName;
+			$idUniversity = $_POST['idUniversity'];
+			$idScholarship = ($_POST['idScholarship']);
+			$title = ($_POST['title']);
+			$headContext = ($_POST['cktext1']);
+			$context = ($_POST['cktext']);
+			$dateNews = date("Y-m-d");
+			$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
+			$stmt->bindparam(":idUniversity", $idUniversity);
+			$stmt->bindparam(":idScholarship", $idScholarship);
+	        $stmt->bindparam(":title", $title);
+	        $stmt->bindparam(":headContext", $headContext);
+	        $stmt->bindparam(":context", $context);
+	        $stmt->bindparam(":dateNews", $dateNews);
+	        $stmt->bindparam(":image", $image);
+			$stmt->execute(); 
+			if($stmt){
+				header("location:news.php?msg=addnews");exit();
+			} else {
+				header("location:news.php?msg=error");exit();	
+			}
 		} else {
 			$image = "";
-		}
-		
-		$idUniversity = $_POST['idUniversity'];
-		$idScholarship = ($_POST['idScholarship']);
-		$title = ($_POST['title']);
-		$headContext = ($_POST['cktext1']);
-		$context = ($_POST['cktext']);
-		$dateNews = date("Y-m-d");
-		$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
-		$stmt->bindparam(":idUniversity", $idUniversity);
-		$stmt->bindparam(":idScholarship", $idScholarship);
-        $stmt->bindparam(":title", $title);
-        $stmt->bindparam(":headContext", $headContext);
-        $stmt->bindparam(":context", $context);
-        $stmt->bindparam(":dateNews", $dateNews);
-        $stmt->bindparam(":image", $image);
-		$stmt->execute(); 
-		if($stmt){
-			header("location:news.php?msg=addnews");exit();
-		} else {
-			header("location:news.php?msg=error");exit();	
+			echo '<span class="error">cannot update. please enter exactly information </span>';
 		}
 	}
 ?>
