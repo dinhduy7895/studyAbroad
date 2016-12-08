@@ -63,7 +63,7 @@ include 'header.php'; ?>
 
             }
          ?>
-        <section id="main-content">
+         <section id="main-content">
           <div class="container">
          <h2 class="margin-bottom-10">Edit News</h2>
             
@@ -117,7 +117,7 @@ include 'header.php'; ?>
                   }, fileReader.readAsDataURL(img.files[0])
                 }
                 </script>     
-                <p>Maximum Filesize is 400kB.</p>                  
+                <p>Maximum Filesize is 5 MB.</p>                  
               </div>
             </div>
             <div class="row form-group">
@@ -143,7 +143,6 @@ include 'header.php'; ?>
       </div>
 
     </div>
-   </div> <!-- / .row -->
 </div>
     <?php include 'footer.php'; ?>
     <script type="text/javascript">
