@@ -29,15 +29,36 @@ include 'header.php'; ?>
 			$hinhanh = "";
 		}
 		
-		$IdUniversity = $_POST['IdUniversity'];
-		$Title = ($_POST['title']);
-		$Context = ($_POST['cktext']);
-		$Datenews = date("Y-m-d");
-		$stmt = $conn->prepare("INSERT INTO news (IdUniversity,Title,Context, Datenews, Image) VALUES (:IdUniversity,:Title,:Context,:Datenews, :Image)");
-		$stmt->bindparam(":IdUniversity", $IdUniversity);
-        $stmt->bindparam(":Title", $Title);
-        $stmt->bindparam(":Context", $Context);
-        $stmt->bindparam(":Datenews", $Datenews);
+		$idUniversity = $_POST['idUniversity'];
+		$title = ($_POST['title']);
+		$context = ($_POST['cktext']);
+		$datenews = date("Y-m-d");
+
+		$_SESSION['idUniversity'] = $idUniversity;
+		$_SESSION['title'] = $title;
+		$_SESSION['cktext'] = $context;
+		$_SESSION['date'] = $datenews;
+
+		$url = $title;
+		$url = str_replace(" ","-",$url);
+		$file = "../new-page/". $url.".php";
+		$fp = fopen($file,'w');
+		$content = file_get_contents("../temp.php");
+		$content = str_replace("_content",$context,$content);
+		$content = str_replace("_title",$title,$content);
+		$content = str_replace("_date",$datenews,$content);
+
+		$file_content = $content;
+		fwrite($fp,$file_content);
+		fclose($fp);
+		$idScholarship = $idUniversity;
+		
+		$stmt = $conn->prepare("INSERT INTO news (IdUniversity,IdScholarship,Title,Context, Datenews, Image) VALUES (:IdUniversity,:IdScholarship,:Title,:Context,:Datenews, :Image)");
+		$stmt->bindparam(":IdUniversity", $idUniversity);
+		$stmt->bindparam(":IdScholarship", $idScholarship);
+        $stmt->bindparam(":Title", $title);
+        $stmt->bindparam(":Context", $context);
+        $stmt->bindparam(":Datenews", $datenews);
         $stmt->bindparam(":Image", $hinhanh);
 		$stmt->execute(); 
 		if($stmt){
@@ -64,7 +85,7 @@ include 'header.php'; ?>
 						<div class="row form-group">
 							<div class="col-lg-6">
 								<label>ID University</label>
-								<input type="text" name="IdUniversity" class="form-control" id="IdUniversity" placeholder="Nhập ID university">
+								<input type="text" name="idUniversity" class="form-control" id="idUniversity" placeholder="Nhập ID university">
 							</div>
 						</div>		
 						<div class="row form-group">
