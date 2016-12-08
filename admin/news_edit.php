@@ -117,7 +117,7 @@ include 'header.php'; ?>
                   }, fileReader.readAsDataURL(img.files[0])
                 }
                 </script>     
-                <p>Maximum Filesize is 5 MB.</p>                  
+                <p>Maximum Filesize is 400kB.</p>                  
               </div>
             </div>
             <div class="row form-group">
