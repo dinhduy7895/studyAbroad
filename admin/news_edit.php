@@ -44,12 +44,12 @@ include 'header.php'; ?>
                   $image = "";
                }
               $idUniversity = $_POST["idUniversity"];
-              $idUniversity = $_POST["idUniversity"];
+              $idScholarship = $_POST["idScholarship"];
               $title = $_POST['title'];
               $headContext = $_POST['cktext1'];
               $Context = $_POST['cktext'];
               $Datenews = date("Y-m-d");
-              $upd = "UPDATE news SET IdUniversity='{$idUniversity}',IdScholarship='{$idScholarship}', Title='{$title}',HeadContext='{$headContext}', Context='{$Context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
+              $upd = "UPDATE news SET IdUniversity='{$idUniversity}',IdScholarship='{$idScholarship}', Title='{$title}',HeadContext='{$headContext}', Context='{$context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
               $q = $conn->query($upd);
               if($q){
                 header("location: news.php?msg=Updated");exit();
