@@ -45,7 +45,7 @@
          <h3 style="display: inline-block;">News Table</h3>
          <h3 style="display: inline-block; float: right;"><a href="news_add.php">Add news</a></h3>
          <?php
-            $sql = "SELECT Id, IdUniversity, Title, Context,DateNews,Image FROM news";
+            $sql = "SELECT * FROM news";
             $q = $conn->query($sql);
             $q->setFetchMode(PDO::FETCH_ASSOC);
             echo $row['Id'] . "<br>";
@@ -55,7 +55,9 @@
                <tr>
                   <th>ID</th>
                   <th>ID University</th>
+                  <th>ID Scholarship</th>
                   <th>Title</th>
+                  <th>HeadContext</th>
                   <th>Context</th>
                   <th>Date</th>
                   <th>Image</th>
@@ -68,7 +70,9 @@
             <tr>
                <td><?php echo htmlspecialchars($row['Id']); ?></td>
                <td><?php echo htmlspecialchars($row['IdUniversity']); ?></td>
+               <td><?php echo htmlspecialchars($row['IdScholarship']); ?></td>
                <td><?php echo htmlspecialchars($row['Title']); ?></td>
+               <td><?php echo htmlspecialchars($row['HeadContext']); ?></td>
                <td><?php echo htmlspecialchars($row['Context']); ?></td>
                <td><?php echo htmlspecialchars($row['DateNews']); ?></td>
                <td><img style="height: 150px; width: 150px;" src="files/<?php echo htmlspecialchars($row['Image']); ?>" alt="img"/></td>

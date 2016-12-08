@@ -2,34 +2,34 @@
 include 'header.php'; ?>
 <?php
 	if (isset($_POST['submit'])){
-		$tenhinh ="";
-		$tenhinh = ($_FILES['image_news']['name']);
-		if ($tenhinh != ""){
-			$arr_tachfile = explode('.',$tenhinh);
-			$dem = count ($arr_tachfile);
-			$duoifile = $arr_tachfile[$dem-1];
-			unset ($arr_tachfile[$dem-1]);
-			$str_noifile = '';
-			foreach ($arr_tachfile as $key => $value) {
+		$imgName ="";
+		$imgName = ($_FILES['image_news']['name']);
+		if ($imgName != ""){
+			$arr_splitfile = explode('.',$imgName);
+			$count = count ($arr_splitfile);
+			$extension = $arr_splitfile[$count-1];
+			unset ($arr_splitfile[$count-1]);
+			$join = '';
+			foreach ($arr_splitfile as $key => $value) {
 				if ($key == 0) {
-					$str_noifile = $str_noifile.$value;
+					$join = $join.$value;
 				} else {
-					$str_noifile = $str_noifile.'_'.$value;
+					$join = $join.'_'.$value;
 				}					
 			}
 			$time = time();
-			$tenfilemoi = 'Img'.'_'.$time.'.'.$duoifile;
-			echo $tenfilemoi;
+			$imgNewName = 'Img'.'_'.$time.'.'.$extension;
+			// echo $imgNewName;
 			$tmp_name = $_FILES['image_news']['tmp_name'];
-			$path_upload = 'files/'.$tenfilemoi;
+			$path_upload = 'files/'.$imgNewName;
 			$result = move_uploaded_file($tmp_name, $path_upload);
-			
-			$hinhanh = $tenfilemoi;
+			$image = $imgNewName;
 		} else {
-			$hinhanh = "";
+			$image = "";
 		}
 		
 		$idUniversity = $_POST['idUniversity'];
+
 		$title = ($_POST['title']);
 		$context = ($_POST['cktext']);
 		$datenews = date("Y-m-d");
@@ -60,6 +60,21 @@ include 'header.php'; ?>
         $stmt->bindparam(":Context", $context);
         $stmt->bindparam(":Datenews", $datenews);
         $stmt->bindparam(":Image", $hinhanh);
+
+		$idScholarship = ($_POST['idScholarship']);
+		$title = ($_POST['title']);
+		$headContext = ($_POST['cktext1']);
+		$context = ($_POST['cktext']);
+		$dateNews = date("Y-m-d");
+		$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
+		$stmt->bindparam(":idUniversity", $idUniversity);
+		$stmt->bindparam(":idScholarship", $idScholarship);
+        $stmt->bindparam(":title", $title);
+        $stmt->bindparam(":headContext", $headContext);
+        $stmt->bindparam(":context", $context);
+        $stmt->bindparam(":dateNews", $dateNews);
+        $stmt->bindparam(":image", $image);
+
 		$stmt->execute(); 
 		if($stmt){
 			header("location:news.php?msg=addnews");exit();
@@ -79,8 +94,8 @@ include 'header.php'; ?>
          </h3>
         <section id="main-content">
           <div class="container">
-			<h2 class="margin-bottom-10">Thêm bài viết</h2>
-					<p>(*): Không được để trống</p>
+			<h2 class="margin-bottom-10">Add News</h2>
+					<p>(*): Not be empty</p>
 					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
 						<div class="row form-group">
 							<div class="col-lg-6">
@@ -90,14 +105,20 @@ include 'header.php'; ?>
 						</div>		
 						<div class="row form-group">
 							<div class="col-lg-6">
-								<label>Tên bài viết (*)</label>
-								<input type="text" name="title" class="form-control" id="inputFirstName" placeholder="Nhập tên bài viết">
+								<label>ID Scholarship</label>
+								<input type="text" name="idScholarship" class="form-control" id="idScholarship" placeholder="Nhập ID Scholarship">
+							</div>
+						</div>	
+						<div class="row form-group">
+							<div class="col-lg-6">
+								<label>Title (*)</label>
+								<input type="text" name="title" class="form-control" id="title" placeholder="Nhập tên bài viết">
 							</div>
 						</div>
 						
 						<div class="row form-group">
 							<div class="col-lg-12">
-								<label class="control-label templatemo-block">Hình ảnh</label> 
+								<label class="control-label templatemo-block">Image</label> 
 								<input type="file" name="image_news" id="fileToUpload" value="" class="filestyle" data-buttonName="btn-primary" data-buttonBefore="true" data-icon="false" onchange="viewImg(this)">
 								<script>
 								function viewImg(img) {
@@ -109,18 +130,24 @@ include 'header.php'; ?>
 									}, fileReader.readAsDataURL(img.files[0])
 								}
 								</script>			
-								<p>Dung lượng tối đa hình ảnh là 5 MB.</p>									
+								<p>Maximum Filesize is 5 MB</p>									
 							</div>
 						</div>
 						<div class="row form-group">
 							<div class="col-lg-12 form-group" id="editor"> 
-								<label class="control-label">Chi tiết</label>
+								<label class="control-label">Head Context</label>
+								<textarea name="cktext1" rows="7" cols="90" class="input-long ckeditor" style="visibility: hidden; display: none;"></textarea>
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-lg-12 form-group" id="editor"> 
+								<label class="control-label">Detail Info</label>
 								<textarea name="cktext" rows="7" cols="90" class="input-long ckeditor" style="visibility: hidden; display: none;"></textarea>
 							</div>
 						</div>
 						<div class="form-group text-right">
-						<input type="submit"  name="submit"  class="templatemo-blue-button" value="Đăng"/>
-						<input type="reset" class="templatemo-white-button" value="Nhập lại" />
+						<input type="submit" name="submit" class="templatemo-blue-button" value="Submit"/>
+						<input type="reset" class="templatemo-white-button" value="Reset" />
 						</div>													 
 					</form>
           </div>
@@ -147,12 +174,9 @@ include 'header.php'; ?>
 				} 
 			},
 			messages: {
-				"ten_bv": {
-					required: "Vui lòng nhập vào đây",
-				},
 				cktext:{ 
-					required:"Vui lòng nhập vào khung Giới thiệu thành viên", 
-					minlength:"Bạn không được để trống khung này" 
+					required:"Please enter here",
+					minlength:"Please enter here",
 				} 
 			}
 		});

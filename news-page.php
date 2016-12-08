@@ -34,7 +34,7 @@
 									<span>Published at <?php echo $row['Datenews']; ?></span>
 								</div>
 								<div class="new-single-content">
-									<?php echo $row['Context']; ?>
+									<?php echo $row['HeadContext']; ?>
 								</div>
 								<div class="new-single-more">
 									<a href="#">continue reading</a>
