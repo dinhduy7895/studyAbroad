@@ -7,14 +7,6 @@ include('connect.php');
 			<div class="row">
 				<div class="col-lg-9 news-highlight">
 					<div class="row center">
-						<div class="col-lg-12">
-							<div class="new-title-bar center">
-								<div class="title-bar">
-									<span>CATEGORY</span>
-									<h1>Name CATEGORY</h1>
-								</div>
-							</div>
-						</div>
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
@@ -32,9 +24,9 @@ include('connect.php');
 									<span>Published at 2016-12-08</span>
 								</div>
 								<div class="new-single-content">
-									<p class="main-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, neque ratione veniam accusantium consectetur hic qui, asperiores nemo facilis deserunt ipsum! Expedita amet error, nisi ipsum sit quasi nulla explicabo?</p>
-									
-									<p>dsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsadsdsdsadasdasdsa</p>
+										<p>f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;</p>
+										<br>
+										<p>f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd fsdf &nbsp;fsdf&nbsp;f asf sd&nbsp;</p>
 									
 								</div>
 								<div class="register center">
