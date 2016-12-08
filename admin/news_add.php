@@ -29,15 +29,18 @@ include 'header.php'; ?>
 		}
 		
 		$idUniversity = $_POST['idUniversity'];
-
+		$idScholarship = ($_POST['idScholarship']);
+		$headContext = ($_POST['cktext1']);		
 		$title = ($_POST['title']);
 		$context = ($_POST['cktext']);
-		$datenews = date("Y-m-d");
+		$dateNews = date("Y-m-d");
 
 		$_SESSION['idUniversity'] = $idUniversity;
+		$_SESSION['idScholarship'] = $idScholarship;
+		$_SESSION['cktext1'] = $headContext;
 		$_SESSION['title'] = $title;
 		$_SESSION['cktext'] = $context;
-		$_SESSION['date'] = $datenews;
+		$_SESSION['date'] = $dateNews;
 
 		$url = $title;
 		$url = str_replace(" ","-",$url);
@@ -45,27 +48,14 @@ include 'header.php'; ?>
 		$fp = fopen($file,'w');
 		$content = file_get_contents("../temp.php");
 		$content = str_replace("_content",$context,$content);
+		$content = str_replace("_headcontent",$headContext,$content);
 		$content = str_replace("_title",$title,$content);
-		$content = str_replace("_date",$datenews,$content);
+		$content = str_replace("_date",$dateNews,$content);
 
 		$file_content = $content;
 		fwrite($fp,$file_content);
 		fclose($fp);
-		$idScholarship = $idUniversity;
 		
-		$stmt = $conn->prepare("INSERT INTO news (IdUniversity,IdScholarship,Title,Context, Datenews, Image) VALUES (:IdUniversity,:IdScholarship,:Title,:Context,:Datenews, :Image)");
-		$stmt->bindparam(":IdUniversity", $idUniversity);
-		$stmt->bindparam(":IdScholarship", $idScholarship);
-        $stmt->bindparam(":Title", $title);
-        $stmt->bindparam(":Context", $context);
-        $stmt->bindparam(":Datenews", $datenews);
-        $stmt->bindparam(":Image", $hinhanh);
-
-		$idScholarship = ($_POST['idScholarship']);
-		$title = ($_POST['title']);
-		$headContext = ($_POST['cktext1']);
-		$context = ($_POST['cktext']);
-		$dateNews = date("Y-m-d");
 		$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
 		$stmt->bindparam(":idUniversity", $idUniversity);
 		$stmt->bindparam(":idScholarship", $idScholarship);

@@ -24,8 +24,8 @@ include('connect.php');
 									<span>Published at _date</span>
 								</div>
 								<div class="new-single-content">
-									<p class="main-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, neque ratione veniam accusantium consectetur hic qui, asperiores nemo facilis deserunt ipsum! Expedita amet error, nisi ipsum sit quasi nulla explicabo?</p>
-			
+										_headcontent
+										<br>
 										_content
 									
 								</div>
