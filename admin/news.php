@@ -58,9 +58,8 @@
                   <th>ID Scholarship</th>
                   <th>Title</th>
                   <th>HeadContext</th>
-                  <th>Context</th>
                   <th>Date</th>
-                  <th>Image</th>
+                  <th>View</th>
                   <th>Edit</th>
                   <th>Delete</th>
                </tr>
@@ -73,9 +72,8 @@
                <td><?php echo htmlspecialchars($row['IdScholarship']); ?></td>
                <td><?php echo htmlspecialchars($row['Title']); ?></td>
                <td><?php echo htmlspecialchars($row['HeadContext']); ?></td>
-               <td><?php echo htmlspecialchars($row['Context']); ?></td>
                <td><?php echo htmlspecialchars($row['Datenews']); ?></td>
-               <td><img style="height: 150px; width: 150px;" src="files/<?php echo htmlspecialchars($row['Image']); ?>" alt="img"/></td>
+               <td><a href="news_view.php?id=<?php echo $row['Id']?>">View</a></td>
                <td><a href="news_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
                <td><a href="news_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
             </tr>
