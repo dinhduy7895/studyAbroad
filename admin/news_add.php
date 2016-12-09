@@ -32,8 +32,8 @@ include 'header.php'; ?>
 
 			$idUniversity = $_POST['idUniversity'];
 			$idScholarship = ($_POST['idScholarship']);
+			$headContext = ($_POST['cktext1']);		
 			$title = ($_POST['title']);
-			$headContext = ($_POST['cktext1']);
 			$context = ($_POST['cktext']);
 			$dateNews = date("Y-m-d");
 
@@ -44,14 +44,13 @@ include 'header.php'; ?>
 			$_SESSION['cktext'] = $context;
 			$_SESSION['date'] = $dateNews;
 
+
 			$url = $title;
 			$url = str_replace(" ","-",$url);
-			$p = "<P>";
-			$p_head= '<p class="head-context">';
-			$p_body= '<p class="context">';
-			$headContext = str_replace($p,$p_head,$headContext);
-			$context = str_replace($p,$p_body,$context);
 			$file = "../news-page/". $url.".php";
+
+		
+
 			$fp = fopen($file,'w');
 			$content = file_get_contents("../temp.php");
 			$content = str_replace("_content",$context,$content);
@@ -66,6 +65,7 @@ include 'header.php'; ?>
 			fclose($fp);
 			$file = str_replace("../","",$file);
 			$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image,URL) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image, :url)");
+
 			$stmt->bindparam(":idUniversity", $idUniversity);
 			$stmt->bindparam(":idScholarship", $idScholarship);
 	        $stmt->bindparam(":title", $title);
@@ -82,9 +82,7 @@ include 'header.php'; ?>
 			}
 		} else {
 			$image = "";
-
 			echo '<span class="error">cannot update. please enter exactly information </span>';
-
 		}
 	}
 	//tới đây
@@ -105,13 +103,22 @@ include 'header.php'; ?>
 					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
 						<div class="row form-group">
 							<div class="col-lg-6">
-								<label>ID University</label>
-								<input type="text" name="idUniversity" class="form-control" id="idUniversity" placeholder="Nhập ID university">
+								<label>University</label>
+								<select name="idUniversity" id="idUniversity">
+									<?php  
+										$sql = "SELECT * FROM university";
+										$stmt_uni = $conn->query($sql);
+				                        $stmt_uni->setFetchMode(PDO::FETCH_ASSOC);
+				                        while ($row_uni = $stmt_uni->fetch()) {
+				                        ?>
+										<option value="<?php echo $row_uni['IdUniversity']; ?>"><?php echo $row_uni['NameUniversity']." - ". $row_uni['Country']; ?></option>
+									<?php } ?>
+								</select>
 							</div>
 						</div>		
 						<div class="row form-group">
 							<div class="col-lg-6">
-								<label>ID Scholarship</label>
+								<label>Scholarship</label>
 								<input type="text" name="idScholarship" class="form-control" id="idScholarship" placeholder="Nhập ID Scholarship">
 							</div>
 						</div>	
@@ -136,7 +143,7 @@ include 'header.php'; ?>
 									}, fileReader.readAsDataURL(img.files[0])
 								}
 								</script>			
-								<p>Maximum Filesize is 5 MB</p>									
+								<p>Maximum Filesize is 400kB</p>									
 							</div>
 						</div>
 						<div class="row form-group">
@@ -162,7 +169,6 @@ include 'header.php'; ?>
 
     </div>
    </div> <!-- / .row -->
-</div>
     <?php include 'footer.php'; ?>
     <script type="text/javascript">
 		$(document).ready(function () {
