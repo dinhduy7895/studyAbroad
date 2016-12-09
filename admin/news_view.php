@@ -1,8 +1,5 @@
 <?php include('../connect.php');
    include 'header.php'; 
-   if (!isset($_SESSION['admin'])) {
-      header('Location: index.php');
-   }
 ?>
 <div class="wrapper">
    <?php include 'sidebar.php'; ?>
