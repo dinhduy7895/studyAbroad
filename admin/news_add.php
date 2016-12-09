@@ -89,13 +89,22 @@ include 'header.php'; ?>
 					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
 						<div class="row form-group">
 							<div class="col-lg-6">
-								<label>ID University</label>
-								<input type="text" name="idUniversity" class="form-control" id="idUniversity" placeholder="Nhập ID university">
+								<label>University</label>
+								<select name="idUniversity" id="idUniversity">
+									<?php  
+										$sql = "SELECT * FROM university";
+										$stmt_uni = $conn->query($sql);
+				                        $stmt_uni->setFetchMode(PDO::FETCH_ASSOC);
+				                        while ($row_uni = $stmt_uni->fetch()) {
+				                        ?>
+										<option value="<?php echo $row_uni['IdUniversity']; ?>"><?php echo $row_uni['NameUniversity']." - ". $row_uni['Country']; ?></option>
+									<?php } ?>
+								</select>
 							</div>
 						</div>		
 						<div class="row form-group">
 							<div class="col-lg-6">
-								<label>ID Scholarship</label>
+								<label>Scholarship</label>
 								<input type="text" name="idScholarship" class="form-control" id="idScholarship" placeholder="Nhập ID Scholarship">
 							</div>
 						</div>	
@@ -120,7 +129,7 @@ include 'header.php'; ?>
 									}, fileReader.readAsDataURL(img.files[0])
 								}
 								</script>			
-								<p>Maximum Filesize is 5 MB</p>									
+								<p>Maximum Filesize is 400kB</p>									
 							</div>
 						</div>
 						<div class="row form-group">
