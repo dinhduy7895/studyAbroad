@@ -35,7 +35,7 @@ $title = "CNTT Schorlarship 1";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, S.StartDay, S.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '3' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '3' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())

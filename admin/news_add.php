@@ -1,5 +1,10 @@
 <?php include('../connect.php');
-include 'header.php'; ?>
+include 'header.php'; 
+   if (!isset($_SESSION['admin'])) {
+      header('Location: index.php');
+   }
+?>
+
 <?php
 	if (isset($_POST['submit'])){
 		$uploadOk = 1;
