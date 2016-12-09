@@ -65,7 +65,7 @@ class USER
     }
     public function search($universityID,$majorID)
     {
-        $sql = 'SELECT  u.NameUniversity, m.Name,s.StartDay, s.EndDay   FROM scholarshipinfor s, university u, major m where u.IdUniversity = s.IdUniversity and m.IdMajor = s.IdMajor ';
+        $sql = 'SELECT  u.NameUniversity, m.NameMajor,s.StartDay, s.EndDay, n.Url   FROM news n ,scholarshipinfor s, university u, major m where n.IdScholarship = s.IdScholarship and u.IdUniversity = s.IdUniversity and m.IdMajor = s.IdMajor ';
         if($universityID != "None"){
             $sql .= "and u.IdUniversity = '$universityID' ";
         }

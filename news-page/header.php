@@ -9,20 +9,14 @@
     </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/news.css">
     
-    <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
-    <script src="js/jquery-1.11.3.min.js"></script>
-    
-    <script src="js/main.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -72,24 +66,24 @@
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ol class="nav navbar-nav ">
-                                <li class="<?php if ($title=='Home') echo " active ";?> "><a href="index.php">Home</a>
+                                <li ><a href="../index.php">Home</a>
                                 </li>
-                                <li class="<?php if ($title=='About') echo " active ";?> "><a href="#">About</a>
+                                <li ><a href="#">About</a>
                                 </li>
-                                <li class="<?php if ($title=='News') echo " active ";?> "><a href="news-page.php">News</a>
+                                <li class="active"><a href="../news-page.php">News</a>
                                 </li>
-                                <li class="<?php if ($title=='Search') echo " active ";?> "><a href="search.php">Search</a>
+                                <li ><a href="../search.php">Search</a>
                                 </li>
-                                <li class="<?php if ($title=='Contact') echo " active ";?> "><a href="contact.php">Contact</a>
+                                <li ><a href="../contact.php">Contact</a>
                                 </li>
                                 <?php if (!isset($_SESSION[ 'user_session']) ) { ?>
-                                <li class="<?php if ($title=='Login') echo " active ";?> "><a href="login_form.php">Login</a>
+                                <li><a href="../login_form.php">Login</a>
                                 </li>
-                                <li class="<?php if ($title=='Register') echo " active ";?> "><a href="register_form.php">Register</a>
+                                <li ><a href="../register_form.php">Register</a>
                                 </li>
                                 <?php } else { ?>
                                 <li>
-                                    <a href="logout.php?logout=true">
+                                    <a href="../logout.php?logout=true">
                                         <?php echo '('.$_SESSION[ 'user_session']. ')'; ?> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a>
                                 </li>
                                 <?php } ?>

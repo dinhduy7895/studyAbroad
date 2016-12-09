@@ -37,7 +37,7 @@
 									<?php echo $row['HeadContext']; ?>
 								</div>
 								<div class="new-single-more">
-									<a href="#">continue reading</a>
+									<a href="<?php echo $row['Url'] ?>">continue reading</a>
 								</div>
 							</div>
 						</div>

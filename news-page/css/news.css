@@ -112,6 +112,26 @@
 .new-single-content p{
 	padding-bottom: 10px;
 }
+.new-single-content>.head-context{
+    font-weight: bold;
+}
+.new-single-content>.context{
+
+}
+.register_link{
+    padding: 7px;
+    background-color: rgba(168, 1, 1, 0.6);
+    border-radius: 5%;
+    color: white;
+}
+.register_link:hover{
+    text-decoration: none;
+    background-color: rgb(125, 10, 10);
+    padding: 7px;
+    color: white;
+
+    
+}
 .time-new-single{
 	margin: 6px 0 0;
     font-style: italic;

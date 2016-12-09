@@ -67,13 +67,13 @@
           <option selected="selected">None</option>
           <?php
          if($universitySelected =="None")
-          $sql = $conn->prepare("Select IdMajor,Name from major ");
+          $sql = $conn->prepare("Select IdMajor,NameMajor from major ");
           else
-           $sql = $conn->prepare("Select m.IdMajor,m.Name from major m ,scholarshipinfor s where m.IdMajor=s.IdMajor  and s.IdUniversity = '$universitySelected'");
+           $sql = $conn->prepare("Select m.IdMajor,m.NameMajor from major m ,scholarshipinfor s where m.IdMajor=s.IdMajor  and s.IdUniversity = '$universitySelected'");
           $sql->execute();
           while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
               $idMajor   = $row['IdMajor'];
-              $nameMajor = $row['Name'];
+              $nameMajor = $row['NameMajor'];
                if(   $majorSelected ==  $idMajor )
                echo '<option value="' . $idMajor . '" selected="selected" >' . $nameMajor . '</option>';
                else
@@ -108,7 +108,7 @@
             </td>
             <td>
               <?php
-              echo $arrayRow['Name'];
+              echo $arrayRow['NameMajor'];
 ?>
             </td>
             <td>
@@ -129,7 +129,7 @@
                 <?php
               if ($start <= $today && $end >= $today) {
 ?>
-                  <a data-toggle="modal" href="#myModal">OK</a>
+                  <a data-toggle="modal" href="<?php echo $arrayRow['Url'] ?>">OK</a>
                   <?php
               }
 ?>

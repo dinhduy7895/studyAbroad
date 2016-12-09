@@ -2,14 +2,14 @@
 session_start(); 
 include('connect.php');
 $_SESSION['login']="";
-$title = "_title";
+$title = "CNTT Schorlarship 1";
 ?>
 <?php
   require_once 'connect.php';
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
-	$user->redirect('_url.php');
+	$user->redirect('CNTT-Schorlarship-1.php');
 	
   }
 
@@ -26,7 +26,7 @@ $title = "_title";
       $_SESSION['user_session'] = $uname;
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
-      } else $user->redirect('_url.php');
+      } else $user->redirect('CNTT-Schorlarship-1.php');
     }
     else
     {
@@ -35,7 +35,7 @@ $title = "_title";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, S.StartDay, S.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '_IdScholarship' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, S.StartDay, S.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '3' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())
@@ -59,7 +59,7 @@ $title = "_title";
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
-									<img src="../admin/files/_image"  class="image-responsive" alt="">
+									<img src="../admin/files/Img_1481219962.jpg"  class="image-responsive" alt="">
 								</a>
 							</div>
 							<div class="new-single-header">
@@ -67,19 +67,19 @@ $title = "_title";
 									<span><a href="#">News in Day</a></span>
 								</div>
 								<h2 class="main-title">
-									<a href="#" class="">_title</a>
+									<a href="#" class="">CNTT Schorlarship 1</a>
 								</h2>
 								<div class="time-new-single">
-									<span>Published at _date</span>
+									<span>Published at 2016-12-08</span>
 								</div>
 								<div class="new-single-content">
 									<div class="head-context">
-									_headcontent
+									<p>Day la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cungDay la bai viet cuoi cung</p>
 									</div>
 									<br>
 									<br>	
 									<div class="context">
-									_content
+									<p>test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;test tiep&nbsp;</p>
 									</div> 	
 										
 									

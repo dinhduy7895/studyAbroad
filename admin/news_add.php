@@ -22,19 +22,50 @@ include 'header.php'; ?>
 					$join = $join.'_'.$value;
 				}					
 			}
+			//Giữ lại đoàn từ đây 
 			$time = time();
 			$imgNewName = 'Img'.'_'.$time.'.'.$extension;
 			$tmp_name = $_FILES['image_news']['tmp_name'];
 			$path_upload = 'files/'.$imgNewName;
 			$result = move_uploaded_file($tmp_name, $path_upload);
 			$image = $imgNewName;
+
 			$idUniversity = $_POST['idUniversity'];
 			$idScholarship = ($_POST['idScholarship']);
 			$title = ($_POST['title']);
 			$headContext = ($_POST['cktext1']);
 			$context = ($_POST['cktext']);
 			$dateNews = date("Y-m-d");
-			$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
+
+			$_SESSION['idUniversity'] = $idUniversity;
+			$_SESSION['idScholarship'] = $idScholarship;
+			$_SESSION['cktext1'] = $headContext;
+			$_SESSION['title'] = $title;
+			$_SESSION['cktext'] = $context;
+			$_SESSION['date'] = $dateNews;
+
+			$url = $title;
+			$url = str_replace(" ","-",$url);
+			$p = "<P>";
+			$p_head= '<p class="head-context">';
+			$p_body= '<p class="context">';
+			$headContext = str_replace($p,$p_head,$headContext);
+			$context = str_replace($p,$p_body,$context);
+			$file = "../news-page/". $url.".php";
+			$fp = fopen($file,'w');
+			$content = file_get_contents("../temp.php");
+			$content = str_replace("_content",$context,$content);
+			$content = str_replace("_headcontent",$headContext,$content);
+			$content = str_replace("_title",$title,$content);
+			$content = str_replace("_date",$dateNews,$content);
+			$content = str_replace("_image",$image,$content);
+			$content = str_replace("_url",$url,$content);
+			$content = str_replace("_IdScholarship",$idScholarship,$content);
+			$file_content = $content;
+			fwrite($fp,$file_content);
+			fclose($fp);
+			$file = str_replace("../","",$file);
+			$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image,URL) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image, :url)");
 			$stmt->bindparam(":idUniversity", $idUniversity);
 			$stmt->bindparam(":idScholarship", $idScholarship);
 	        $stmt->bindparam(":title", $title);
@@ -42,6 +73,7 @@ include 'header.php'; ?>
 	        $stmt->bindparam(":context", $context);
 	        $stmt->bindparam(":dateNews", $dateNews);
 	        $stmt->bindparam(":image", $image);
+			$stmt->bindparam(":url", $file);
 			$stmt->execute(); 
 			if($stmt){
 				header("location:news.php?msg=addnews");exit();
@@ -50,56 +82,12 @@ include 'header.php'; ?>
 			}
 		} else {
 			$image = "";
-<<<<<<< HEAD
+
 			echo '<span class="error">cannot update. please enter exactly information </span>';
-=======
-		}
-		
-		$idUniversity = $_POST['idUniversity'];
-		$idScholarship = ($_POST['idScholarship']);
-		$headContext = ($_POST['cktext1']);		
-		$title = ($_POST['title']);
-		$context = ($_POST['cktext']);
-		$dateNews = date("Y-m-d");
 
-		$_SESSION['idUniversity'] = $idUniversity;
-		$_SESSION['idScholarship'] = $idScholarship;
-		$_SESSION['cktext1'] = $headContext;
-		$_SESSION['title'] = $title;
-		$_SESSION['cktext'] = $context;
-		$_SESSION['date'] = $dateNews;
-
-		$url = $title;
-		$url = str_replace(" ","-",$url);
-		$file = "../new-page/". $url.".php";
-		$fp = fopen($file,'w');
-		$content = file_get_contents("../temp.php");
-		$content = str_replace("_content",$context,$content);
-		$content = str_replace("_headcontent",$headContext,$content);
-		$content = str_replace("_title",$title,$content);
-		$content = str_replace("_date",$dateNews,$content);
-
-		$file_content = $content;
-		fwrite($fp,$file_content);
-		fclose($fp);
-		
-		$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image)");
-		$stmt->bindparam(":idUniversity", $idUniversity);
-		$stmt->bindparam(":idScholarship", $idScholarship);
-        $stmt->bindparam(":title", $title);
-        $stmt->bindparam(":headContext", $headContext);
-        $stmt->bindparam(":context", $context);
-        $stmt->bindparam(":dateNews", $dateNews);
-        $stmt->bindparam(":image", $image);
-
-		$stmt->execute(); 
-		if($stmt){
-			header("location:news.php?msg=addnews");exit();
-		} else {
-			header("location:news.php?msg=error");exit();	
->>>>>>> 7c6ce69ab0062039e4cb3514144f7c502ffd7d70
 		}
 	}
+	//tới đây
 ?>
 <div class="wrapper">
   <?php include 'sidebar.php'; ?>
