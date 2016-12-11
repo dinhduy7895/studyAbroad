@@ -47,12 +47,6 @@
           session_start();
           if ($row['Level'] == 10) {
             $_SESSION['university'] = $row['Name'];
-            $nameUniversity = $row['Name'];
-            $stmt1 = $conn->prepare("SELECT IdUniversity FROM university WHERE NameUniversity = :nameUniversity");
-            $stmt1->execute(array(':nameUniversity'=>$nameUniversity));
-            $row1 = $stmt1->fetch(PDO::FETCH_ASSOC);
-            $_SESSION['idUniversity'] =  $row1['IdUniversity'];
-
             header('Location: university.php');
           } else {
             $_SESSION['admin'] = $row['Name'];
