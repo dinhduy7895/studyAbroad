@@ -1,5 +1,9 @@
 <?php include '../connect.php'; ?>
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+   if (isset($_SESSION['university'])) {
+      header('Location: university.php');
+   }
+?>
 <div class="wrapper">
 
    <?php include 'sidebar.php'; ?>
@@ -14,7 +18,7 @@
          </h3>
          <h3>hi <?php echo $_SESSION['admin']; ?></h3>
          <h3 style="display: inline-block;">Admin</h3>
-         <h3 style="display: inline-block; float: right;"><a href="admin_add.php">Create new admin acount</a></h3>
+         <h3 style="display: inline-block; float: right;"><a href="admin_add.php">Create new admin account</a></h3>
          <?php
             $sql = "SELECT Id, Name, Level,Email FROM admin";
             $q = $conn->query($sql);
@@ -39,7 +43,7 @@
                <td><?php echo htmlspecialchars($row['Level']); ?></td>
                <td><?php echo htmlspecialchars($row['Email']); ?></td>
                <?php 
-                  if ($_SESSION['admin_level'] >= $row['Level']) {
+                  if ($_SESSION['admin_level'] <= $row['Level']) {
                ?>
                <td><a href="admin_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
                <td><a href="admin_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>

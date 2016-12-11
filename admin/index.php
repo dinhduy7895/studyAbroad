@@ -45,9 +45,21 @@
           echo " <br><center><font color= 'red' size='3'>Please fill up the fields correctly</center></font>";
         } else if ($stmt->rowCount() > 0) {
           session_start();
-          $_SESSION['admin'] = $row['Name'];
-          $_SESSION['admin_level'] = $row['Level'];
-          header("location: news.php");
+          if ($row['Level'] == 10) {
+            $_SESSION['university'] = $row['Name'];
+            $nameUniversity = $row['Name'];
+            $stmt1 = $conn->prepare("SELECT IdUniversity FROM university WHERE NameUniversity = :nameUniversity");
+            $stmt1->execute(array(':nameUniversity'=>$nameUniversity));
+            $row1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+            $_SESSION['idUniversity'] =  $row1['IdUniversity'];
+
+            header('Location: university.php');
+          } else {
+            $_SESSION['admin'] = $row['Name'];
+            $_SESSION['admin_level'] = $row['Level'];
+            header("location: news.php");
+          }
+        
          }
       }
    ?>

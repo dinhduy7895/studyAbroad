@@ -1,5 +1,8 @@
 <?php include('../connect.php');
-include 'header.php'; 
+	include 'header.php';
+	if (isset($_SESSION['university'])) {
+		header('Location: university.php');
+	} 
 ?>
 
 <?php

@@ -1,5 +1,8 @@
 <?php include('../connect.php');
-include 'header.php'; 
+	include 'header.php'; 
+	if (isset($_SESSION['university'])) {
+		header('Location: university.php');
+	}
 ?>
 
 <?php
@@ -33,7 +36,7 @@ include 'header.php';
          </h3>
         <section id="main-content">
           	<div class="container">
-					<h2 class="margin-bottom-10">Add Admin acount</h2>
+					<h2 class="margin-bottom-10">Add Admin account</h2>
 					<form id="admin_add" method="post" class="form-horizontal" action="">
 		            <div class="form-group">
 		               <br/>

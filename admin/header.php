@@ -29,7 +29,7 @@
     session_start();
   ?>
   <?php 
-  if (!isset($_SESSION['admin'])) {
+  if (!isset($_SESSION['admin']) && !isset($_SESSION['university'])) {
     header('Location: index.php');
   }
 ?>

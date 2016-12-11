@@ -1,8 +1,5 @@
 <?php include('../connect.php');
 	include 'header.php'; 
-	if (isset($_SESSION['university'])) {
-		header('Location: university.php');
-	}
 ?>
 
 <?php
@@ -35,14 +32,13 @@
 			$result = move_uploaded_file($tmp_name, $path_upload);
 			$image = $imgNewName;
 
-			$idUniversity = $_POST['idUniversity'];
+			$idUniversity = $_SESSION['idUniversity'];
 			$idScholarship = ($_POST['idScholarship']);
 			$headContext = ($_POST['cktext1']);		
 			$title = ($_POST['title']);
 			$context = ($_POST['cktext']);
 			$dateNews = date("Y-m-d");
 
-			$_SESSION['idUniversity'] = $idUniversity;
 			$_SESSION['idScholarship'] = $idScholarship;
 			$_SESSION['cktext1'] = $headContext;
 			$_SESSION['title'] = $title;
@@ -106,21 +102,6 @@
 			<h2 class="margin-bottom-10">Add News</h2>
 					<p>(*): Not be empty</p>
 					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
-						<div class="row form-group">
-							<div class="col-lg-6">
-								<label>University</label>
-								<select name="idUniversity" id="idUniversity">
-									<?php  
-										$sql = "SELECT * FROM university";
-										$stmt_uni = $conn->query($sql);
-				                        $stmt_uni->setFetchMode(PDO::FETCH_ASSOC);
-				                        while ($row_uni = $stmt_uni->fetch()) {
-				                        ?>
-										<option value="<?php echo $row_uni['IdUniversity']; ?>"><?php echo $row_uni['NameUniversity']." - ". $row_uni['Country']; ?></option>
-									<?php } ?>
-								</select>
-							</div>
-						</div>		
 						<div class="row form-group">
 							<div class="col-lg-6">
 								<label>Scholarship</label>
