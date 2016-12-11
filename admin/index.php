@@ -35,19 +35,19 @@
       if(isset($_POST['go']))
       {
       
-      $username=$_POST['username'];
-      $password=$_POST['password'];
-      
-         $sql = "SELECT * FROM admin WHERE Name =  '{$username}' AND Pass = '${password}'";
-         $q = $conn->query($sql);
-         $q->setFetchMode(PDO::FETCH_ASSOC);
-         $row = $q->fetch();
-         if ($row == 0) {
-            echo " <br><center><font color= 'red' size='3'>Please fill up the fields correctly</center></font>";
-         } else if ($row > 0) {
-            session_start();
-            $_SESSION['admin'] = $row['Name'];
-            header("location: news.php");
+        $username=$_POST['username'];
+        $password=md5($_POST['password']);
+        $sql = "SELECT * FROM admin WHERE Name=:Name AND Pass=:Pass";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array(':Name'=> $username, ':Pass'=>$password));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($stmt->rowCount() == 0) {
+          echo " <br><center><font color= 'red' size='3'>Please fill up the fields correctly</center></font>";
+        } else if ($stmt->rowCount() > 0) {
+          session_start();
+          $_SESSION['admin'] = $row['Name'];
+          $_SESSION['admin_level'] = $row['Level'];
+          header("location: news.php");
          }
       }
    ?>

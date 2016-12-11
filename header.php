@@ -1,4 +1,7 @@
-
+<?php  
+    ob_start();  
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +57,7 @@
             <div class="header-wrapper">
                 <div class="logo-inner">
                     <div class="logo ">
-                        <a href="" class=" ">
+                        <a href="index.php" class="">
                             <img class="img-responsive logo-png" src="img/logo.png" alt="" />
                         </a>
                     </div>
@@ -81,7 +84,7 @@
                                 </li>
                                 <li class="<?php if ($title=='Contact') echo " active ";?> "><a href="contact.php">Contact</a>
                                 </li>
-                                <?php if (!isset($_SESSION[ 'user_session']) ) { ?>
+                                <?php if (!isset($_SESSION['user_session']) ) { ?>
                                 <li class="<?php if ($title=='Login') echo " active ";?> "><a href="login_form.php">Login</a>
                                 </li>
                                 <li class="<?php if ($title=='Register') echo " active ";?> "><a href="register_form.php">Register</a>

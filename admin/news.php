@@ -10,7 +10,48 @@
 
          <h3 class="page-header">
             Dashboard <small>Dashboard and statistics</small>
+            
          </h3>
+         <h3>hi <?php echo $_SESSION['admin']; ?></h3>
+         <h3 style="display: inline-block;">Admin</h3>
+         <h3 style="display: inline-block; float: right;"><a href="admin_add.php">Create new admin acount</a></h3>
+         <?php
+            $sql = "SELECT Id, Name, Level,Email FROM admin";
+            $q = $conn->query($sql);
+            $q->setFetchMode(PDO::FETCH_ASSOC);
+         ?> 
+         <table class="table table-bordered table-condensed">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Level</th>
+                  <th>Email</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+               </tr>
+            </thead>
+            <tbody>
+            <?php while ($row = $q->fetch()): ?>
+            <tr>
+               <td><?php echo htmlspecialchars($row['Id']); ?></td>
+               <td><?php echo htmlspecialchars($row['Name']); ?></td>
+               <td><?php echo htmlspecialchars($row['Level']); ?></td>
+               <td><?php echo htmlspecialchars($row['Email']); ?></td>
+               <?php 
+                  if ($_SESSION['admin_level'] >= $row['Level']) {
+               ?>
+               <td><a href="admin_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
+               <td><a href="admin_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
+
+               <?php } ?>
+            </tr>
+            <?php endwhile; ?>
+            </tbody>
+         </table>  
+         <br><br>
+
+
          <h3>User</h3>
          <?php
             $sql = "SELECT Id, Name, FirstName, LastName FROM user";

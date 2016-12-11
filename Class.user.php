@@ -19,7 +19,7 @@ class USER
         try
         {
             $pass = md5($pass);
-            $stmt = $this->db->prepare("INSERT INTO user  (Name, Email, Pass,FirstName,LastName,YearOld,PhoneNumber)
+            $stmt = $this->db->prepare("INSERT INTO user (Name, Email, Pass,FirstName,LastName,YearOld,PhoneNumber)
             VALUES(:name, :email, :pass,:fname,:lname,:year,:phone)");
             
             $stmt->bindparam(":name", $name);

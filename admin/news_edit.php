@@ -72,17 +72,16 @@ include 'header.php';
                   <p>(*): Not be empty</p>
                   <form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
                      <?php
-                        
                         $sql = "SELECT * FROM news where Id = {$id}";
                         $q = $conn->query($sql);
                         $q->setFetchMode(PDO::FETCH_ASSOC);
                         while ($row = $q->fetch()) {
-                         $idUniversity = $row['IdUniversity'];
-                         $idScholarship = $row['IdScholarship'];
-                         $title= $row['Title'];
-                         $headContext = $row['HeadContext'];
-                         $context = $row['Context'];
-                         $image = $row['Image'];
+                           $idUniversity = $row['IdUniversity'];
+                           $idScholarship = $row['IdScholarship'];
+                           $title= $row['Title'];
+                           $headContext = $row['HeadContext'];
+                           $context = $row['Context'];
+                           $image = $row['Image'];
                      ?>
                      <div class="row form-group">
                         <div class="col-lg-6">
