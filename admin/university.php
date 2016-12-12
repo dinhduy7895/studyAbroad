@@ -50,9 +50,9 @@
                   <td><?php echo htmlspecialchars($row['Title']); ?></td>
                   <td><?php echo htmlspecialchars($row['HeadContext']); ?></td>
                   <td><?php echo htmlspecialchars($row['Datenews']); ?></td>
-                  <td><a href="news_view.php?id=<?php echo $row['Id']?>">View</a></td>
-                  <td><a href="news_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
-                  <td><a href="news_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
+                  <td><a href="university_view.php?id=<?php echo $row['Id']?>">View</a></td>
+                  <td><a href="university_edit.php?id=<?php echo $row['Id']?>">Edit</a></td>
+                  <td><a href="university_del.php?id=<?php echo $row['Id']?>" onclick="return confirmAction()">Delete</a></td>
                </tr>
                <?php endwhile; ?>
                </tbody>

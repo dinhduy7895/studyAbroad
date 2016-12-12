@@ -8230,3 +8230,6 @@ body {
     transform: translateX(0);
   }
 }
+th {
+  padding: 15px;
+}
