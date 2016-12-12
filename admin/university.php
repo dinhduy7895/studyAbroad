@@ -1,5 +1,9 @@
 <?php include '../connect.php'; ?>
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+   if (isset($_SESSION['admin'])) {
+      header('Location: news.php');
+   }
+?>
 
 <div class="wrapper">
 

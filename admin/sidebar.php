@@ -15,30 +15,11 @@
 
           <!-- Sidebar user info -->
           <a class="sidebar-user__info">
-            <h4>Richard Roe</h4>
+            <h4>Hi </h4>
             <p>Administrator <i class="fa fa-caret-down"></i></p>
           </a>
 
         </div>
-
-        <!-- Sidebar user nav -->
-        <nav class="sidebar-user__nav">
-          <ul class="sidebar__nav">
-            <li>
-              <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
-            </li>
-            <li>
-              <a href="edit-profile.html"><i class="fa fa-edit"></i> Edit profile</a>
-            </li>
-            <li>
-              <a href="inbox.html"><i class="fa fa-envelope-o"></i> Inbox</a>
-            </li>
-            <li>
-              <a href="logout.php"><i class="fa fa-sign-out"></i> Sign out</a>
-            </li>
-          </ul>
-        </nav>
-
         <!-- Sidebar nav -->
         <nav>
           <ul class="sidebar__nav">
@@ -50,11 +31,11 @@
             <li class="sidebar-nav__dropdown">
               <a href="#"><i class="fa fa-user"></i> Account <i class="fa fa-angle-down"></i></a>
               <ul class="sidebar-nav__submenu">
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="edit-profile.html">Edit profile</a></li>
-                <li><a href="inbox.html">Inbox</a></li>
-                <li><a href="sign-in.html">Sign In</a></li>
-                <li><a href="sign-up.html">Sign Up</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Edit profile</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Sign Up</a></li>
               </ul>
             </li>
             <li>
