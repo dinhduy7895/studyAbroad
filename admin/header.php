@@ -24,4 +24,12 @@
   </head>
 
   <body>
-  <?php    ob_start();  ?>
+  <?php
+    ob_start();  
+    session_start();
+  ?>
+  <?php 
+  if (!isset($_SESSION['admin']) && !isset($_SESSION['university'])) {
+    header('Location: index.php');
+  }
+?>

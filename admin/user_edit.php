@@ -1,5 +1,9 @@
 <?php include('../connect.php');
-include 'header.php'; ?>
+  include 'header.php'; 
+  if (isset($_SESSION['university'])) {
+    header('Location: university.php');
+  }
+?>
 <div class="wrapper">
   <?php include 'sidebar.php'; ?>
   <div class="container-fluid">

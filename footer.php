@@ -87,13 +87,27 @@
         
     </footer>
 </div>  
-    
-<script src="js/vendor/jquery.sortelements.js" type="text/javascript"></script>
-<script src="js/jquery.bdt.min.js" type="text/javascript"></script>
-<script>
-    $(document).ready( function () {
-        $('#bootstrap-table').bdt();
-    });
-</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/form_validation.js"></script>
+    <script type="text/javascript" src="js/intlTelInput.min.js"></script>
+    <script>
+    $.validator.addMethod('matches1', function(phoneNumber, element) {
+        phoneNumber = phoneNumber.replace(/\s+/g, '');
+        return this.optional(element) || phoneNumber.length == 10 || phoneNumber.length == 11 && phoneNumber.match(/^\d+$/);
+        }, "nhap dung so dien thoai");
+    </script>
+    <script src="js/vendor/jquery.sortelements.js" type="text/javascript"></script>
+    <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready( function () {
+            $('#bootstrap-table').bdt();
+        });
+    </script>
+
 </body>
 </html>
+<?php ob_end_flush(); ?>

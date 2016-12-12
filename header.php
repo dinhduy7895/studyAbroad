@@ -1,4 +1,7 @@
+<?php  
+    ob_start();  
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +66,7 @@
             <div class="header-wrapper">
                 <div class="logo-inner">
                     <div class="logo ">
-                        <a href="" class=" ">
+                        <a href="index.php" class="">
                             <img class="img-responsive logo-png" src="img/logo.png" alt="" />
                         </a>
                     </div>

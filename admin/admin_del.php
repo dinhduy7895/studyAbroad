@@ -10,9 +10,7 @@
 		$id=$_GET["id"];
 		try {
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    // sql to delete a record
-		    $sql = "DELETE FROM user WHERE id={$id}";
-		    // use exec() because no results are returned
+		    $sql = "DELETE FROM admin WHERE id={$id}";
 		    $conn->exec($sql);
 		   	header("location:news.php?deleted");exit();
 		    }
