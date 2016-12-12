@@ -1,4 +1,8 @@
-<?php require_once 'connect.php' ?>
+<?php require_once 'connect.php' ;
+// session_name('s');
+// session_set_cookie_params(0, '/');
+// session_cache_limiter('private_no_expire');
+session_start();?>
 <?php $title = 'News' ?>
 <?php include 'header.php'; ?>
 	<section class="news">
@@ -28,7 +32,7 @@
 							</div>
 							<div class="new-single-header">
 								<h2 class="main-title">
-									<a href="#" class=""><?php echo $row['Title']; ?></a>
+									<a href="<?php echo $row['Url'] ?>" class=""><?php echo $row['Title']; ?></a>
 								</h2>
 								<div class="time-new-single">
 									<span>Published at <?php echo $row['Datenews']; ?></span>

@@ -88,7 +88,7 @@
     </footer>
 </div>  
     
-    <script src="js/vendor/jquery.sortelements.js" type="text/javascript"></script>
+<script src="js/vendor/jquery.sortelements.js" type="text/javascript"></script>
 <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
 <script>
     $(document).ready( function () {

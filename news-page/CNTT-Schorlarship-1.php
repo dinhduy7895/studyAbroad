@@ -1,11 +1,14 @@
 <?php 
+// session_name('s');
+// session_set_cookie_params(0, '/');
+// session_cache_limiter('private_no_expire');
 session_start(); 
-include('connect.php');
+include('../connect.php');
 $_SESSION['login']="";
 $title = "CNTT Schorlarship 1";
 ?>
 <?php
-  require_once 'connect.php';
+  
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
@@ -22,8 +25,11 @@ $title = "CNTT Schorlarship 1";
 	
     if($user->login($uname,$umail,$upass))
     {
-	$_SESSION['login'] = true;
-      $_SESSION['user_session'] = $uname;
+	  $_SESSION['login'] = true;
+      
+	  $fname = $_SESSION['FirstName'];
+	  $lname = $_SESSION['LastName'];
+	  
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
       } else $user->redirect('CNTT-Schorlarship-1.php');
@@ -49,7 +55,48 @@ $title = "CNTT Schorlarship 1";
 		$noy = $row['NumberOfYear'];
 		$textReg = "The ".$university." with major ".$major."having a scholarship for foreign student in ".$noy." years. You will be support by ".$fee." % and the course will be ".$scholarship." /year. <br> The time to register is from".$start." to".$end." <br> Please fill in your information right here if you want to have a chance to get it. Thank you !!"; 
 	}
+	$idScholarship = '3';
+	$uname = "avd";	
+ 	$allowedExts = array("doc", "docx", "pdf");
+	 
+     if(isset($_POST['upload'])){
+		$target_dir = "CV/";
+		$target_file = $target_dir . basename($_FILES["fileCV"]["name"]);
+        $extension = pathinfo($target_file,PATHINFO_EXTENSION);
+        if ( in_array($extension, $allowedExts))
+        {
+            if ($_FILES["fileCV"]["error"] > 0)
+            {
+            echo "Return Code: " . $_FILES["fileCV"]["error"] . "<br>";
+            }
+            else
+            {   
+                $time = time();
+                echo "Upload: " . $_FILES["fileCV"]["name"] . "<br>";
+                echo "Type: " . $_FILES["fileCV"]["type"] . "<br>";
+                echo "Size: " . ($_FILES["fileCV"]["size"] / 200000) . " kB<br>";
+                echo "Temp file: " . $_FILES["fileCV"]["tmp_name"] . "<br>";
+                $fileName = $idScholarship."_".$uname."_".$time.".".$extension;
+    
+                move_uploaded_file($_FILES["fileCV"]["tmp_name"],
+                "CV/" .$fileName);
+                echo "Stored in: " . "CV/" . $fileName;
+                
+            }
+        }
+        else
+        {
+            echo "Invalid file";
+        }
+		 header("HTTP/1.1 303 See Other");
+        header("Location: CNTT-Schorlarship-1.php");
+		die();
+	 }
+	
+    
+	  
 ?>
+
 <?php include 'header.php'; ?>
 	<section class="news">
 		<div class="container">
@@ -99,6 +146,13 @@ $title = "CNTT Schorlarship 1";
 													</div>
 													<div class="modal-body">
 														<?php echo $textReg;?>
+														<div class="form-register center">
+															<form action="" method="post" enctype="multipart/form-data">
+																Please upload your CV : 
+																<input type="file" name="fileCV" id="file">
+																<input type="submit" value="upload" name="upload">
+															</form>
+														</div>
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

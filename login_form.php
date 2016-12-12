@@ -1,14 +1,14 @@
 <?php $title = 'Login'; 
+// session_name('s');
+// session_set_cookie_params(0, '/');
+// session_cache_limiter('private_no_expire');
 session_start(); 
 ?>
 
 
 <?php
   require_once 'connect.php';
-  if($user->is_loggedin()!="")
-  {
-    $user->redirect('home.php');
-  }
+  
 
   if(isset($_POST['submit']))
   {

@@ -1,6 +1,21 @@
-#contactForm .aidFrom, #contactForm .aidTo{
-	padding: 0px;
+section#main-content{
+	margin-top: 50px;
 }
-#contactForm .usd{
-	padding-right: 0px;
+.top-title h1{
+	font-size: 34px;
+	padding-bottom: 25px;
+	text-align: center;
+   color: #a8a8a8;
+}
+.top-title h3{
+	font-size: 16px;
+	padding-bottom: 25px;
+}
+.submit>input{
+	background-color: #6e6e6e;
+    border-color: #6e6e6e;
+}
+.submit>input:hover{
+	background-color: #585858;
+    border-color: #585858;
 }

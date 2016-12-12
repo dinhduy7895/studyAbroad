@@ -1,6 +1,9 @@
 
 <?php $title = 'Register'; ?>
 <?php
+    // session_name('s');
+    // session_set_cookie_params(0, '/');
+    // session_cache_limiter('private_no_expire');
     session_start(); 
     include('connect.php');
     $name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";

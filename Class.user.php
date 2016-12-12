@@ -65,7 +65,7 @@ class USER
     }
     public function search($universityID,$majorID)
     {
-        $sql = 'SELECT  u.NameUniversity, m.NameMajor,s.StartDay, s.EndDay, n.Url   FROM news n ,scholarshipinfor s, university u, major m where n.IdScholarship = s.IdScholarship and u.IdUniversity = s.IdUniversity and m.IdMajor = s.IdMajor ';
+        $sql = 'SELECT  u.NameUniversity, m.NameMajor,u.Country,s.Fee,s.Scholarship,s.NumberOfYear,s.StartDay, s.EndDay, n.Url   FROM news n ,scholarshipinfor s, university u, major m where n.IdScholarship = s.IdScholarship and u.IdUniversity = s.IdUniversity and m.IdMajor = s.IdMajor ';
         if($universityID != "None"){
             $sql .= "and u.IdUniversity = '$universityID' ";
         }
@@ -89,12 +89,18 @@ class USER
                 if($upass == $userRow['Pass'])
                 {
                     $_SESSION['user_session'] = $userRow['Name'];
+                    $_SESSION['FirstName'] = $userRow['FirstName'];
+                    $_SESSION['LastName'] = $userRow['LastName'];
+                    $_SESSION['idUser'] = $userRow['Id'];
                     return true;
                 }
                 else
                 {
                     return false;
                 }
+            }
+            else{
+                return false;
             }
         }
         catch(PDOException $e)

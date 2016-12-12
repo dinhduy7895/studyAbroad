@@ -6,7 +6,7 @@ if($_POST['id'])
     if($id == 'None')
     $sql = $conn->prepare("Select m.IdMajor,m.NameMajor from major m");
     else
-    $sql = $conn->prepare("Select m.IdMajor,m.NameMajor from major m ,scholarshipinfor s where m.IdMajor=s.IdMajor  and s.IdUniversity = '$id'");
+    $sql = $conn->prepare("Select distinct m.IdMajor,m.NameMajor from major m ,scholarshipinfor s where m.IdMajor=s.IdMajor  and s.IdUniversity = '$id'");
     $sql->execute(); ?>
     <option selected="selected">None</option>
   <?php  while($row=$sql->fetch(PDO::FETCH_ASSOC))

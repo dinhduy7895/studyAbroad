@@ -1,5 +1,8 @@
 <?php $title = 'Search';?>
 <?php
+    // session_name('s');
+    // session_set_cookie_params(0, '/');
+    // session_cache_limiter('private_no_expire'); 
     session_start(); 
     include('connect.php');
     $universitySelected = $majorSelected  ="None";
@@ -85,13 +88,19 @@
       </form>
 
       <table class="table table-hover table-striped bdt" id="bootstrap-table">
-        <tr>
-          <th>University</th>
-          <th>Major</th>
-          <th>From</th>
-          <th>To</th>
-          <th>Register</th>
-        </tr>
+        <thead>
+          <tr>         
+            <th>University</th>
+            <th>Major</th>
+            <th>Country</th>
+            <th>Fee ( USD/Year )</th>
+            <th>Scholarship(%)</th>
+            <th>Recruitin From</th>
+            <th>End  </th>
+            <th>Recruiting</th>
+          </tr>
+        </thead>
+        <tbody>
           <?php
           $today    = date("Y-m-d");
           $array    = $user->search($universitySelected, $majorSelected);
@@ -113,6 +122,21 @@
             </td>
             <td>
               <?php
+              echo $arrayRow['Country'];
+?>
+            </td>
+            <td>
+              <?php
+              echo $arrayRow['Fee'];
+?>
+            </td>
+            <td>
+              <?php
+              echo $arrayRow['Scholarship'];
+?>
+            </td>
+            <td>
+              <?php
               echo $arrayRow['StartDay']
 ?>
             </td>
@@ -129,7 +153,7 @@
                 <?php
               if ($start <= $today && $end >= $today) {
 ?>
-                  <a data-toggle="modal" href="<?php echo $arrayRow['Url'] ?>">OK</a>
+                  <a style="padding: 0px 16px; font-size: 15px; font-weight: bold;" class ="btn  btn-success " data-toggle="modal" href="<?php echo $arrayRow['Url'] ?>">Detail</a>
                   <?php
               }
 ?>
@@ -138,9 +162,10 @@
           <?php
           }
 ?>
-
+      </tbody>
       </table>
         </div>
     </div>
+    
   </section>
   <?php include 'footer.php'; ?>

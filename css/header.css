@@ -20,6 +20,12 @@
     float: left;
     line-height: 40px;
 }
+.header-wrapper{
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.4) 100%), url('../img/bg.png') !important ;
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 255, 255, 1);
+}
 #s{
 	padding-top: 11px;
 	border: none;

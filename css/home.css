@@ -98,10 +98,11 @@ a.read:hover{
 	padding: 50px 0px;
 }
 .about-us{
-	background-color: #ffecc8;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.4) 100%), url('../img/bg.png') !important ;
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 255, 255, 1);
 	margin-bottom: 60px;
-	border-top: 1px solid black;
-	border-bottom: 2px solid black;
 }
 .invest_area {
     text-align: center;
@@ -112,11 +113,11 @@ a.read:hover{
     font-weight: bold;
     font-size: 40px;
     padding: 60px 0px;
-    color: black;
+    color: white;
 }
 .invest_area>p {
     font-size: 14px;
-    color: black;
+    color: white;
     line-height: 21px;
     padding-bottom: 23px;
 }
@@ -192,4 +193,22 @@ a.read:hover{
 .footer .content-copy p{
 	font-size: 13px;
 	padding-left: 15px;
+}
+.field-content>p::first-letter {
+      float: left;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+	    color: #333;
+    font-size: 98px !important;
+    margin: 7px 10px 0 0!important;
+    font-weight: 700;
+    line-height: 74px !important;
+}
+a.title-dr:hover{
+	color: black;
+	text-decoration: none;
+}
+.adverst{
+	margin-top: 40px;
 }

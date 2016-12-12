@@ -4,25 +4,34 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
     <title>
         <?php echo $title; ?>
     </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/search.css">
     
-    <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
-    <script src="js/jquery-1.11.3.min.js"></script>
+    
+    
     
     <script src="js/main.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
 </head>
 <body>
     <div id="wrapper">
@@ -81,7 +90,7 @@
                                 </li>
                                 <li class="<?php if ($title=='Contact') echo " active ";?> "><a href="contact.php">Contact</a>
                                 </li>
-                                <?php if (!isset($_SESSION[ 'user_session']) ) { ?>
+                                <?php if (!isset($_SESSION['user_session']) ) { ?>
                                 <li class="<?php if ($title=='Login') echo " active ";?> "><a href="login_form.php">Login</a>
                                 </li>
                                 <li class="<?php if ($title=='Register') echo " active ";?> "><a href="register_form.php">Register</a>

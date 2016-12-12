@@ -1,7 +1,10 @@
 
 <?php $title = 'Home';
+// session_name('s');
+// session_set_cookie_params(0, '/');
+// session_cache_limiter('private_no_expire');
 session_start();  ?>
-
+<?php require_once 'connect.php' ;?>
 <?php include 'header.php'; ?>
 	<section id="slider" class="slider">
 		<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -199,49 +202,34 @@ session_start();  ?>
 				<div class="col-lg-12 views-field-title"> <span class="title-content">In The News</span> </div>
 				<div class="col-lg-7 col-md-7 new-left">
 	                <div class="view-content">
+                        <?php  
+							  	$sql = "SELECT * FROM news ORDER BY Id DESC limit 2";
+					            $q = $conn->query($sql);
+					            $q->setFetchMode(PDO::FETCH_ASSOC);
+					            while ($row = $q->fetch()):
+						?>
 	                    <div class="views-row ">
 	                        <div class="views-field-field-picture">
-	                            <div class="field-content"><img typeof="foaf:Image" src="img/new1.jpg" width="940" height="626" alt="" />
+	                            <div class="field-content"><img typeof="foaf:Image" src="admin/files/<?php echo $row['Image']; ?>" width="940" height="626" alt="" />
 	                            </div>
 	                            <div class="back-ground-title"></div>
 	                        <div class="views-field-field-headline">
-	                            <div class="field-content center ">Entrepreneurialism in Higher Education</div>
+	                            <div class="field-content center "><a href="<?php echo $row['Url'] ?>" class="title-dr"> <?php echo $row['Title']; ?></a></div>
 	                        </div>
 	                        </div>
 	                        
 	                        <div class=" views-field-body">
 	                            <div class="field-content">
-	                                <span class="su-dropcap su-dropcap-style-simple" style="font-size:2.5em">W</span>
-	                                hat's the secret to developing and nurturing an entrepreneurial culture in higher education? Here's what Melissa Vito, Senior Vice President for Student Affairs and Enrollment Management and Senior Vice Provost for Academic Initiatives and Student Success, University of Arizona, had to say. 
+	                                <?php echo $row['HeadContext']; ?>
 	                            </div>
 	                        </div>
 	                        <div class="views-field-field-more-link-1">
-	                            <div class="field-content red-link"><a href="#" target="_blank">Learn More</a>
+	                            <div class="field-content red-link"><a href="<?php echo $row['Url'] ?>" target="_blank">Learn More</a>
 	                            </div>
 	                        </div>
 	                    </div>
-	                    <div class="views-row views-row-2 views-row-even views-row-last">
-
-	                        <div class="views-field-title sub-news"> <span class="field-content">Division News</span> </div>
-	                        <div class="views-field-field-picture">
-	                            <div class="field-content"><img typeof="foaf:Image" src="img/new1.jpg" width="750" height="415" alt="" />
-	                            </div>
-	                            <div class="back-ground-title"></div>
-	                        <div class="views-field-field-headline">
-	                            <div class="field-content">Remembering Pearl Harbor and the NATA</div>
-	                        </div>
-	                        </div>
-	                         
-	                        <div class="views-field-body">
-	                            <div class="field-content">
-	                                <p><span class="su-dropcap su-dropcap-style-simple" style="font-size:2.5em">T</span>o recognize the UA's ties to the USS Arizona and the 75th anniversary of the attack that sealed U.S. participation in World War II, University affiliates are hosting or participating in several programs and events.</p>
-	                            </div>
-	                        </div>
-	                        <div class="views-field-field-more-link-1">
-	                            <div class="field-content red-link"><a href="#" target="_blank">Learn More</a>
-	                            </div>
-	                        </div>
-	                    </div>
+                        <?php endwhile; ?>
+	                   
 	                </div>
 	            </div>
 
