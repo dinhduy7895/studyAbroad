@@ -7,6 +7,7 @@
 }
 body{
     font-family: 'nice' !important;  
+
     background-color: #f4f4f4;
 }
 .fixed{
@@ -144,6 +145,7 @@ h2{
 /*---------------------------*/
 .news {
    
+
     padding-top: 30px;
 }
 .title-content{

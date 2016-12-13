@@ -1,7 +1,9 @@
-<?php $title = 'Register'; ?>
+<?php $title = 'Register'; 
+?>
 <?php
   session_start();
   include('functions/connect.php');
+  require_once 'lib/sendmail/lib/swift_required.php';
   $name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
   $check = 0;
   if(count($_POST) > 0) {
@@ -41,6 +43,39 @@ else if (isset($_SESSION['email'])){
                 $stmt = $conn->prepare("Select count(*) from user where name= '$name' or email ='$email' ");
                 $stmt->execute();
                 $count = $stmt->fetchColumn(0);
+                // goi email kich hoat
+                $maKichHoat = md5($name);
+                $stmt1 = $conn->prepare("INSERT INTO kichhoat(Name, MaKichHoat) VALUES (:name,:maKichHoat)");
+                $stmt1->bindparam(":name",$name);
+                $stmt1->bindparam(":maKichHoat",$maKichHoat);
+                $stmt1->execute();
+                $stmt->execute();
+                $to = $email;
+                $subject = "Kich hoat tai khoan User";
+                $message = "
+                <html>
+                <head>
+                <title>Kich hoat tai khoan</title>
+                </head>
+                <body>
+                <a href='http://localhost/studyAbroad/verify.php?name={$name}&maKichHoat={$maKichHoat}'><p>Kich vao link nay kich hoat tai khoan </p></a>
+                <p> Username: ". $name."<br> Password: ". $pass ."
+                </body>
+                </html>
+                ";
+
+                // Always set content-type when sending HTML email
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                // More headers
+                $headers .= 'From: <thanhbinh0995@gmail.com>' . "\r\n";
+                $headers .= 'Cc: myboss@example.com' . "\r\n";
+
+                mail($to,$subject,$message,$headers);
+
+
+
             }
             catch(PDOException $e)
             {

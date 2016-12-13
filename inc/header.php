@@ -25,7 +25,7 @@ ob_start();
     <script src="lib/js/plugins/jquery-1.11.3.min.js"></script>
     <script src="lib/js/plugins/bootstrap.min.js"></script>
     <script src="lib/js/plugins/jquery.bdt.min.js"></script>    
-
+    
 
 
     <link rel="stylesheet" href="css/reset.css">
@@ -66,6 +66,7 @@ ob_start();
                     target="_blank" href="https://dribbble.com/gljivec" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a><a target="_blank" href="https://www.flickr.com/" title="Flickr"><i class="fa fa-flickr" aria-hidden="true"></i></a>
                       <a target="_blank" href="http://www.pinterest.com/gljivec/" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                   </div>
+
                 </div>
 
               </div>
