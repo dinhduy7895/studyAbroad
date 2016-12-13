@@ -33,11 +33,22 @@
             <li>
               <a href="user.php"><i class="fa fa-th-large"></i>User</a>
             </li>
+            <li>
+              <a href="submit.php"><i class="fa fa-th-large"></i>Student Submit</a>
+            </li>
             <li class="sidebar-nav__heading">Pages</li>
             <li>
               <a href="university.php"><i class="fa fa-envelope-o"></i>University</a>
             </li>
-           
+           <li>
+              <a href="university_submit.php"><i class="fa fa-envelope-o"></i>Stuent submit</a>
+            </li>
+            <li>
+              <a href="university_scholarship.php"><i class="fa fa-envelope-o"></i>Create Scholarship</a>
+            </li>
+            <li>
+              <a href="university_scholarship_view.php"><i class="fa fa-envelope-o"></i>View Scholarship</a>
+            </li>
           </ul>
         </nav>
 
