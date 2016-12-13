@@ -49,13 +49,9 @@
 			$_SESSION['cktext'] = $context;
 			$_SESSION['date'] = $dateNews;
 
-
 			$url = $title;
 			$url = str_replace(" ","-",$url);
 			$file = "../news-page/". $url.".php";
-
-		
-
 			$fp = fopen($file,'w');
 			$content = file_get_contents("../temp.php");
 			$content = str_replace("_content",$context,$content);
@@ -68,6 +64,7 @@
 			$file_content = $content;
 			fwrite($fp,$file_content);
 			fclose($fp);
+
 			$file = str_replace("../","",$file);
 			$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image,URL) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image, :url)");
 

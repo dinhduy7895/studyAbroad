@@ -1,12 +1,7 @@
-
 <?php
 $title = 'Contact';
-  session_start(); 
- 
-
+  // session_start(); 
 ?>
-
-
 <?php
 	include('connect.php');
 	// if(!$user->is_loggedin()){
@@ -30,8 +25,6 @@ $title = 'Contact';
 		$phoneContact = $_SESSION['phoneContact'];
 		$opinionContact = $_SESSION['opinionContact'];
 		
-		
-
 				/** Include PHPExcel */
 		require_once 'excel/Classes/PHPExcel.php';
 		require_once 'excel/Classes/PHPExcel/IOFactory.php';
@@ -52,6 +45,9 @@ $title = 'Contact';
 	include "header.php" ;
 	
 ?>
+	<section id="google-map">
+		<div id="googleMap" style="width:100%;height:510px;"></div>
+	</section>
 	<section id="main-content">
 		<div class="container">
 			<div class="top-title ">
@@ -66,19 +62,19 @@ $title = 'Contact';
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Your Name</label>-->
 							<div class="col-sm-12">
-								<input type="text" class="date form-control" name="nameContact" placeholder="Your Name" /><br/>
+								<input type="text" class="form-control" name="nameContact" placeholder="Your Name" /><br/>
 							</div>
 						</div>
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Email</label>-->
 							<div class="col-sm-12">
-								<input type="text" class="date form-control" name="emailContact" placeholder="Email" /><br/>
+								<input type="text" class="form-control" name="emailContact" placeholder="Email" /><br/>
 							</div>
 						</div>
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Address</label>-->
 							<div class="col-sm-12">
-								<input type="text" class="date form-control" name="addressContact" placeholder="Address" /><br/>
+								<input type="text" class="form-control" name="addressContact" placeholder="Address" /><br/>
 							</div>
 						</div>
 						<div class="form-group">

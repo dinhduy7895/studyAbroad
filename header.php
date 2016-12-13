@@ -56,7 +56,7 @@
                     <div class="top-right col-lg-6">
                         <div class="top-search fright ">
                             <form method="get" id="searchform" class="searchform" action="http://amory.premiumcoding.com/">
-                                <input type="text" value="Search and hit enter..." name="s" id="s">
+                                <input type="text" placeholder="Search and hit enter..." name="s" id="s">
                                 <i class="fa fa-search search-desktop" aria-hidden="true"></i>
                             </form>
                         </div>
