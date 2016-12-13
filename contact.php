@@ -33,8 +33,8 @@ $title = 'Contact';
 		
 
 				/** Include PHPExcel */
-		require_once 'excel/Classes/PHPExcel.php';
-		require_once 'excel/Classes/PHPExcel/IOFactory.php';
+		require_once 'lib/excel/Classes/PHPExcel.php';
+		require_once 'lib/excel/Classes/PHPExcel/IOFactory.php';
 
 		$objPHPExcel = PHPExcel_IOFactory::load("admin/files/contact/contact.xlsx");
 		$objPHPExcel->setActiveSheetIndex(0);
@@ -66,19 +66,19 @@ $title = 'Contact';
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Your Name</label>-->
 							<div class="col-sm-12">
-								<input type="text" class="date form-control" name="nameContact" placeholder="Your Name" /><br/>
+								<input type="text" class=" form-control" name="nameContact" placeholder="Your Name" /><br/>
 							</div>
 						</div>
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Email</label>-->
 							<div class="col-sm-12">
-								<input type="text" class="date form-control" name="emailContact" placeholder="Email" /><br/>
+								<input type="text" class=" form-control" name="emailContact" placeholder="Email" /><br/>
 							</div>
 						</div>
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Address</label>-->
 							<div class="col-sm-12">
-								<input type="text" class="date form-control" name="addressContact" placeholder="Address" /><br/>
+								<input type="text" class=" form-control" name="addressContact" placeholder="Address" /><br/>
 							</div>
 						</div>
 						<div class="form-group">

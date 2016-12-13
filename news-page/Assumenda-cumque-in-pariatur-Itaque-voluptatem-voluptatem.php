@@ -6,8 +6,8 @@ session_start();
 include('../connect.php');
 
 $_SESSION['login']="";
-$_SESSION['url'] = '_url.php';
-$title = "_title";
+$_SESSION['url'] = 'Assumenda-cumque-in-pariatur-Itaque-voluptatem-voluptatem.php';
+$title = "Assumenda cumque in pariatur Itaque voluptatem voluptatem";
 ?>
 <?php
   
@@ -18,7 +18,7 @@ $title = "_title";
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
-	$user->redirect('_url.php');
+	$user->redirect('Assumenda-cumque-in-pariatur-Itaque-voluptatem-voluptatem.php');
 	
   }
 
@@ -35,7 +35,7 @@ $title = "_title";
 	  
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
-      } else $user->redirect('_url.php');
+      } else $user->redirect('Assumenda-cumque-in-pariatur-Itaque-voluptatem-voluptatem.php');
     }
     else
     {
@@ -44,7 +44,7 @@ $title = "_title";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '_IdScholarship' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '3' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())
@@ -61,8 +61,8 @@ $title = "_title";
 	///////upload
 		if(isset($_SESSION['user_session']))
 		$uname=$_SESSION['user_session'] ;
-		$idScholarship = _IdScholarship;
-		$_SESSION['idScholarship'] = _IdScholarship;
+		$idScholarship = 3;
+		$_SESSION['idScholarship'] = 3;
 		
 		if(isset($_POST['upload']))
 		include('upload.php');
@@ -76,7 +76,7 @@ $title = "_title";
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
-									<img src="../admin/files/_image"  class="image-responsive" alt="">
+									<img src="../admin/files/Img_1481534716.jpg"  class="image-responsive" alt="">
 								</a>
 							</div>
 							<div class="new-single-header">
@@ -84,19 +84,19 @@ $title = "_title";
 									<span><a href="#">News in Day</a></span>
 								</div>
 								<h2 class="main-title">
-									<a href="#" class="">_title</a>
+									<a href="#" class="">Assumenda cumque in pariatur Itaque voluptatem voluptatem</a>
 								</h2>
 								<div class="time-new-single">
-									<span>Published at _date</span>
+									<span>Published at 2016-12-12</span>
 								</div>
 								<div class="new-single-content">
 									<div class="head-context">
-									_headcontent
+									<p>Assumenda cumque in pariatur Itaque voluptatem voluptatem</p>
 									</div>
 									<br>
 									<br>	
 									<div class="context">
-									_content
+									<p>Assumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatemAssumenda cumque in pariatur Itaque voluptatem voluptatem</p>
 									</div> 	
 										
 									
@@ -124,7 +124,8 @@ $title = "_title";
 														<div class="form-register center col-lg-12">
 															<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
 																Please upload your CV : 
-																<input type="file" name="fileCV" id="fileCV" accept=".docx, .pdf, .doc">
+																<input type="file" name="fileCV" id="fileCV" accept=".docx,.pdf">
+																<input type="submit" value="Upload file" name="upload">
 															</form>
 														</div>
 													</div>
@@ -301,4 +302,5 @@ $(document).on('ready', function() {
 		$(".fileinput-upload").attr("name", "upload");
 });
 </script>
+
 <?php include 'footer.php'; ?>

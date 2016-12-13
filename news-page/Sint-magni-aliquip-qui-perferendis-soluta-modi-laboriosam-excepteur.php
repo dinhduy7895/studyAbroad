@@ -114,16 +114,18 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 														<button type="button" class="close" data-dismiss="modal">&times;</button>
 														<h4 class="modal-title">Please fill your information</h4>
 													</div>
-													<div class="modal-body">
-														<?php echo $textReg;?>
-														<div class="download">
-															<a href="../download.docx">Template Form CV</a>
+													<div class="modal-body clearfix">
+														<div class="noti col-lg-12">
+															<?php echo $textReg;?>
 														</div>
-														<div class="form-register center">
+														<div class="download col-lg-2 col-lg-offset-5">
+															<a href="../download.docx"><img src="../img/download.png" class="img-responsive" alt=""></a>
+														</div>
+														<div class="form-register center col-lg-12">
 															<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
 																Please upload your CV : 
-																<input type="file" name="fileCV" id="fileCV">
-																<input type="submit" value="Upload file" name="upload">
+																<input type="file" name="fileCV" id="fileCV"  accept=".docx,.pdf">
+																<input type="submit" value="Upload file">
 															</form>
 														</div>
 													</div>
@@ -290,4 +292,19 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 		 unset($_SESSION['upload']); 
 	}
 ?>
+<script>
+$(document).on('ready', function() {
+    $("#fileCV").fileinput({
+        previewFileType: "text",
+        allowedFileExtensions: ["txt", "md", "ini", "text"],
+        previewClass: "bg-warning"
+    });
+		
+});
+</script>
+<script>
+function myFunction() {
+    document.getElementsByClassName("fileinput-upload-button").setAttribute("name", "upload"); 
+}
+</script>
 <?php include 'footer.php'; ?>
