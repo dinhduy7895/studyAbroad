@@ -39,30 +39,6 @@ class USER
             echo $e->getMessage();
         }
     }
-    public function contact($name,$from,$to,$startYear,$numYear,$country,$opinion)
-    {
-        try
-        {
-            $stmt = $this->db->prepare("INSERT INTO sinhvien  (Name, AidFrom, AidTo,StartYear,NumberOfYear,Country,Opinion)
-            VALUES(:name, :afrom , :ato,:startYear,:numYear,:country,:opinion)");
-            
-            $stmt->bindparam(":name", $name);
-            $stmt->bindparam(":afrom", $from);
-            $stmt->bindparam(":ato", $to);
-            $stmt->bindparam(":startYear", $startYear);
-            $stmt->bindparam(":numYear", $numYear);
-            $stmt->bindparam(":country", $country);
-            $stmt->bindparam(":opinion", $opinion);
-            
-            $stmt->execute();
-            
-            return $stmt;
-        }
-        catch(PDOException $e)
-        {
-            echo $e->getMessage();
-        }
-    }
     public function search($universityID,$majorID)
     {
         $sql = 'SELECT  u.NameUniversity, m.NameMajor,u.Country,s.Fee,s.Scholarship,s.NumberOfYear,s.StartDay, s.EndDay, n.Url   FROM news n ,scholarshipinfor s, university u, major m where n.IdScholarship = s.IdScholarship and u.IdUniversity = s.IdUniversity and m.IdMajor = s.IdMajor ';

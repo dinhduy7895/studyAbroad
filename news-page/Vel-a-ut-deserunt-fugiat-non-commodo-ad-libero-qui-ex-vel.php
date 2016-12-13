@@ -6,8 +6,8 @@ session_start();
 include('../connect.php');
 
 $_SESSION['login']="";
-$_SESSION['url'] = '_url.php';
-$title = "_title";
+$_SESSION['url'] = 'Vel-a-ut-deserunt-fugiat-non-commodo-ad-libero-qui-ex-vel.php';
+$title = "Vel a ut deserunt fugiat non commodo ad libero qui ex vel";
 ?>
 <?php
   
@@ -18,7 +18,7 @@ $title = "_title";
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
-	$user->redirect('_url.php');
+	$user->redirect('Vel-a-ut-deserunt-fugiat-non-commodo-ad-libero-qui-ex-vel.php');
 	
   }
 
@@ -35,7 +35,7 @@ $title = "_title";
 	  
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
-      } else $user->redirect('_url.php');
+      } else $user->redirect('Vel-a-ut-deserunt-fugiat-non-commodo-ad-libero-qui-ex-vel.php');
     }
     else
     {
@@ -44,7 +44,7 @@ $title = "_title";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '_IdScholarship' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '3' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())
@@ -61,8 +61,8 @@ $title = "_title";
 	///////upload
 		if(isset($_SESSION['user_session']))
 		$uname=$_SESSION['user_session'] ;
-		$idScholarship = _IdScholarship;
-		$_SESSION['idScholarship'] = _IdScholarship;
+		$idScholarship = 3;
+		$_SESSION['idScholarship'] = 3;
 		
 		if(isset($_POST['upload']))
 		include('upload.php');
@@ -71,17 +71,12 @@ $title = "_title";
 	<section class="news">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 tarbar">
-					<a href="news-page.php?id=0" class="split  <?php if(isset($_GET['id']) && $_GET['id']==0 ) echo " active" ?> "  >News in day</a>
-					<a href="news-page.php?id=1" class="split  <?php if(isset($_GET['id']) && $_GET['id']==1 ) echo " active" ?> "  >Recruit</a>
-					<a href="news-page.php" class="split  <?php if(!isset($_GET['id'])) echo " active" ?> "   >All</a>
-				</div>
 				<div class="col-lg-9 news-highlight">
 					<div class="row center">
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
-									<img src="../admin/files/_image"  class="image-responsive" alt="">
+									<img src="../admin/files/Img_1481626920.jpg"  class="image-responsive" alt="">
 								</a>
 							</div>
 							<div class="new-single-header">
@@ -89,20 +84,19 @@ $title = "_title";
 									<span><a href="#">News in Day</a></span>
 								</div>
 								<h2 class="main-title">
-									<a href="#" class="">_title</a>
+									<a href="#" class="">Vel a ut deserunt fugiat non commodo ad libero qui ex vel</a>
 								</h2>
 								<div class="time-new-single">
-									<span>Published at _date <br></span>
-									<span>Upload by _user </span>
+									<span>Published at 2016-12-13</span>
 								</div>
 								<div class="new-single-content">
 									<div class="head-context">
-									_headcontent
+									<p>Vel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex vel</p>
 									</div>
 									<br>
 									<br>	
 									<div class="context">
-									_content
+									<p>Vel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex velVel a ut deserunt fugiat non commodo ad libero qui ex vel</p>
 									</div> 	
 										
 									
@@ -125,7 +119,7 @@ $title = "_title";
 															<?php echo $textReg;?>
 														</div>
 														<div class="download col-lg-2 col-lg-offset-5 " style="padding : 10px;">
-															<a href="../document/download.docx"><img src="../img/download.png" class="img-responsive" alt=""></a>
+															<a href="../download.docx"><img src="../img/download.png" class="img-responsive" alt=""></a>
 														</div>
 														<span class ="col-lg-12" style="color: #804040; padding : 10px 0px;" >Download template CV</span>
 														<div class="form-register center col-lg-12">
@@ -199,13 +193,13 @@ $title = "_title";
 					<ul class="new-feed ">
 						<li class="single-feed fearture-feed">
 						<?php  
-						  	$sql = "SELECT n.*, u.NameUniversity FROM news n, university u where u.IdUniversity = n.IdUniversity ORDER BY Id DESC limit 6";
+						  	$sql = "SELECT * FROM news ORDER BY Id DESC limit 6";
 				            $q = $conn->query($sql);
 				            $q->setFetchMode(PDO::FETCH_ASSOC);
 				            $count = 0;
 				            while ($row = $q->fetch()):
 				            	$count++;
-				            	if ($count > 1) {
+				            	if ($count > 3) {
 						?>
 							<div class="feed col-lg-12">
 								<div class="feed-image">
@@ -218,8 +212,7 @@ $title = "_title";
 										<a href="#" class=""><?php echo $row['Title']; ?></a>
 									</h2>
 									<div class="time-new-single">
-										<span>Published at <?php echo $row['Datenews']; ?><br></span>
-										<span>Upload by  <?php echo $row['NameUniversity']; ?></span>
+										<span>Published at <?php echo $row['Datenews']; ?></span>
 									</div>
 								</div>
 							</div>

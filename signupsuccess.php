@@ -1,17 +1,15 @@
-<!DOCTYPE html>
+
 <?php
-session_start();
+$title = "success";
+include('header.php');
 ?>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-     
-      echo "New record created successfully";
-    ?>
-    <a href="login_form.php">Click here to Login</a>
-</body>
-</html>
+    <div class="success center">
+        <div class="success-header">
+            Thank you for register <br>
+            <a href="login_form.php" class="">Click here </a><span>to log in</span>
+        </div>
+    </div> 
+    
+    
+
+<?php include('footer.php');?>

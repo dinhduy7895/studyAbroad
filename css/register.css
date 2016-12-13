@@ -1,0 +1,41 @@
+.checkboxx{
+    margin-bottom: 15px;
+}
+.register input{
+    background-color: rgb(104, 145, 162);
+    
+}
+#signupForm .col-lg-12{
+}
+.top-main-content{
+    padding: 15px 0px;
+    background-color: #804040;
+    color: white;
+    margin-bottom: 20px;
+}
+.wrapper{
+    background: white;
+    border: 1px solid grey;
+    border-radius: 5%;
+    padding: 20px 0px;
+}
+
+.success{
+    background-color: #D5FCCF;
+    border: 1px solid #527959;
+    margin: 40px 100px;
+    padding: 50px;
+    color:  #51B143;
+    border-radius: 2%;
+}
+.success-header{
+    line-height: 31px;
+    letter-spacing: 2px;
+}
+.success-header a{
+    color: #A06354;
+}
+.success-header a:hover{
+    text-decoration: none;
+    color: red;
+}

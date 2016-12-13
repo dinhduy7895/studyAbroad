@@ -1,0 +1,11 @@
+.modal-header,.modal-footer{
+    background-color: #804040;
+}
+.modal-title{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+}
+.modal-body {
+    background-color: #CAF5FF;
+}

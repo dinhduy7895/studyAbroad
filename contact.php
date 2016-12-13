@@ -24,7 +24,13 @@ $title = 'Contact';
 		$addressContact = $_SESSION['addressContact'];
 		$phoneContact = $_SESSION['phoneContact'];
 		$opinionContact = $_SESSION['opinionContact'];
+		unset($_SESSION['nameContact']);
+		unset($_SESSION['opinionContact']);
+		unset($_SESSION['emailContact']);
+		unset($_SESSION['addressContact']);
+		unset($_SESSION['phoneContact']);
 		
+
 				/** Include PHPExcel */
 		require_once 'lib/excel/Classes/PHPExcel.php';
 		require_once 'lib/excel/Classes/PHPExcel/IOFactory.php';

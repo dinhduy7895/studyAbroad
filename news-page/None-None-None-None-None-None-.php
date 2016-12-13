@@ -6,8 +6,8 @@ session_start();
 include('../connect.php');
 
 $_SESSION['login']="";
-$_SESSION['url'] = '_url.php';
-$title = "_title";
+$_SESSION['url'] = 'None-None-None-None-None-None-.php';
+$title = "None None None None None None ";
 ?>
 <?php
   
@@ -18,7 +18,7 @@ $title = "_title";
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
-	$user->redirect('_url.php');
+	$user->redirect('None-None-None-None-None-None-.php');
 	
   }
 
@@ -35,7 +35,7 @@ $title = "_title";
 	  
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
-      } else $user->redirect('_url.php');
+      } else $user->redirect('None-None-None-None-None-None-.php');
     }
     else
     {
@@ -44,7 +44,7 @@ $title = "_title";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '_IdScholarship' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '0' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())
@@ -61,8 +61,8 @@ $title = "_title";
 	///////upload
 		if(isset($_SESSION['user_session']))
 		$uname=$_SESSION['user_session'] ;
-		$idScholarship = _IdScholarship;
-		$_SESSION['idScholarship'] = _IdScholarship;
+		$idScholarship = 0;
+		$_SESSION['idScholarship'] = 0;
 		
 		if(isset($_POST['upload']))
 		include('upload.php');
@@ -71,17 +71,12 @@ $title = "_title";
 	<section class="news">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 tarbar">
-					<a href="news-page.php?id=0" class="split  <?php if(isset($_GET['id']) && $_GET['id']==0 ) echo " active" ?> "  >News in day</a>
-					<a href="news-page.php?id=1" class="split  <?php if(isset($_GET['id']) && $_GET['id']==1 ) echo " active" ?> "  >Recruit</a>
-					<a href="news-page.php" class="split  <?php if(!isset($_GET['id'])) echo " active" ?> "   >All</a>
-				</div>
 				<div class="col-lg-9 news-highlight">
 					<div class="row center">
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
-									<img src="../admin/files/_image"  class="image-responsive" alt="">
+									<img src="../admin/files/Img_1481637637.jpg"  class="image-responsive" alt="">
 								</a>
 							</div>
 							<div class="new-single-header">
@@ -89,20 +84,20 @@ $title = "_title";
 									<span><a href="#">News in Day</a></span>
 								</div>
 								<h2 class="main-title">
-									<a href="#" class="">_title</a>
+									<a href="#" class="">None None None None None None </a>
 								</h2>
 								<div class="time-new-single">
-									<span>Published at _date <br></span>
-									<span>Upload by _user </span>
+									<span>Published at 2016-12-13 <br></span>
+									<span>Upload by dut </span>
 								</div>
 								<div class="new-single-content">
 									<div class="head-context">
-									_headcontent
+									<p>None None&nbsp;None None&nbsp;</p>
 									</div>
 									<br>
 									<br>	
 									<div class="context">
-									_content
+									<p>None None&nbsp;None None&nbsp;</p>
 									</div> 	
 										
 									

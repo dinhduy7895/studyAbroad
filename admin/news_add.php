@@ -41,6 +41,7 @@
 			$title = ($_POST['title']);
 			$context = ($_POST['cktext']);
 			$dateNews = date("Y-m-d");
+			$user = "admin";
 
 			$_SESSION['idUniversity'] = $idUniversity;
 			$_SESSION['idScholarship'] = $idScholarship;
@@ -55,6 +56,7 @@
 			$fp = fopen($file,'w');
 			$content = file_get_contents("../temp.php");
 			$content = str_replace("_content",$context,$content);
+			$content = str_replace("_user",$user,$content);
 			$content = str_replace("_headcontent",$headContext,$content);
 			$content = str_replace("_title",$title,$content);
 			$content = str_replace("_date",$dateNews,$content);
@@ -102,28 +104,7 @@
           <div class="container">
 			<h2 class="margin-bottom-10">Add News</h2>
 					<p>(*): Not be empty</p>
-					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
-						<div class="row form-group">
-							<div class="col-lg-6">
-								<label>University</label>
-								<select name="idUniversity" id="idUniversity">
-									<?php  
-										$sql = "SELECT * FROM university";
-										$stmt_uni = $conn->query($sql);
-				                        $stmt_uni->setFetchMode(PDO::FETCH_ASSOC);
-				                        while ($row_uni = $stmt_uni->fetch()) {
-				                        ?>
-										<option value="<?php echo $row_uni['IdUniversity']; ?>"><?php echo $row_uni['NameUniversity']." - ". $row_uni['Country']; ?></option>
-									<?php } ?>
-								</select>
-							</div>
-						</div>		
-						<div class="row form-group">
-							<div class="col-lg-6">
-								<label>Scholarship</label>
-								<input type="text" name="idScholarship" class="form-control" id="idScholarship" placeholder="Nhập ID Scholarship">
-							</div>
-						</div>	
+					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">	
 						<div class="row form-group">
 							<div class="col-lg-6">
 								<label>Title (*)</label>

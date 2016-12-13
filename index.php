@@ -54,12 +54,12 @@ session_start();  ?>
 	<section class="spot">
 		<div class="container">
 			<div class="row">
-	            <div class="col-lg-4 col-md-4"data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft; ">
+	            <div class="col-lg-4 col-md-4"style="  ">
 	                <div class="box box_skin">
 	                    <p class="def letter">b</p>
 
 	                    <div class="heading">
-	                        <p class="def">Student guide</p>
+	                        <p class="def">Student guide 1</p>
 
 	                        <p>Bulum iaculis lacinia</p>
 	                    </div>
@@ -67,16 +67,16 @@ session_start();  ?>
 	                        ipsum
 	                        dme
 	                        consectetuer adipiscin.</p>
-	                    <a class="btn  btn_sm" href="#">more</a>
+	                    <a class="btn  btn_sm" href="document/guide1.pdf" target="_blank">more</a>
 	                </div>
 	            </div>
 
-	            <div class="col-lg-4 col-md-4 " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+	            <div class="col-lg-4 col-md-4 " style=" ">
 	                <div class="box box_skin">
 	                    <p class="def letter">c</p>
 
 	                    <div class="heading">
-	                        <p class="def">Student guide</p>
+	                        <p class="def">Student guide 2</p>
 
 	                        <p>Bulum iaculis lacinia</p>
 	                    </div>
@@ -84,16 +84,16 @@ session_start();  ?>
 	                        ipsum
 	                        dme
 	                        consectetuer adipiscin.</p>
-	                    <a class="btn  btn_sm" href="#">more</a>
+	                    <a class="btn  btn_sm" href="document/guide2.pdf" target="_blank">more</a>
 	                </div>
 	            </div>
 
-	            <div class="col-lg-4 col-md-4 " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+	            <div class="col-lg-4 col-md-4 " style=" ">
 	                <div class="box box_skin">
 	                    <p class="def letter">d</p>
 
 	                    <div class="heading">
-	                        <p class="def">Student guide</p>
+	                        <p class="def">Student guide 3</p>
 
 	                        <p>Bulum iaculis lacinia</p>
 	                    </div>
@@ -101,7 +101,7 @@ session_start();  ?>
 	                        ipsum
 	                        dme
 	                        consectetuer adipiscin.</p>
-	                    <a class="btn  btn_sm" href="#">more</a>
+	                    <a class="btn  btn_sm" href="document/guide1.pdf" target="_blank">more</a>
 	                </div>
 	            </div>
 			</div>		
@@ -119,7 +119,10 @@ session_start();  ?>
 	</section>
 	<section class="Progressive">
 		<div class="container ">
-			<div class=" col-lg-12 icon-wrapper box_skin">
+			<div class="" style="font-family :'nice'; font-size: 37px; padding-bottom: 32px; " >
+					Progressive Programs
+			</div>
+			<div class=" col-lg-12 icon-wrapper box_skin">	
 				<div class="col-lg-4 col-md-4">				
 		            <div class="icon-box box1 ">
 		                <div class="box_left">
@@ -147,7 +150,7 @@ session_start();  ?>
 				<div class="col-lg-4 col-md-4">
 					<div class="icon-box box1 " >
 		                <div class="box_left">
-		                    <div class="icon fa fa-flag"></div>
+		                    <div class="icon fa fa-headphones"></div>
 		                </div>
 		                <div class="box_cnt o__hidden">
 		                    <h6>
@@ -158,7 +161,7 @@ session_start();  ?>
 		            </div>
 		            <div class="icon-box box1 ">
 		                <div class="box_left">
-		                    <div class="icon fa fa-folder-open-o"></div>
+		                    <div class="icon fa fa-graduation-cap"></div>
 		                </div>
 		                <div class="box_cnt o__hidden">
 		                    <h6>
@@ -171,7 +174,7 @@ session_start();  ?>
 				<div class="col-lg-4 col-md-4">
 					<div class="icon-box box1 " >
 		                <div class="box_left">
-		                    <div class="icon fa fa-flag"></div>
+		                    <div class="icon fa fa-flask"></div>
 		                </div>
 		                <div class="box_cnt o__hidden">
 		                    <h6>
@@ -182,7 +185,7 @@ session_start();  ?>
 		            </div>
 		            <div class="icon-box box1 " >
 		                <div class="box_left">
-		                    <div class="icon fa fa-folder-open-o"></div>
+		                    <div class="icon fa fa-laptop"></div>
 		                </div>
 		                <div class="box_cnt o__hidden">
 		                    <h6>
@@ -210,7 +213,7 @@ session_start();  ?>
 						?>
 	                    <div class="views-row ">
 	                        <div class="views-field-field-picture">
-	                            <div class="field-content"><img typeof="foaf:Image" src="admin/files/<?php echo $row['Image']; ?>" width="940" height="626" alt="" />
+	                            <div class="field-content"><a href="<?php echo $row['Url'] ?>" class="title-dr"><img typeof="foaf:Image" src="admin/files/<?php echo $row['Image']; ?>" width="940" height="626" alt="" /></a>
 	                            </div>
 	                            <div class="back-ground-title"></div>
 	                        <div class="views-field-field-headline">

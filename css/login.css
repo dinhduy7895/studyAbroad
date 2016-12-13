@@ -1,0 +1,26 @@
+.avatar{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.login{
+    width: 66%;
+    padding: 12px;
+    
+}
+.form-login>button {
+    width: 66%;
+    background-color: rgb(104, 145, 162);
+}
+.form-login{
+    margin: auto;
+    background: white;
+    border: 1px solid #888888;
+    padding: 20px 0px;
+    width: 40%;
+    border-radius: 5%;
+}

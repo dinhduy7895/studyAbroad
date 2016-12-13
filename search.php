@@ -84,7 +84,7 @@
           }
 ?>
         </select>
-        <input class="col-lg-2 fright" type="submit" value = " Seach"> 
+        <input class="col-lg-2 fright btn-primary" type="submit" value = " Seach"> 
       </form>
 
       <table class="table table-hover table-striped bdt" id="bootstrap-table">

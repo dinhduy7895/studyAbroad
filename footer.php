@@ -2,52 +2,20 @@
 	<footer class="footer">
        
         <div class=" footer-link container">
-            <div class="col-lg-3 col-md-3">
+            <div class="col-lg-5 col-md-5">
 
                 <h2>Contact</h2>
 
                 <div class="content">
-                    <p> Administration Building, Room 401 </p>
-                    <p> Da Nang University of Technology</p>
-                    <p> Nguyen Luong Bang Street, Da Nang, Viet Nam</p>
-                    <p> Phone: +84 05113 876331</p>
+                    <p>	DAI HOC BACH KHOA DA NANG
+                    <br/> KHOA CONG NGHE THONG TIN
+                    <br/> Tel: (84-511) 3736 949
+                    <br/> Fax: (84-511) 3842 771
+					<br/> Email: cntt@dut.udn.vn</p>
                 </div>
             </div>
-            <div  class="col-lg-3 col-md-3">
-                <h2>Areas</h2>
-                <div class="content">
-                    <ul class="menu">
-                        <li class="first leaf"><a href="#">Senior Vice President &amp; Senior Vice Provost</a>
-                        </li>
-                        <li class="leaf"><a href="#">Student Affairs</a>
-                        </li>
-                        <li class="leaf"><a href="#">Enrollment Management</a>
-                        </li>
-                        <li class="leaf"><a href="#">Academic Initiatives</a>
-                        </li>
-                        <li class="last leaf"><a href="#">Student Success</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                <h2>Quick Links</h2>
-                <div class="content">
-                    <ul class="menu">
-                        <li class="first leaf"><a href="#">Finals Survival</a>
-                        </li>
-                        <li class="leaf"><a href="#">Minor Policy</a>
-                        </li>
-                        <li class="leaf"><a href="#">Student Fees</a>
-                        </li>
-                        <li class="leaf"><a href="#">Apply</a>
-                        </li>
-                        <li class="last leaf"><a href="#" class="restricted">UA Online Co-Branding Resources</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3" id ="social-icon">
+            
+            <div class="col-lg-3 col-md-3 col-lg-offset-4" id ="social-icon">
 
                 <h2>Follow Us</h2>
 
@@ -86,13 +54,13 @@
         
     </footer>
 </div>  
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    
     <script src="js/main.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/form_validation.js"></script>
     <script type="text/javascript" src="js/intlTelInput.min.js"></script>
+    
     <script>
     $.validator.addMethod('matches1', function(phoneNumber, element) {
         phoneNumber = phoneNumber.replace(/\s+/g, '');
@@ -103,7 +71,9 @@
     <script src="js/jquery.bdt.min.js" type="text/javascript"></script>
     <script>
         $(document).ready( function () {
+        
             $('#bootstrap-table').bdt();
+            
         });
     </script>
 
@@ -123,7 +93,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCS-54UStijEqrHhffyq-LOC4cbOCCOrTg&callback=initMap">
     </script>
-
+  
 </body>
 </html>
 <?php ob_end_flush(); ?>

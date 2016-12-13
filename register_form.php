@@ -70,82 +70,87 @@ else if (isset($_SESSION['email'])){
       <section id="main-content">
         <div class="top-title">
           <div class="container">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Register</a></li>
-            </ol>
+
           </div>
         </div>
-        <div class="container">
-          <div class="top-main-content">
-            <span class="col-lg-10" style="font-size:30px;">New And Innovative market opportunities</span>
-          </div>
-          <div class="clearfix"></div>
-          <div class="main-content container">
+        <div class="container wrapper">
+          <div class="main-content ">
             <form id="signupForm" method="post" class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-              <div class="form-group">
-                <br/>
-                <label class="col-lg-2" for="firstname">First name</label>
-                <div class="col-lg-5">
-                  <input value="<?php echo $fname ?>" type="text" id="firstname" class="form-control" name="firstname" placeholder="First name" />
-                  <br/>
+              <div class="col-lg-12">
+                <div class="top-main-content center ">
+                  <span class=" title " style="font-size:30px;">REGISTRATION</span>
+              </div>
+              </div>
+              
+              <div class="col-lg-6">
+                <div class="form-group">
+               
+                  <div class="col-lg-12">
+                    <input value="<?php echo $fname ?>" type="text" id="firstname" class="form-control" name="firstname" placeholder="First name" />
+                    <br/>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-2" for="lastname">Last name</label>
-                <div class="col-lg-5">
-                  <input value="<?php echo $lname ?>" type="text" id="lastname" class="form-control" name="lastname" placeholder="last name" />
-                  <br/>
+                <div class="form-group">
+
+                  <div class="col-lg-12">
+                    <input value="<?php echo $lname ?>" type="text" id="lastname" class="form-control" name="lastname" placeholder="last name" />
+                    <br/>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-2" for="name">Username</label>
-                <div class="col-lg-5">
-                  <input type="text" id="name" class="form-control" name="name" placeholder="Username" />
-                  <br/>
-                  <?php echo $nameErr; ?>
+                <div class="form-group">
+
+                  <div class="col-lg-12">
+                    <input type="text" id="name" class="form-control" name="name" placeholder="Username" />
+                    <br/>
+                    <?php echo $nameErr; ?>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-2" for="email">Email</label>
-                <div class="col-sm-5">
-                  <input value="<?php echo $email ?>" type="email" id="email" class="form-control" name="email" placeholder="Email" />
-                  <br/>
+                <div class="form-group">
+
+                  <div class="col-lg-12">
+                    <input value="<?php echo $email ?>" type="email" id="email" class="form-control" name="email" placeholder="Email" />
+                    <br/>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-2" for="pass">Password</label>
-                <div class="col-sm-5">
-                  <input value="<?php echo $pass ?>" type="password" id="pass" class="form-control" name="pass" placeholder="your password" />
-                  <br/>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-2" for="year">Year old</label>
-                <div class="col-sm-5">
-                  <input value="<?php echo $year ?>" type="text" id="year" class="form-control" name="year" placeholder="year name" />
-                  <br/>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-2 control-label" style="text-align: left;">Phone number</label>
-                <div class="col-lg-5">
-                  <input value="<?php echo $phone ?>" type="tel" class="form-control" name="phoneNumber" placeholder="+841234567" />
-                </div>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" name="check"> <span style="font-weight:bold;"> Comfirm </span>
-                  <br>
-                </label>
-                <br/>
-                <br/>
-              </div>
-              <input type="submit" name="submit" value="OK">
-              <br/>
-              <br/>
-            </form>
           </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+
+              <div class="col-lg-12">
+                <input value="<?php echo $pass ?>" type="password" id="pass" class="form-control" name="pass" placeholder="your password" />
+                <br/>
+              </div>
+            </div>
+            <div class="form-group">
+
+              <div class="col-lg-12">
+                <input value="<?php echo $year ?>" type="text" id="year" class="form-control" name="year" placeholder="year name" />
+                <br/>
+              </div>
+            </div>
+            <div class="form-group">
+
+              <div class="col-lg-12">
+                <input value="<?php echo $phone ?>" type="tel" class="form-control" name="phoneNumber" placeholder="+841234567" />
+                <br/>
+              </div>
+            </div>
+            <div class="checkboxx form-group col-lg-12">
+              <label>
+                <input type="checkbox" name="check"> <span style="font-weight:bold;"> Comfirm </span>
+                <br>
+              </label>
+              <br/>
+              <br/>
+            </div>
+          </div>
+          <div class="register col-lg-12">
+            <input type="submit" class="  btn btn-lg btn-primary btn-block btn-signin" name="submit" value="Register">
+          </div>
+          <br/>
+          <br/>
+          </form>
+        </div>
         </div>
       </section>
       <?php include 'footer.php' ?>

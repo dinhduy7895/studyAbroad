@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  if (isset($_SESSION['admin'])) {
+      header('Location: news.php');
+   }
+   else if (isset($_SESSION['university'])) {
+      header('Location: university.php');
+   }
+?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>

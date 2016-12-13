@@ -2,53 +2,20 @@
 	<footer class="footer">
        
         <div class=" footer-link container">
-            <div class="col-lg-3 col-md-3">
+            <div class="col-lg-5 col-md-5">
 
                 <h2>Contact</h2>
 
                 <div class="content">
-                    <p>Administration Building, Room 401
-                    <br/> The University of Arizona
-                    <br/> Tucson, AZ USA 85721-0066
-                    <br/> Phone: 520-621-3772
-                    <br/> Fax: 520-621-3776</p>
+                    <p> DAI HOC BACH KHOA DA NANG
+                    <br/> KHOA CONG NGHE THONG TIN
+                    <br/> Tel: (84-511) 3736 949
+                    <br/> Fax: (84-511) 3842 771
+                    <br/> Email: cntt@dut.udn.vn</p>
                 </div>
             </div>
-            <div  class="col-lg-3 col-md-3">
-                <h2>Areas</h2>
-                <div class="content">
-                    <ul class="menu">
-                        <li class="first leaf"><a href="senior-vice-president-senior-vice-provost/message-senior-vice-president-and-senior-vice-provost.html">Senior Vice President &amp; Senior Vice Provost</a>
-                        </li>
-                        <li class="leaf"><a href="student-affairs.html">Student Affairs</a>
-                        </li>
-                        <li class="leaf"><a href="enrollment-management.html">Enrollment Management</a>
-                        </li>
-                        <li class="leaf"><a href="academic-initiatives.html">Academic Initiatives</a>
-                        </li>
-                        <li class="last leaf"><a href="student-success.html">Student Success</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                <h2>Quick Links</h2>
-                <div class="content">
-                    <ul class="menu">
-                        <li class="first leaf"><a href="#">Finals Survival</a>
-                        </li>
-                        <li class="leaf"><a href="#">Minor Policy</a>
-                        </li>
-                        <li class="leaf"><a href="#">Student Fees</a>
-                        </li>
-                        <li class="leaf"><a href="#">Apply</a>
-                        </li>
-                        <li class="last leaf"><a href="#" class="restricted">UA Online Co-Branding Resources</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3" id = "social-icon">
+        
+            <div class="col-lg-3 col-md-3 col-lg-offset-4" id = "social-icon">
 
                 <h2>Follow Us</h2>
 

@@ -148,8 +148,7 @@ h2{
 /*-------------------------------------*/
 
 /*---------------------------*/
-.news {
-    margin-top: 60px;   
+.news { 
     padding-top: 30px;
 }
 .title-content{
@@ -195,7 +194,7 @@ h2{
     font-weight: bold;
     text-transform: uppercase;
     position: absolute;
-    bottom:  0%;
+    bottom:  -3%;
     padding: 15px 0px;
     width: 100%;
 }

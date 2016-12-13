@@ -56,7 +56,7 @@ $title = "Assumenda cumque in pariatur Itaque voluptatem voluptatem";
 		$start = $row['StartDay'];
 		$end = $row['EndDay'];
 		$noy = $row['NumberOfYear'];
-		$textReg = "The ".$university." with major ".$major."having a scholarship for foreign student in ".$noy." years. You will be support by ".$fee." % and the course will be ".$scholarship." /year. <br> The time to register is from".$start." to".$end." <br> Please fill in your information right here if you want to have a chance to get it. Thank you !!"; 
+		$textReg = "The <b>".$university."</b> with major <b>".$major." </b>having a scholarship for foreign student in <b>".$noy." </b>years. You will be support by <b>".$fee."%</b> and the course will be<b> ".$scholarship."/year </b>. <br> The time to register is from <b>".$start."</b> to <b>".$end." </b><br><br> Please fill in your information right here if you want to have a chance to get it. Thank you !!"; 
 	}
 	///////upload
 		if(isset($_SESSION['user_session']))
@@ -115,17 +115,17 @@ $title = "Assumenda cumque in pariatur Itaque voluptatem voluptatem";
 														<h4 class="modal-title">Please fill your information</h4>
 													</div>
 													<div class="modal-body clearfix">
-														<div class="noti col-lg-12">
+														<div class="noti col-lg-12" style=" line-height: 20px;" >
 															<?php echo $textReg;?>
 														</div>
-														<div class="download col-lg-2 col-lg-offset-5">
+														<div class="download col-lg-2 col-lg-offset-5" style="padding-top : 10px;">
 															<a href="../download.docx"><img src="../img/download.png" class="img-responsive" alt=""></a>
 														</div>
+														<span class ="col-lg-12" style="color: #804040; padding : 10px 0px;" >Download template CV</span>
 														<div class="form-register center col-lg-12">
 															<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
-																Please upload your CV : 
-																<input type="file" name="fileCV" id="fileCV" accept=".docx,.pdf">
-																<input type="submit" value="Upload file" name="upload">
+															
+																<input type="file" name="fileCV" id="fileCV" accept=".docx,.pdf" placeholder="dsd">
 															</form>
 														</div>
 													</div>
@@ -300,6 +300,7 @@ $(document).on('ready', function() {
         previewClass: "bg-warning"
     });
 		$(".fileinput-upload").attr("name", "upload");
+		$(".file-caption-name").text("Please upload your CV");
 });
 </script>
 

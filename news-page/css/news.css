@@ -33,7 +33,7 @@
 .title-bar>span{
 	font-weight: bold;
 }
-.title-bar>h1{
+.title-bar h1{
 	color: #a60505;
 	display: inline-block;
 	text-transform: uppercase;
@@ -295,4 +295,23 @@ ul.new-feed li{
 }
 .feed-image>a>img{
 	width: 100%;
+}
+.split{
+    color: #313131;
+    font-style: italic;
+    padding: 10px ;
+    margin-right: 15px;
+    
+}
+.split:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #938A86;
+}
+.tarbar .active{
+    color: white;
+    background-color: #8A0000;
+}
+.tarbar{
+    margin-bottom: 40px;
 }

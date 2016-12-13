@@ -1,0 +1,16 @@
+.about-title h1{
+        font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 12px;
+    padding-bottom: 20px;
+}
+.about-title p{
+    padding-bottom: 20px;
+    line-height: 22px;
+}
+.about-man{
+        font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}

@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet">
   <script src="js/jquery-1.11.3.min.js"></script>
-   <link rel="stylesheet" href="css/style.css">
   <link href="../lib/browser/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
   <script src="../lib/browser/js/fileinput.js" type="text/javascript"></script>
   <script src="../lib/browser/js/fileinput_locale_fr.js" type="text/javascript"></script>
@@ -18,9 +17,11 @@
   <script src="js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/news.css">
+  <link rel="stylesheet" href="css/modal.css">
 
 </head>
 

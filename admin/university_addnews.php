@@ -41,6 +41,7 @@
 			$title = ($_POST['title']);
 			$context = ($_POST['cktext']);
 			$dateNews = date("Y-m-d");
+			$user = $_SESSION['university'];
 
 			$_SESSION['idScholarship'] = $idScholarship;
 			$_SESSION['cktext1'] = $headContext;
@@ -58,6 +59,7 @@
 			$fp = fopen($file,'w');
 			$content = file_get_contents("../temp.php");
 			$content = str_replace("_content",$context,$content);
+			$content = str_replace("_user",$user,$content);
 			$content = str_replace("_headcontent",$headContext,$content);
 			$content = str_replace("_title",$title,$content);
 			$content = str_replace("_date",$dateNews,$content);
@@ -97,6 +99,7 @@
    <?php include 'navbar.php'; ?>
    <div class="row">
       <div class="col-xs-12">
+		  <h1  style="text-transform:uppercase; text-align :center; font-weight:bold;">WELCOME <?php echo $_SESSION['university'] ?></h1>
          <h3 class="page-header">
             Dashboard <small>Dashboard and statistics</small>
          </h3>
@@ -107,8 +110,23 @@
 					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
 						<div class="row form-group">
 							<div class="col-lg-6">
-								<label>Scholarship</label>
-								<input type="text" name="idScholarship" class="form-control" id="idScholarship" placeholder="Nhập ID Scholarship">
+								<label>Scholarship</label> <small>Select <b>None</b> if it just a new</small>
+								<select name="idScholarship" class="form-control" id="idScholarship">
+								<option selected="selected" value = "0">None</option>
+
+								<?php
+								$sql = $conn->prepare('Select * from scholarshipinfor where IdUniversity='.$_SESSION['idUniversity']);
+								$sql->execute();
+								while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+									$idScholarship = $row['IdScholarship'];
+									$idMajor = $row['IdMajor'];
+									$fee = $row['Fee'];
+									$scholarship = $row['Scholarship'];
+
+									echo '<option  value="' . $idScholarship . '"  >' ."IdScholarship: ". $idMajor."- IdMajor: ".$fee."- Scholarship: ".$scholarship. '</option>';
+								}
+								?>
+								</select>
 							</div>
 						</div>	
 						<div class="row form-group">

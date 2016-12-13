@@ -3,6 +3,7 @@
    if (isset($_SESSION['admin'])) {
       header('Location: news.php');
    }
+   
 ?>
 
 <div class="wrapper">
@@ -20,7 +21,7 @@
             <h3 style="display: inline-block; float: right;"><a href="university_addnews.php">Add news</a></h3>
             <?php
                $nameUniversity = $_SESSION['university'];
-               $stmt = $conn->prepare("SELECT IdUniversity FROM university WHERE NameUniversity = :nameUniversity");
+               $stmt = $conn->prepare("SELECT IdUniversity FROM university WHERE NameUniversity =:nameUniversity");
                $stmt->execute(array(':nameUniversity'=>$nameUniversity));
                $row = $stmt->fetch(PDO::FETCH_ASSOC);
                $idUniversity =  $row['IdUniversity'];
