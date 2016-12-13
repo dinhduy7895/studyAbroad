@@ -40,7 +40,7 @@
   </center>
 </form>
    <?php
-      include('../connect.php');
+      include('../functions/connect.php');
       
       if(isset($_POST['go']))
       {

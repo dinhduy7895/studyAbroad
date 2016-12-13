@@ -1,7 +1,7 @@
 <?php 
-   include('connect.php');
+   include('functions/connect.php');
    $title = 'Add NEWS'; 
-   include 'header.php'; 
+   include 'inc/header.php'; 
 ?>
 
 <?php
@@ -165,7 +165,7 @@
 
     </div>
    </div> <!-- / .row -->
-    <?php include 'footer.php'; ?>
+    <?php include 'inc/footer.php'; ?>
     <script type="text/javascript">
       $(document).ready(function () {
       $('#add_news').validate({

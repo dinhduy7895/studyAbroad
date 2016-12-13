@@ -1,10 +1,10 @@
 <?php $title = 'Register'; ?>
-  <?php
-session_start();
-include('connect.php');
-$name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
-$check = 0;
-if(count($_POST) > 0) {
+<?php
+  session_start();
+  include('functions/connect.php');
+  $name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
+  $check = 0;
+  if(count($_POST) > 0) {
     $_SESSION['name'] = $_POST["name"];
     $_SESSION['firstname'] = $_POST['firstname'];
     $_SESSION['lastname'] = $_POST['lastname'];
@@ -66,7 +66,7 @@ else if (isset($_SESSION['email'])){
     session_destroy();
 }
 ?>
-    <?php include 'header.php'; ?>
+    <?php include 'inc/header.php'; ?>
       <section id="main-content">
         <div class="top-title">
           <div class="container">
@@ -111,6 +111,7 @@ else if (isset($_SESSION['email'])){
                     <input value="<?php echo $email ?>" type="email" id="email" class="form-control" name="email" placeholder="Email" />
                     <br/>
                   </div>
+            
                 </div>
           </div>
           <div class="col-lg-6">
@@ -124,7 +125,7 @@ else if (isset($_SESSION['email'])){
             <div class="form-group">
 
               <div class="col-lg-12">
-                <input value="<?php echo $year ?>" type="text" id="year" class="form-control" name="year" placeholder="year name" />
+                <input value="<?php echo $year ?>" type="text" id="year" class="form-control" name="year" placeholder="year name" />          
                 <br/>
               </div>
             </div>
@@ -153,4 +154,4 @@ else if (isset($_SESSION['email'])){
         </div>
         </div>
       </section>
-      <?php include 'footer.php' ?>
+      <?php include 'inc/footer.php' ?>

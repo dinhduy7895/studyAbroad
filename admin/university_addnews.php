@@ -1,5 +1,5 @@
-<?php include('../connect.php');
-	include 'header.php'; 
+<?php include('../functions/connect.php');
+	include 'inc/header.php'; 
 	if (isset($_SESSION['admin'])) {
       	header('Location: news.php');
    }
@@ -94,12 +94,11 @@
 	//tới đây
 ?>
 <div class="wrapper">
-  <?php include 'sidebar.php'; ?>
+  <?php include 'inc/sidebar.php'; ?>
   <div class="container-fluid">
-   <?php include 'navbar.php'; ?>
+   <?php include 'inc/navbar.php'; ?>
    <div class="row">
       <div class="col-xs-12">
-		  <h1  style="text-transform:uppercase; text-align :center; font-weight:bold;">WELCOME <?php echo $_SESSION['university'] ?></h1>
          <h3 class="page-header">
             Dashboard <small>Dashboard and statistics</small>
          </h3>
@@ -176,7 +175,7 @@
 
     </div>
    </div> <!-- / .row -->
-    <?php include 'footer.php'; ?>
+    <?php include 'inc/footer.php'; ?>
     <script type="text/javascript">
 		$(document).ready(function () {
 		$('#add_news').validate({

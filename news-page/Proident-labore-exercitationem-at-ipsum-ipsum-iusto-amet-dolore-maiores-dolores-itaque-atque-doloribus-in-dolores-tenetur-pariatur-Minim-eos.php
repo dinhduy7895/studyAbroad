@@ -6,8 +6,8 @@ session_start();
 include('../functions/connect.php');
 
 $_SESSION['login']="";
-$_SESSION['url'] = '_url.php';
-$title = "_title";
+$_SESSION['url'] = 'Proident-labore-exercitationem-at-ipsum-ipsum-iusto-amet-dolore-maiores-dolores-itaque-atque-doloribus-in-dolores-tenetur-pariatur-Minim-eos.php';
+$title = "Proident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eos";
 ?>
 <?php
   
@@ -18,7 +18,7 @@ $title = "_title";
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
-	$user->redirect('_url.php');
+	$user->redirect('Proident-labore-exercitationem-at-ipsum-ipsum-iusto-amet-dolore-maiores-dolores-itaque-atque-doloribus-in-dolores-tenetur-pariatur-Minim-eos.php');
 	
   }
 
@@ -35,7 +35,7 @@ $title = "_title";
 	  
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
-      } else $user->redirect('_url.php');
+      } else $user->redirect('Proident-labore-exercitationem-at-ipsum-ipsum-iusto-amet-dolore-maiores-dolores-itaque-atque-doloribus-in-dolores-tenetur-pariatur-Minim-eos.php');
     }
     else
     {
@@ -44,7 +44,7 @@ $title = "_title";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '_IdScholarship' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '5' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())
@@ -60,8 +60,8 @@ $title = "_title";
 	}
 		if(isset($_SESSION['user_session']))
 		$uname=$_SESSION['user_session'] ;
-		$idScholarship = _IdScholarship;
-		$_SESSION['idScholarship'] = _IdScholarship;
+		$idScholarship = 5;
+		$_SESSION['idScholarship'] = 5;
 		
 		if(isset($_POST['upload']))
 		include('upload.php');
@@ -80,7 +80,7 @@ $title = "_title";
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
-									<img src="../admin/files/_image"  class="image-responsive" alt="">
+									<img src="../admin/files/Img_1481650667.jpg"  class="image-responsive" alt="">
 								</a>
 							</div>
 							<div class="new-single-header">
@@ -88,20 +88,20 @@ $title = "_title";
 									<span><a href="#">News in Day</a></span>
 								</div>
 								<h2 class="main-title">
-									<a href="#" class="">_title</a>
+									<a href="#" class="">Proident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eos</a>
 								</h2>
 								<div class="time-new-single">
-									<span>Published at _date <br></span>
-									<span>Upload by _user </span>
+									<span>Published at 2016-12-13 <br></span>
+									<span>Upload by dut </span>
 								</div>
 								<div class="new-single-content">
 									<div class="head-context">
-									_headcontent
+									<p>Proident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eos</p>
 									</div>
 									<br>
 									<br>	
 									<div class="context">
-									_content
+									<p>Proident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eosProident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eosProident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eosProident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eosProident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eosProident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eosProident labore exercitationem at ipsum ipsum iusto amet dolore maiores dolores itaque atque doloribus in dolores tenetur pariatur Minim eos</p>
 									</div> 	
 										
 									
@@ -309,4 +309,4 @@ $(document).on('ready', function() {
 		$(".file-caption-name").text("Please upload your CV");
 });
 </script>
-<?php include '../inc/footer.php'; ?>
+<?php include 'footer.php'; ?>

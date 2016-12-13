@@ -1,5 +1,5 @@
-<?php include '../connect.php'; ?>
-<?php include 'header.php'; 
+<?php include '../functions/connect.php'; ?>
+<?php include 'inc/header.php'; 
    if (isset($_SESSION['admin'])) {
       header('Location: news.php');
    }
@@ -8,9 +8,9 @@
 
 <div class="wrapper">
 
-   <?php include 'sidebar.php'; ?>
+   <?php include 'inc/sidebar.php'; ?>
    <div class="container-fluid">
-   <?php include 'navbar.php'; ?>
+   <?php include 'inc/navbar.php'; ?>
       <div class="row">
          <div class="col-xs-12">
 
@@ -65,4 +65,4 @@
    return confirm("Are you sure to delete ?")
    }
    </script> 
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>

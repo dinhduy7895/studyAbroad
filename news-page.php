@@ -1,10 +1,7 @@
-<?php require_once 'connect.php' ;
-// session_name('s');
-// session_set_cookie_params(0, '/');
-// session_cache_limiter('private_no_expire');
+<?php require_once 'functions/connect.php' ;
 session_start();?>
 <?php $title = 'News' ?>
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 	<section class="news">
 		<div class="container">
 			<div class="row">
@@ -113,4 +110,4 @@ session_start();?>
 		</div>
 	</section>
 	
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>

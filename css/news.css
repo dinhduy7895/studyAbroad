@@ -247,6 +247,8 @@ ul.new-feed li{
 }
 .fearture-feed .feed{
 	    margin: 0 0 11px 0px !important;
+            border-bottom: 1px solid #dedede;
+    padding-bottom: 20px;
 }
 
 .feed-header>.feed-title{

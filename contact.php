@@ -3,7 +3,7 @@ $title = 'Contact';
   session_start(); 
 ?>
 <?php
-	include('connect.php');
+	include('functions/connect.php');
 	// if(!$user->is_loggedin()){
 	// 	header("Location: home.html");
 	// }
@@ -48,7 +48,7 @@ $title = 'Contact';
 		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
 		$objWriter->save('admin/files/contact/contact.xlsx');
 	}
-	include "header.php" ;
+	include "inc/header.php" ;
 	
 ?>
 	<section id="google-map">
@@ -142,4 +142,4 @@ $title = 'Contact';
 		unset($_SESSION['contact'] );
 	}
 	?>
-	<?php include 'footer.php';?>
+	<?php include 'inc/footer.php';?>

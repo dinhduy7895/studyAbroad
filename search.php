@@ -1,10 +1,7 @@
 <?php $title = 'Search';?>
-<?php
-    // session_name('s');
-    // session_set_cookie_params(0, '/');
-    // session_cache_limiter('private_no_expire'); 
+<?php 
     session_start(); 
-    include('connect.php');
+    include('functions/connect.php');
     $universitySelected = $majorSelected  ="None";
     if(count($_POST) > 0) {
         $_SESSION['univer'] = $_POST['univer'];
@@ -20,7 +17,7 @@
         session_destroy();
     }
 ?>
-<?php include 'header.php';?>
+<?php include 'inc/header.php';?>
 
   <section class="search-field">
     <div class="container">
@@ -168,4 +165,11 @@
     </div>
     
   </section>
-  <?php include 'footer.php'; ?>
+    <script>
+        $(document).ready( function () {
+        
+            $('#bootstrap-table').bdt();
+            
+        });
+    </script>
+  <?php include 'inc/footer.php'; ?>

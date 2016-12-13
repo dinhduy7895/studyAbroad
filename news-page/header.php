@@ -7,19 +7,26 @@
   <title>
     <?php echo $title; ?>
   </title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet">
-  <script src="js/jquery-1.11.3.min.js"></script>
-  <link href="../lib/browser/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../css/plugins/bootstrap.min.css">
+
+  <link href="../css/plugins/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link  href="../lib/browser/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+  
+  <script src="../lib/js/plugins/jquery-1.11.3.min.js"></script>
+  
   <script src="../lib/browser/js/fileinput.js" type="text/javascript"></script>
   <script src="../lib/browser/js/fileinput_locale_fr.js" type="text/javascript"></script>
   <script src="../lib/browser/js/fileinput_locale_es.js" type="text/javascript"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/header.css">
+
+  <script src="../lib/js/plugins/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/modal.css">
 
@@ -59,7 +66,7 @@
         <div class="logo-inner">
           <div class="logo ">
             <a href="" class=" ">
-              <img class="img-responsive logo-png" src="img/logo.png" alt="" />
+              <img class="img-responsive logo-png" src="../img/logo.png" alt="" />
             </a>
           </div>
         </div>

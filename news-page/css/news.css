@@ -267,11 +267,13 @@ ul.new-feed li{
 }
 .fearture-feed .feed{
 	    margin: 0 0 11px 0px !important;
+            border-bottom: 1px solid #dedede;
+         padding-bottom: 20px;
 }
 
-.feed-header>.feed-title{
-	color: #313131;
-	letter-spacing: 0px;
+.feed-header>.feed-title a{
+	color: #313131 !important;
+	letter-spacing: 0px !important;
 	font-size: 16px;
 }
 .fearture-feed .feed-title{
@@ -314,4 +316,8 @@ ul.new-feed li{
 }
 .tarbar{
     margin-bottom: 40px;
+}
+.feed-title a:hover {
+    text-decoration: none;
+    color: #a60505;
 }

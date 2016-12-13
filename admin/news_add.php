@@ -1,5 +1,5 @@
-<?php include('../connect.php');
-	include 'header.php'; 
+<?php include('../functions/connect.php');
+	include 'inc/header.php'; 
 	if (isset($_SESSION['university'])) {
 		header('Location: university.php');
 	}
@@ -10,7 +10,7 @@
 		$uploadOk = 1;
 		$imgName ="";
 		$imgName = ($_FILES['image_news']['name']);
-		if ($_FILES["image_news"]["size"] > 400000) {
+		if ($_FILES["image_news"]["size"] > 3000000) {
 			echo "<span class='error'>Sorry, your file is too large. </span></br>";
 			$uploadOk = 0;
         }
@@ -92,9 +92,9 @@
 	//tới đây
 ?>
 <div class="wrapper">
-  <?php include 'sidebar.php'; ?>
+  <?php include 'inc/sidebar.php'; ?>
   <div class="container-fluid">
-   <?php include 'navbar.php'; ?>
+   <?php include 'inc/navbar.php'; ?>
    <div class="row">
       <div class="col-xs-12">
          <h3 class="page-header">
@@ -152,7 +152,7 @@
 
     </div>
    </div> <!-- / .row -->
-    <?php include 'footer.php'; ?>
+    <?php include 'inc/footer.php'; ?>
     <script type="text/javascript">
 		$(document).ready(function () {
 		$('#add_news').validate({

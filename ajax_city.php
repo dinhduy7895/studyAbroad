@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include('functions/connect.php');
 if($_POST['id'])
 {
     $id=$_POST['id'];

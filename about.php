@@ -1,9 +1,9 @@
 <?php
 $title = 'About';
 ?>
-  <?php
-include('connect.php');
-include "header.php" ;
+<?php
+	include('functions/connect.php');
+	include "inc/header.php" ;
 
 ?>
     <section id="main-content">
@@ -59,5 +59,6 @@ include "header.php" ;
         </div>
       </div>
 
-    </section>
-    <?php include 'footer.php';?>
+
+	</section>
+	<?php include 'inc/footer.php';?>

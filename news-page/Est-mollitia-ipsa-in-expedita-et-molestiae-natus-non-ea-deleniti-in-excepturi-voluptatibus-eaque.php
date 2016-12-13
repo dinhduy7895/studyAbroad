@@ -6,8 +6,8 @@ session_start();
 include('../functions/connect.php');
 
 $_SESSION['login']="";
-$_SESSION['url'] = '_url.php';
-$title = "_title";
+$_SESSION['url'] = 'Est-mollitia-ipsa-in-expedita-et-molestiae-natus-non-ea-deleniti-in-excepturi-voluptatibus-eaque.php';
+$title = "Est mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaque";
 ?>
 <?php
   
@@ -18,7 +18,7 @@ $title = "_title";
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
-	$user->redirect('_url.php');
+	$user->redirect('Est-mollitia-ipsa-in-expedita-et-molestiae-natus-non-ea-deleniti-in-excepturi-voluptatibus-eaque.php');
 	
   }
 
@@ -35,7 +35,7 @@ $title = "_title";
 	  
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
-      } else $user->redirect('_url.php');
+      } else $user->redirect('Est-mollitia-ipsa-in-expedita-et-molestiae-natus-non-ea-deleniti-in-excepturi-voluptatibus-eaque.php');
     }
     else
     {
@@ -44,7 +44,7 @@ $title = "_title";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '_IdScholarship' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '1' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())
@@ -60,8 +60,8 @@ $title = "_title";
 	}
 		if(isset($_SESSION['user_session']))
 		$uname=$_SESSION['user_session'] ;
-		$idScholarship = _IdScholarship;
-		$_SESSION['idScholarship'] = _IdScholarship;
+		$idScholarship = 1;
+		$_SESSION['idScholarship'] = 1;
 		
 		if(isset($_POST['upload']))
 		include('upload.php');
@@ -71,16 +71,16 @@ $title = "_title";
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 tarbar">
-					<a href="../news-page.php?id=0" class="split  <?php if(isset($_GET['id']) && $_GET['id']==0 ) echo " active" ?> "  >News in day</a>
-					<a href="../news-page.php?id=1" class="split  <?php if(isset($_GET['id']) && $_GET['id']==1 ) echo " active" ?> "  >Recruit</a>
-					<a href="../news-page.php" class="split  <?php if(!isset($_GET['id'])) echo " active" ?> "   >All</a>
+					<a href="news-page.php?id=0" class="split  <?php if(isset($_GET['id']) && $_GET['id']==0 ) echo " active" ?> "  >News in day</a>
+					<a href="news-page.php?id=1" class="split  <?php if(isset($_GET['id']) && $_GET['id']==1 ) echo " active" ?> "  >Recruit</a>
+					<a href="news-page.php" class="split  <?php if(!isset($_GET['id'])) echo " active" ?> "   >All</a>
 				</div>
 				<div class="col-lg-9 news-highlight">
 					<div class="row center">
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
-									<img src="../admin/files/_image"  class="image-responsive" alt="">
+									<img src="../admin/files/Img_1481647558.jpg"  class="image-responsive" alt="">
 								</a>
 							</div>
 							<div class="new-single-header">
@@ -88,20 +88,20 @@ $title = "_title";
 									<span><a href="#">News in Day</a></span>
 								</div>
 								<h2 class="main-title">
-									<a href="#" class="">_title</a>
+									<a href="#" class="">Est mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaque</a>
 								</h2>
 								<div class="time-new-single">
-									<span>Published at _date <br></span>
-									<span>Upload by _user </span>
+									<span>Published at 2016-12-13 <br></span>
+									<span>Upload by dut </span>
 								</div>
 								<div class="new-single-content">
 									<div class="head-context">
-									_headcontent
+									<p>Est mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaque</p>
 									</div>
 									<br>
 									<br>	
 									<div class="context">
-									_content
+									<p>Est mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaqueEst mollitia ipsa in expedita et molestiae natus non ea deleniti in excepturi voluptatibus eaque</p>
 									</div> 	
 										
 									
@@ -309,4 +309,4 @@ $(document).on('ready', function() {
 		$(".file-caption-name").text("Please upload your CV");
 });
 </script>
-<?php include '../inc/footer.php'; ?>
+<?php include 'footer.php'; ?>
