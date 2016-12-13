@@ -79,7 +79,6 @@ else if (isset($_SESSION['email'])){
         <div class="container">
           <div class="top-main-content">
             <span class="col-lg-10" style="font-size:30px;">New And Innovative market opportunities</span>
-            <span class="" style="font-size:20px">Published on 2016/10/17</span>
           </div>
           <div class="clearfix"></div>
           <div class="main-content container">

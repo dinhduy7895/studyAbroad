@@ -39,7 +39,7 @@
 	text-transform: uppercase;
 }
 .new-single{
-	font-family: nice;
+	font-family: 'nice', Arial, Helvetica, sans-serif;
 }
 .mew-single img {
 	max-width: 100%;

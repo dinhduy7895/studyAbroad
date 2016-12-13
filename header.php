@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/search.css">

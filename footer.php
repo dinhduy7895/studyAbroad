@@ -7,26 +7,25 @@
                 <h2>Contact</h2>
 
                 <div class="content">
-                    <p>Administration Building, Room 401
-                    <br/> The University of Arizona
-                    <br/> Tucson, AZ USA 85721-0066
-                    <br/> Phone: 520-621-3772
-                    <br/> Fax: 520-621-3776</p>
+                    <p> Administration Building, Room 401 </p>
+                    <p> Da Nang University of Technology</p>
+                    <p> Nguyen Luong Bang Street, Da Nang, Viet Nam</p>
+                    <p> Phone: +84 05113 876331</p>
                 </div>
             </div>
             <div  class="col-lg-3 col-md-3">
                 <h2>Areas</h2>
                 <div class="content">
                     <ul class="menu">
-                        <li class="first leaf"><a href="senior-vice-president-senior-vice-provost/message-senior-vice-president-and-senior-vice-provost.html">Senior Vice President &amp; Senior Vice Provost</a>
+                        <li class="first leaf"><a href="#">Senior Vice President &amp; Senior Vice Provost</a>
                         </li>
-                        <li class="leaf"><a href="student-affairs.html">Student Affairs</a>
+                        <li class="leaf"><a href="#">Student Affairs</a>
                         </li>
-                        <li class="leaf"><a href="enrollment-management.html">Enrollment Management</a>
+                        <li class="leaf"><a href="#">Enrollment Management</a>
                         </li>
-                        <li class="leaf"><a href="academic-initiatives.html">Academic Initiatives</a>
+                        <li class="leaf"><a href="#">Academic Initiatives</a>
                         </li>
-                        <li class="last leaf"><a href="student-success.html">Student Success</a>
+                        <li class="last leaf"><a href="#">Student Success</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +47,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3" id = "social-icon">
+            <div class="col-lg-3 col-md-3" id ="social-icon">
 
                 <h2>Follow Us</h2>
 
