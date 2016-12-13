@@ -49,11 +49,12 @@
           <option selected="selected" value = "None">None</option>
 
           <?php
-          $sql = $conn->prepare('Select IdUniversity,NameUniversity from university ');
+          $sql = $conn->prepare('Select IdUniversity,NameUniversity,Url from university ');
           $sql->execute();
           while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
               $idUniversity = $row['IdUniversity'];
-              $nameUniversity         = $row['NameUniversity'];
+              $nameUniversity = $row['NameUniversity'];
+              $urlUniversity = $row['Url']; 
               if(  $universitySelected ==  $idUniversity )
               echo '<option  value="' . $idUniversity . '" selected="selected" >' . $nameUniversity . '</option>';
               else 
@@ -93,7 +94,7 @@
             <th>Fee ( USD/Year )</th>
             <th>Scholarship(%)</th>
             <th>Recruitin From</th>
-            <th>End  </th>
+            <th>End </th>
             <th>Recruiting</th>
           </tr>
         </thead>
@@ -104,38 +105,40 @@
           $len      = count($array);
           for ($count = 0; $count < $len; $count++) {
               $arrayRow = $array[$count];
-?>
-
+          ?>
+          
           <tr>
             <td>
-              <?php
-              echo $arrayRow['NameUniversity'];
-?>
+              <a href="<?php echo $urlUniversity; ?>">
+                <?php
+                  echo $arrayRow['NameUniversity'];
+                ?>
+              </a>
             </td>
             <td>
               <?php
               echo $arrayRow['NameMajor'];
-?>
+              ?>
             </td>
             <td>
               <?php
               echo $arrayRow['Country'];
-?>
+            ?>
             </td>
             <td>
               <?php
               echo $arrayRow['Fee'];
-?>
+            ?>
             </td>
             <td>
               <?php
               echo $arrayRow['Scholarship'];
-?>
+            ?>
             </td>
             <td>
               <?php
               echo $arrayRow['StartDay']
-?>
+              ?>
             </td>
             <td>
               <?php
@@ -145,20 +148,20 @@
             <?php
               $start = $arrayRow['StartDay'];
               $end   = $arrayRow['EndDay'];
-?>
+            ?>
               <th>
                 <?php
               if ($start <= $today && $end >= $today) {
-?>
+              ?>
                   <a style="padding: 0px 16px; font-size: 15px; font-weight: bold;" class ="btn  btn-success " data-toggle="modal" href="<?php echo $arrayRow['Url'] ?>">Detail</a>
                   <?php
               }
-?>
+              ?>
               </th>
           </tr>
           <?php
           }
-?>
+          ?>
       </tbody>
       </table>
         </div>

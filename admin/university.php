@@ -46,7 +46,7 @@
                <?php while ($row = $q->fetch()): ?>
                <tr>
                   <td><?php echo htmlspecialchars($row['Id']); ?></td>
-                  <td><?php echo htmlspecialchars($row['IdScholarship']); ?></td>
+               
                   <td><?php echo htmlspecialchars($row['Title']); ?></td>
                   <td><?php echo htmlspecialchars($row['HeadContext']); ?></td>
                   <td><?php echo htmlspecialchars($row['Datenews']); ?></td>

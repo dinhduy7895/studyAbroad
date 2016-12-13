@@ -52,52 +52,44 @@ session_start();  ?>
 			<div class="row">
 	            <div class="col-lg-4 col-md-4"data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft; ">
 	                <div class="box box_skin">
-	                    <p class="def letter">b</p>
+	                    <p class="def letter"style='color:#1ff0ec'>i</p>
 
 	                    <div class="heading">
-	                        <p class="def">Student guide</p>
+	                        <p class="def">Intelligent</p>
 
-	                        <p>Bulum iaculis lacinia</p>
+	                        
 	                    </div>
-	                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem
-	                        ipsum
-	                        dme
-	                        consectetuer adipiscin.</p>
-	                    <a class="btn  btn_sm" href="#">more</a>
+	                    <p class="text-icon">Intelligent Strategy Solutions provides high quality training and consultancy services. 
+						We deliver quality and value. Our strength is in SME growth and development. Our facilitators focuses on SME business and operation improvement.</p>
+	                    
 	                </div>
 	            </div>
 
 	            <div class="col-lg-4 col-md-4 " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
 	                <div class="box box_skin">
-	                    <p class="def letter">c</p>
+	                    <p class="def letter"style='color:#b6d5e8'>c</p>
 
 	                    <div class="heading">
-	                        <p class="def">Student guide</p>
+	                        <p class="def" >Creative</p>
 
-	                        <p>Bulum iaculis lacinia</p>
+	                        
 	                    </div>
-	                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem
-	                        ipsum
-	                        dme
-	                        consectetuer adipiscin.</p>
-	                    <a class="btn  btn_sm" href="#">more</a>
+	                    <p class="text-icon">A creative strategy is generally the result of a team composed of one or more copywriters, an art director and a creative director. 
+						The creative strategy generally explains how the advertising campaign will meet the advertising objectives of the business.</p>
+	                   
 	                </div>
 	            </div>
 
 	            <div class="col-lg-4 col-md-4 " data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
 	                <div class="box box_skin">
-	                    <p class="def letter">d</p>
+	                    <p class="def letter" style='color:#ddcaee'>d</p>
 
 	                    <div class="heading">
-	                        <p class="def">Student guide</p>
-
-	                        <p>Bulum iaculis lacinia</p>
+	                        <p class="def">Dynamic</p>
 	                    </div>
-	                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem
-	                        ipsum
-	                        dme
-	                        consectetuer adipiscin.</p>
-	                    <a class="btn  btn_sm" href="#">more</a>
+	                    <p class="text-icon">The dynamic model of the strategy process is a way of understanding how strategic actions occur. It recognizes that strategic planning is dynamic, that is, strategy-making involves a complex pattern of actions and reactions. 
+						It is partially planned and partially.</p>
+	                    
 	                </div>
 	            </div>
 			</div>		
@@ -107,89 +99,19 @@ session_start();  ?>
 		<div class="container" >
 			<div class="invest_area"> 
 				<h1>INVEST IN YOUR <span>FUTURE</span></h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</p></br>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<p>"The Seven Social Sins are:
+					<br/>Wealth without work.
+					<br/>Pleasure without conscience.
+					<br/>Knowledge without character.
+					<br/>Commerce without morality.
+					<br/>Science without humanity.
+					<br/>Worship without sacrifice.
+					<br/>Politics without principle.
+					<br/>
+					From a sermon given by Frederick Lewis Donaldson in Westminster Abbey, London, on March 20, 1925.” 
+					<br/>― Frederick Lewis Donaldson
+				</p>
 			</div>
-		</div>
-	</section>
-	<section class="Progressive">
-		<div class="container ">
-			<div class=" col-lg-12 icon-wrapper box_skin">
-				<div class="col-lg-4 col-md-4">				
-		            <div class="icon-box box1 ">
-		                <div class="box_left">
-		                    <div class="icon fa fa-flag"></div>
-		                </div>
-		                <div class="box_cnt o__hidden">
-		                    <h6>
-		                        <a href="#">Lorem ipsum dolor sit amet</a>
-		                    </h6>
-		                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem ipsum dme consectetuer adipiscin.</p>
-		                </div>
-		            </div>
-		            <div class="icon-box box1 " >
-		                <div class="box_left">
-		                    <div class="icon fa fa-folder-open-o"></div>
-		                </div>
-		                <div class="box_cnt o__hidden">
-		                    <h6>
-		                        <a href="#">Lorem ipsum dolor sit amet</a>
-		                    </h6>
-		                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem consectetuer adipiscin.</p>
-		                </div>
-		            </div>         
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="icon-box box1 " >
-		                <div class="box_left">
-		                    <div class="icon fa fa-flag"></div>
-		                </div>
-		                <div class="box_cnt o__hidden">
-		                    <h6>
-		                        <a href="#">Lorem ipsum dolor sit amet</a>
-		                    </h6>
-		                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem ipsum dme consectetuer adipiscin.</p>
-		                </div>
-		            </div>
-		            <div class="icon-box box1 ">
-		                <div class="box_left">
-		                    <div class="icon fa fa-folder-open-o"></div>
-		                </div>
-		                <div class="box_cnt o__hidden">
-		                    <h6>
-		                        <a href="#">Lorem ipsum dolor sit amet</a>
-		                    </h6>
-		                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem consectetuer adipiscin.</p>
-		                </div>
-		            </div>        
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="icon-box box1 " >
-		                <div class="box_left">
-		                    <div class="icon fa fa-flag"></div>
-		                </div>
-		                <div class="box_cnt o__hidden">
-		                    <h6>
-		                        <a href="#">Lorem ipsum dolor sit amet</a>
-		                    </h6>
-		                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem ipsum dme consectetuer adipiscin.</p>
-		                </div>
-		            </div>
-		            <div class="icon-box box1 " >
-		                <div class="box_left">
-		                    <div class="icon fa fa-folder-open-o"></div>
-		                </div>
-		                <div class="box_cnt o__hidden">
-		                    <h6>
-		                        <a href="#">Lorem ipsum dolor sit amet</a>
-		                    </h6>
-		                    <p class="text-icon">Bulum iaculis lacinia est. Proin dictum elemntum velit. Fusce euismod cons equat ante. Lorem consectetuer adipiscin.</p>
-		                </div>
-		            </div>        
-				</div>
-
-			</div> <!-- end rown -->
 		</div>
 	</section>
 

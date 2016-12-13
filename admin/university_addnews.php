@@ -36,13 +36,13 @@
 			$image = $imgNewName;
 
 			$idUniversity = $_SESSION['idUniversity'];
-			$idScholarship = ($_POST['idScholarship']);
+			
 			$headContext = ($_POST['cktext1']);		
 			$title = ($_POST['title']);
 			$context = ($_POST['cktext']);
 			$dateNews = date("Y-m-d");
 
-			$_SESSION['idScholarship'] = $idScholarship;
+			
 			$_SESSION['cktext1'] = $headContext;
 			$_SESSION['title'] = $title;
 			$_SESSION['cktext'] = $context;
@@ -63,15 +63,15 @@
 			$content = str_replace("_date",$dateNews,$content);
 			$content = str_replace("_image",$image,$content);
 			$content = str_replace("_url",$url,$content);
-			$content = str_replace("_IdScholarship",$idScholarship,$content);
+		
 			$file_content = $content;
 			fwrite($fp,$file_content);
 			fclose($fp);
 			$file = str_replace("../","",$file);
-			$stmt = $conn->prepare("INSERT INTO news (IdUniversity, IdScholarship ,Title, HeadContext, Context, Datenews, Image,URL) VALUES (:idUniversity,:idScholarship ,:title, :headContext, :context, :dateNews, :image, :url)");
+			$stmt = $conn->prepare("INSERT INTO news (IdUniversity ,Title, HeadContext, Context, Datenews, Image,URL) VALUES (:idUniversity ,:title, :headContext, :context, :dateNews, :image, :url)");
 
 			$stmt->bindparam(":idUniversity", $idUniversity);
-			$stmt->bindparam(":idScholarship", $idScholarship);
+		
 	        $stmt->bindparam(":title", $title);
 	        $stmt->bindparam(":headContext", $headContext);
 	        $stmt->bindparam(":context", $context);
@@ -105,12 +105,7 @@
 			<h2 class="margin-bottom-10">Add News</h2>
 					<p>(*): Not be empty</p>
 					<form action="" class="templatemo-login-form" id="add_news" method="post" enctype="multipart/form-data" novalidate="novalidate">
-						<div class="row form-group">
-							<div class="col-lg-6">
-								<label>Scholarship</label>
-								<input type="text" name="idScholarship" class="form-control" id="idScholarship" placeholder="Nhập ID Scholarship">
-							</div>
-						</div>	
+						
 						<div class="row form-group">
 							<div class="col-lg-6">
 								<label>Title (*)</label>

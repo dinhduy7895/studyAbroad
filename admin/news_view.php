@@ -26,7 +26,7 @@
                      $q->setFetchMode(PDO::FETCH_ASSOC);
                      while ($row = $q->fetch()) {
                         $idUniversity = $row['IdUniversity'];
-                        $idScholarship = $row['IdScholarship'];
+                    
                         $title= $row['Title'];
                         $headContext = $row['HeadContext'];
                         $context = $row['Context'];
@@ -37,10 +37,7 @@
                            <th>Id University</th>
                            <td><?php echo $idUniversity; ?></td>
                         </tr>
-                         <tr>
-                           <th>Id Scholarship</th>
-                           <td><?php echo $idScholarship; ?></td>
-                        </tr>
+                        
                          <tr>
                            <th>Title</th>
                            <td><?php echo $title; ?></td>

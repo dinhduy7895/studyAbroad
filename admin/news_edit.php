@@ -49,12 +49,12 @@ include 'inc/header.php';
                      $result = move_uploaded_file($tmp_name, $path_upload);
                      $image = $imgNewName;
                      $idUniversity = $_POST["idUniversity"];
-                     $idScholarship = $_POST["idScholarship"];
+                  
                      $title = $_POST['title'];
                      $headContext = $_POST['cktext1'];
                      $context = $_POST['cktext'];
                      $Datenews = date("Y-m-d");
-                     $upd = "UPDATE news SET IdUniversity='{$idUniversity}',IdScholarship='{$idScholarship}', Title='{$title}',HeadContext='{$headContext}', Context='{$context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
+                     $upd = "UPDATE news SET IdUniversity='{$idUniversity}', Title='{$title}',HeadContext='{$headContext}', Context='{$context}', Datenews='{$Datenews}',Image='{$image}' WHERE Id = {$id}";
                      $q = $conn->query($upd);
                      if ($q) {
                         header("location: news.php?msg=Updated");exit();
@@ -80,7 +80,7 @@ include 'inc/header.php';
                         $q->setFetchMode(PDO::FETCH_ASSOC);
                         while ($row = $q->fetch()) {
                            $idUniversity = $row['IdUniversity'];
-                           $idScholarship = $row['IdScholarship'];
+                        
                            $title= $row['Title'];
                            $headContext = $row['HeadContext'];
                            $context = $row['Context'];
@@ -103,12 +103,7 @@ include 'inc/header.php';
                            <!-- <input type="text" name="idUniversity" class="form-control" id="idUniversity" value="<?php echo $idUniversity; ?>"> -->
                         </div>
                      </div>    
-                     <div class="row form-group">
-                        <div class="col-lg-6">
-                           <label>ID Scholarship</label>
-                           <input type="text" name="idScholarship" class="form-control" id="idScholarship" value="<?php echo $idScholarship; ?>">
-                        </div>
-                     </div> 
+                    
                      <div class="row form-group">
                         <div class="col-lg-6">
                             <label>Title (*)</label>

@@ -65,7 +65,7 @@ class USER
     }
     public function search($universityID,$majorID)
     {
-        $sql = 'SELECT  u.NameUniversity, m.NameMajor,u.Country,s.Fee,s.Scholarship,s.NumberOfYear,s.StartDay, s.EndDay, n.Url   FROM news n ,scholarshipinfor s, university u, major m where n.IdScholarship = s.IdScholarship and u.IdUniversity = s.IdUniversity and m.IdMajor = s.IdMajor ';
+        $sql ='SELECT DISTINCT u.NameUniversity, u.Country, m.NameMajor,s.Fee, s.Scholarship ,s.StartDay, s.EndDay   FROM scholarshipinfor s inner join  university u on s.IdUniversity=u.IdUniversity INNER JOIN major m on m.IdMajor=s.IdMajor WHERE 1';
         if($universityID != "None"){
             $sql .= "and u.IdUniversity = '$universityID' ";
         }
@@ -81,7 +81,7 @@ class USER
     {
         try
         {
-            $stmt = $this->db->prepare("SELECT * FROM user WHERE Name=:uname OR Email=:umail LIMIT 1");
+            $stmt = $this->db->prepare("SELECT * FROM user WHERE Active=1 AND Name=:uname OR Email=:umail LIMIT 1");
             $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
             $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
             if($stmt->rowCount() > 0)
