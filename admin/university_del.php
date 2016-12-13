@@ -1,6 +1,6 @@
 <?php 
-	include '../connect.php';
-	include 'header.php';
+	include '../functions/connect.php';
+	include 'inc/header.php';
 	if (isset($_SESSION['admin'])) {
 		header('Location: news.php');
 	}
@@ -28,5 +28,5 @@
 		    header("location:news.php?error");exit();
 	    }
 	}
-	include 'footer.php';
+	include 'inc/footer.php';
 ?>

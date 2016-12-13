@@ -1,10 +1,10 @@
 <?php $title = 'Register'; ?>
-  <?php
-session_start();
-include('connect.php');
-$name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
-$check = 0;
-if(count($_POST) > 0) {
+<?php
+  session_start();
+  include('functions/connect.php');
+  $name=$fname=$lname=$email=$pass=$year=$phone=$nameErr="";
+  $check = 0;
+  if(count($_POST) > 0) {
     $_SESSION['name'] = $_POST["name"];
     $_SESSION['firstname'] = $_POST['firstname'];
     $_SESSION['lastname'] = $_POST['lastname'];
@@ -66,7 +66,7 @@ else if (isset($_SESSION['email'])){
     session_destroy();
 }
 ?>
-    <?php include 'header.php'; ?>
+    <?php include 'inc/header.php'; ?>
       <section id="main-content">
         <div class="top-title">
           <div class="container">
@@ -87,21 +87,21 @@ else if (isset($_SESSION['email'])){
                 <br/>
                 <label class="col-lg-2" for="firstname">First name</label>
                 <div class="col-lg-5">
-                  <input value="<?php echo $fname ?>" type="text" id="firstname" class="form-control" name="firstname" placeholder="First name" />
+                  <input value="<?php echo $fname ?>" type="text" id="firstname" class="form-control" name="firstname" placeholder="First name" required/>
                   <br/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-2" for="lastname">Last name</label>
                 <div class="col-lg-5">
-                  <input value="<?php echo $lname ?>" type="text" id="lastname" class="form-control" name="lastname" placeholder="last name" />
+                  <input value="<?php echo $lname ?>" type="text" id="lastname" class="form-control" name="lastname" placeholder="last name" required/>
                   <br/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-2" for="name">Username</label>
                 <div class="col-lg-5">
-                  <input type="text" id="name" class="form-control" name="name" placeholder="Username" />
+                  <input type="text" id="name" class="form-control" name="name" placeholder="Username" required/>
                   <br/>
                   <?php echo $nameErr; ?>
                 </div>
@@ -109,33 +109,33 @@ else if (isset($_SESSION['email'])){
               <div class="form-group">
                 <label class="col-lg-2" for="email">Email</label>
                 <div class="col-sm-5">
-                  <input value="<?php echo $email ?>" type="email" id="email" class="form-control" name="email" placeholder="Email" />
+                  <input value="<?php echo $email ?>" type="email" id="email" class="form-control" name="email" placeholder="Email" required/>
                   <br/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-2" for="pass">Password</label>
                 <div class="col-sm-5">
-                  <input value="<?php echo $pass ?>" type="password" id="pass" class="form-control" name="pass" placeholder="your password" />
+                  <input value="<?php echo $pass ?>" type="password" id="pass" class="form-control" name="pass" placeholder="your password" required/>
                   <br/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-2" for="year">Year old</label>
                 <div class="col-sm-5">
-                  <input value="<?php echo $year ?>" type="text" id="year" class="form-control" name="year" placeholder="year name" />
+                  <input value="<?php echo $year ?>" type="text" id="year" class="form-control" name="year" placeholder="year name" required/>
                   <br/>
                 </div>
               </div>
               <div class="form-group">
                 <label class="col-lg-2 control-label" style="text-align: left;">Phone number</label>
                 <div class="col-lg-5">
-                  <input value="<?php echo $phone ?>" type="tel" class="form-control" name="phoneNumber" placeholder="+841234567" />
+                  <input value="<?php echo $phone ?>" type="tel" class="form-control" name="phoneNumber" placeholder="+841234567" required/>
                 </div>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" name="check"> <span style="font-weight:bold;"> Comfirm </span>
+                  <input type="checkbox" name="check" required> <span style="font-weight:bold;"> Comfirm </span>
                   <br>
                 </label>
                 <br/>
@@ -148,4 +148,4 @@ else if (isset($_SESSION['email'])){
           </div>
         </div>
       </section>
-      <?php include 'footer.php' ?>
+      <?php include 'inc/footer.php' ?>

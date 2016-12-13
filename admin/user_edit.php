@@ -1,13 +1,13 @@
-<?php include('../connect.php');
-  include 'header.php'; 
+<?php include('../functions/connect.php');
+  include 'inc/header.php'; 
   if (isset($_SESSION['university'])) {
     header('Location: university.php');
   }
 ?>
 <div class="wrapper">
-  <?php include 'sidebar.php'; ?>
+  <?php include 'inc/sidebar.php'; ?>
   <div class="container-fluid">
-   <?php include 'navbar.php'; ?>
+   <?php include 'inc/navbar.php'; ?>
    <div class="row">
       <div class="col-xs-12">
          <h3 class="page-header">
@@ -124,20 +124,7 @@
           </div>
         </section>
       </div>
-      <script src="../js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
-      <script src="js/main.js"></script>
-      <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
-      <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
-      <script type="text/javascript" src="../js/form_validation.js"></script>
-      <script type="text/javascript" src="../js/intlTelInput.min.js"></script>
-      <script>
-        $.validator.addMethod('matches1', function(phoneNumber, element) {
-          phoneNumber = phoneNumber.replace(/\s+/g, '');
-          return this.optional(element) || phoneNumber.length == 10 || phoneNumber.length == 11 && phoneNumber.match(/^\d+$/);
-        }, "nhap dung so dien thoai");
-      </script>
        </div>
         </div> <!-- / .row -->
       </div>
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>

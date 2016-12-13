@@ -2,8 +2,8 @@
 $title = 'About';
 ?>
 <?php
-	include('connect.php');
-	include "header.php" ;
+	include('functions/connect.php');
+	include "inc/header.php" ;
 	
 ?>
 	<section id="main-content">
@@ -15,4 +15,4 @@ $title = 'About';
 		</div>
 
 	</section>
-	<?php include 'footer.php';?>
+	<?php include 'inc/footer.php';?>

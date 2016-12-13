@@ -1,11 +1,7 @@
-
 <?php $title = 'Home';
-// session_name('s');
-// session_set_cookie_params(0, '/');
-// session_cache_limiter('private_no_expire');
 session_start();  ?>
-<?php require_once 'connect.php' ;?>
-<?php include 'header.php'; ?>
+<?php require_once 'functions/connect.php' ;?>
+<?php include 'inc/header.php'; ?>
 	<section id="slider" class="slider">
 		<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
 			<ol class="carousel-indicators">
@@ -293,4 +289,4 @@ session_start();  ?>
 		</div>
 	</section>
 
-	<?php include 'footer.php'; ?>
+	<?php include 'inc/footer.php'; ?>

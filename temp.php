@@ -3,7 +3,7 @@
 // session_set_cookie_params(0, '/');
 // session_cache_limiter('private_no_expire');
 session_start(); 
-include('../connect.php');
+include('functions/connect.php');
 
 $_SESSION['login']="";
 $_SESSION['url'] = '_url.php';
@@ -58,7 +58,6 @@ $title = "_title";
 		$noy = $row['NumberOfYear'];
 		$textReg = "The ".$university." with major ".$major."having a scholarship for foreign student in ".$noy." years. You will be support by ".$fee." % and the course will be ".$scholarship." /year. <br> The time to register is from".$start." to".$end." <br> Please fill in your information right here if you want to have a chance to get it. Thank you !!"; 
 	}
-	///////upload
 		if(isset($_SESSION['user_session']))
 		$uname=$_SESSION['user_session'] ;
 		$idScholarship = _IdScholarship;
@@ -67,7 +66,7 @@ $title = "_title";
 		if(isset($_POST['upload']))
 		include('upload.php');
 ?>
-<?php include 'header.php'; ?>
+<?php include 'inc/header.php'; ?>
 	<section class="news">
 		<div class="container">
 			<div class="row">
@@ -301,4 +300,4 @@ $(document).on('ready', function() {
 		$(".fileinput-upload").attr("name", "upload");
 });
 </script>
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>

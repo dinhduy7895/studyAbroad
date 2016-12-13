@@ -1,22 +1,14 @@
 <?php $title = 'Login'; 
-// session_name('s');
-// session_set_cookie_params(0, '/');
-// session_cache_limiter('private_no_expire');
 session_start(); 
 ?>
-
-
 <?php
-  require_once 'connect.php';
-  
-
+  require_once 'functions/connect.php';
   if(isset($_POST['submit']))
   {
     $uname = $_POST['Name'];
     $umail = $_POST['Name'];
     $upass = $_POST['pass'];
     $upass = md5($upass);
-
     if($user->login($uname,$umail,$upass))
     {
       $_SESSION['user_session'] = $uname;
@@ -30,7 +22,7 @@ session_start();
     } 
   }
 ?>
-    <?php include 'header.php'; ?>
+  <?php include 'inc/header.php'; ?>
   <section id="main-content">
     <div class="top-title">
       <div class="container">
@@ -69,5 +61,5 @@ session_start();
       </div>
     </div>
   </section>
-<?php include 'footer.php'; ?>
+<?php include 'inc/footer.php'; ?>
 
