@@ -89,7 +89,18 @@ include 'header.php';
                      <div class="row form-group">
                         <div class="col-lg-6">
                            <label>ID University</label>
-                           <input type="text" name="idUniversity" class="form-control" id="idUniversity" value="<?php echo $idUniversity; ?>">
+                           <select name="idUniversity" id="idUniversity">
+                           <?php  
+                              $sql1 = "SELECT * FROM university";
+                              $stmt_uni = $conn->query($sql1);
+                                    $stmt_uni->setFetchMode(PDO::FETCH_ASSOC);
+                                    while ($row_uni = $stmt_uni->fetch()) {
+                                    ?>
+                              <option value="<?php echo $row_uni['IdUniversity']; ?>"><?php echo $row_uni['NameUniversity']." - ". $row_uni['Country']; ?></option>
+                           <?php } ?>
+                        </select>
+
+                           <!-- <input type="text" name="idUniversity" class="form-control" id="idUniversity" value="<?php echo $idUniversity; ?>"> -->
                         </div>
                      </div>    
                      <div class="row form-group">

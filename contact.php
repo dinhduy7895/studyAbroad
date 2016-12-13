@@ -1,12 +1,7 @@
-
 <?php
 $title = 'Contact';
   session_start(); 
- 
-
 ?>
-
-
 <?php
 	include('connect.php');
 	// if(!$user->is_loggedin()){
@@ -30,8 +25,6 @@ $title = 'Contact';
 		$phoneContact = $_SESSION['phoneContact'];
 		$opinionContact = $_SESSION['opinionContact'];
 		
-		
-
 				/** Include PHPExcel */
 		require_once 'lib/excel/Classes/PHPExcel.php';
 		require_once 'lib/excel/Classes/PHPExcel/IOFactory.php';
@@ -52,6 +45,9 @@ $title = 'Contact';
 	include "header.php" ;
 	
 ?>
+	<section id="google-map">
+		<div id="googleMap" style="width:100%;height:510px;"></div>
+	</section>
 	<section id="main-content">
 		<div class="container">
 			<div class="top-title ">
@@ -67,18 +63,21 @@ $title = 'Contact';
 							<!--<label class="col-lg-2" for="date">Your Name</label>-->
 							<div class="col-sm-12">
 								<input type="text" class=" form-control" name="nameContact" placeholder="Your Name" /><br/>
+								
 							</div>
 						</div>
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Email</label>-->
 							<div class="col-sm-12">
 								<input type="text" class=" form-control" name="emailContact" placeholder="Email" /><br/>
+							
 							</div>
 						</div>
 						<div class="form-group">
 							<!--<label class="col-lg-2" for="date">Address</label>-->
 							<div class="col-sm-12">
 								<input type="text" class=" form-control" name="addressContact" placeholder="Address" /><br/>
+								
 							</div>
 						</div>
 						<div class="form-group">
@@ -108,24 +107,22 @@ $title = 'Contact';
 	</section>
 			 <!-- Modal -->
 <div id="contact" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h1 class="modal-title center" style="font-size: 30px;">Thank you !</h4>
-      </div>
-      <div class="modal-body center">
-          <p>We have been received your opinions .</p>
-		  <p>If you have more question , please do not hesistant to contact us follow information below </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title center" style="font-size: 30px;">Thank you !</h4>
+			</div>
+			<div class="modal-body center">
+				<p>We have been received your opinions .</p>
+				<p>If you have more question , please do not hesistant to contact us follow information below </p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
 </div>
 	<?php 
 	if(isset($_SESSION['contact'])){

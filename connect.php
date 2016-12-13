@@ -1,8 +1,14 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "binh";
 $dbname = "studyabroad";
+
+
+// $servername = "http://sql28.hostinger.vn";
+// $username = "u619397211_root";
+// $password = "thanhbinh";
+// $dbname = "u619397211_study";
 try{
      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // set the PDO error mode to exception

@@ -17,6 +17,7 @@
     <title>
         <?php echo $title; ?>
     </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/vendor/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
@@ -27,6 +28,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/search.css">
@@ -56,7 +58,7 @@
                     <div class="top-right col-lg-6">
                         <div class="top-search fright ">
                             <form method="get" id="searchform" class="searchform" action="http://amory.premiumcoding.com/">
-                                <input type="text" value="Search and hit enter..." name="s" id="s">
+                                <input type="text" placeholder="Search and hit enter..." name="s" id="s">
                                 <i class="fa fa-search search-desktop" aria-hidden="true"></i>
                             </form>
                         </div>
@@ -86,7 +88,7 @@
                             <ol class="nav navbar-nav ">
                                 <li class="<?php if ($title=='Home') echo " active ";?> "><a href="index.php">Home</a>
                                 </li>
-                                <li class="<?php if ($title=='About') echo " active ";?> "><a href="#">About</a>
+                                <li class="<?php if ($title=='About') echo " active ";?> "><a href="about.php">About</a>
                                 </li>
                                 <li class="<?php if ($title=='News') echo " active ";?> "><a href="news-page.php">News</a>
                                 </li>

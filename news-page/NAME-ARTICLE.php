@@ -6,8 +6,8 @@ session_start();
 include('../connect.php');
 
 $_SESSION['login']="";
-$_SESSION['url'] = 'Sint-magni-aliquip-qui-perferendis-soluta-modi-laboriosam-excepteur.php';
-$title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
+$_SESSION['url'] = 'NAME-ARTICLE.php';
+$title = "NAME ARTICLE";
 ?>
 <?php
   
@@ -18,7 +18,7 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
   if($user->is_loggedin()!="" && $_SESSION['login'] == true )
   {
     $_SESSION['login'] = false;
-	$user->redirect('Sint-magni-aliquip-qui-perferendis-soluta-modi-laboriosam-excepteur.php');
+	$user->redirect('NAME-ARTICLE.php');
 	
   }
 
@@ -35,7 +35,7 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 	  
       if ($uname == 'admin') {
         $user->redirect('../admin/news.php');
-      } else $user->redirect('Sint-magni-aliquip-qui-perferendis-soluta-modi-laboriosam-excepteur.php');
+      } else $user->redirect('NAME-ARTICLE.php');
     }
     else
     {
@@ -44,7 +44,7 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
   }
 ?>
 <?php  
-	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '3' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
+	$sql = "SELECT u.NameUniversity, m.NameMajor, s.Fee, s.Scholarship, s.StartDay, s.EndDay, s.NumberOfYear FROM university u, major m, scholarshipinfor s where  s.IdScholarship = '2' and s.IdUniversity = u.IdUniversity and s.IdMajor = m.IdMajor";
 	$q = $conn->query($sql);
 	$q->setFetchMode(PDO::FETCH_ASSOC);
 	while ($row = $q->fetch())
@@ -61,8 +61,8 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 	///////upload
 		if(isset($_SESSION['user_session']))
 		$uname=$_SESSION['user_session'] ;
-		$idScholarship = 3;
-		$_SESSION['idScholarship'] = 3;
+		$idScholarship = 2;
+		$_SESSION['idScholarship'] = 2;
 		
 		if(isset($_POST['upload']))
 		include('upload.php');
@@ -76,7 +76,7 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 						<div class="new-single col-lg-12">
 							<div class="new-single-image">
 								<a href="#">
-									<img src="../admin/files/Img_1481510892.png"  class="image-responsive" alt="">
+									<img src="../admin/files/Img_1481534586.jpg"  class="image-responsive" alt="">
 								</a>
 							</div>
 							<div class="new-single-header">
@@ -84,19 +84,19 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 									<span><a href="#">News in Day</a></span>
 								</div>
 								<h2 class="main-title">
-									<a href="#" class="">Sint magni aliquip qui perferendis soluta modi laboriosam excepteur</a>
+									<a href="#" class="">NAME ARTICLE</a>
 								</h2>
 								<div class="time-new-single">
 									<span>Published at 2016-12-12</span>
 								</div>
 								<div class="new-single-content">
 									<div class="head-context">
-									<p>Sint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteur</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sunt voluptatibus voluptas. Dignissimos veritatis provident vitae, asperiores, quaerat similique deleniti. Quibusdam consectetur sunt corrupti, minus veniam possimus distinctio laboriosam accusamus.</p><p>&nbsp;</p>
 									</div>
 									<br>
 									<br>	
 									<div class="context">
-									<p>Sint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteurSint magni aliquip qui perferendis soluta modi laboriosam excepteur</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sunt voluptatibus voluptas. Dignissimos veritatis provident vitae, asperiores, quaerat similique deleniti. Quibusdam consectetur sunt corrupti, minus veniam possimus distinctio laboriosam accusamus.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sunt voluptatibus voluptas. Dignissimos veritatis provident vitae, asperiores, quaerat similique deleniti. Quibusdam consectetur sunt corrupti, minus veniam possimus distinctio laboriosam accusamus.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sunt voluptatibus voluptas. Dignissimos veritatis provident vitae, asperiores, quaerat similique deleniti. Quibusdam consectetur sunt corrupti, minus veniam possimus distinctio laboriosam accusamus.</p><p>&nbsp;</p>
 									</div> 	
 										
 									
@@ -114,18 +114,16 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 														<button type="button" class="close" data-dismiss="modal">&times;</button>
 														<h4 class="modal-title">Please fill your information</h4>
 													</div>
-													<div class="modal-body clearfix">
-														<div class="noti col-lg-12">
-															<?php echo $textReg;?>
+													<div class="modal-body">
+														<?php echo $textReg;?>
+														<div class="download">
+															<a href="../download.docx">Template Form CV</a>
 														</div>
-														<div class="download col-lg-2 col-lg-offset-5">
-															<a href="../download.docx"><img src="../img/download.png" class="img-responsive" alt=""></a>
-														</div>
-														<div class="form-register center col-lg-12">
+														<div class="form-register center">
 															<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
 																Please upload your CV : 
-																<input type="file" name="fileCV" id="fileCV"  accept=".docx,.pdf">
-																<input type="submit" value="Upload file">
+																<input type="file" name="fileCV" id="fileCV">
+																<input type="submit" value="Upload file" name="upload">
 															</form>
 														</div>
 													</div>
@@ -292,19 +290,4 @@ $title = "Sint magni aliquip qui perferendis soluta modi laboriosam excepteur";
 		 unset($_SESSION['upload']); 
 	}
 ?>
-<script>
-$(document).on('ready', function() {
-    $("#fileCV").fileinput({
-        previewFileType: "text",
-        allowedFileExtensions: ["txt", "md", "ini", "text"],
-        previewClass: "bg-warning"
-    });
-		
-});
-</script>
-<script>
-function myFunction() {
-    document.getElementsByClassName("fileinput-upload-button").setAttribute("name", "upload"); 
-}
-</script>
 <?php include 'footer.php'; ?>
