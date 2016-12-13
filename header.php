@@ -87,7 +87,7 @@
                             <ol class="nav navbar-nav ">
                                 <li class="<?php if ($title=='Home') echo " active ";?> "><a href="index.php">Home</a>
                                 </li>
-                                <li class="<?php if ($title=='About') echo " active ";?> "><a href="#">About</a>
+                                <li class="<?php if ($title=='About') echo " active ";?> "><a href="about.php">About</a>
                                 </li>
                                 <li class="<?php if ($title=='News') echo " active ";?> "><a href="news-page.php">News</a>
                                 </li>
