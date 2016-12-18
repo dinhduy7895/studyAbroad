@@ -6,7 +6,7 @@ include('header.php');
     <div class="success center">
         <div class="success-header">
             Thank you for register <br>
-            <a href="login_form.php" class="">Click here </a><span>to log in</span>
+            <a href="login_form.php" class="">Click here </a><span>to log inn</span>
         </div>
     </div> 
     
